@@ -1,17 +1,64 @@
-/* Error: Undefined variable.
- *   ,
- * 7 |     color: $theme-color3;
- *   |            ^^^^^^^^^^^^^
- *   '
- *   src\sass\components\games.scss 7:12  root stylesheet */
+@import "../utilities/variables.scss";
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-    "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 7 \2502      color: $theme-color3;\a   \2502             ^^^^^^^^^^^^^\a   \2575 \a   src\\sass\\components\\games.scss 7:12  root stylesheet";
+.news-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.news {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: $background-color-tertiary;
+  border: 1px solid rgba(129, 199, 132, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &-image {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-container {
+    padding: 1.2rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $theme-color3;
+      line-height: 1.4;
+    }
+
+    &-desc {
+      font-size: 0.9rem;
+      color: $font-color-main;
+      opacity: 0.85;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    &-date {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+      color: $hover-color;
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+  }
 }

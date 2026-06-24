@@ -1,3 +1,6 @@
+@import "../utilities/variables.scss";
+@import "../utilities/mixins.scss";
+
 .game {
   display: flex;
   flex-direction: column;
