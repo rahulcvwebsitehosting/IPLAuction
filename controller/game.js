@@ -1,24 +1,14 @@
-const schedule = require("node-schedule");
 const squadData = require("../data/squads.json");
-const getSquads = require("../utilities/players");
 const Auction = require("./auction");
 
-const liveAuctions = new Map();
-let squads = squadData;
+// Squads come from the bundled data/squads.json. The Puppeteer scraper that
+// refreshed this nightly was removed — it pulled in a huge Chromium download
+// that caused out-of-memory failures on Render's free tier, and the static
+// data is already a valid fallback. If live scraping is needed again, it can
+// run as a separate scheduled job rather than inside the web service.
+const squads = squadData;
 
-schedule.scheduleJob("fetching-squads", "0 0 * * *", () => {
-  getSquads()
-    .then((response) => {
-      squads = response;
-    })
-    .catch((error) => {
-      console.log(
-        "Failed to fetch squads, falling back to local data.",
-        error.message || error
-      );
-      squads = squadData;
-    });
-});
+const liveAuctions = new Map();
 
 // Called while creating a game
 const create = (io, socket, data) => {
