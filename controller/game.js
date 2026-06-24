@@ -151,6 +151,23 @@ const serverUsers = (io, room) => {
   });
 };
 
+const fetchState = (socket, data) => {
+  if (!data || !data.room) {
+    return;
+  }
+  const auction = liveAuctions.get(data.room);
+  if (!auction) {
+    return;
+  }
+  const bid = auction.getCurrentBid();
+  socket.emit("server-details", {
+    bidder: bid.bidder,
+    amount: bid.bid,
+    player: auction.getCurrentPlayer(),
+    timer: auction.timer,
+  });
+};
+
 const exitUser = (io, data) => {
   if (!data || !data.room || !data.user) {
     return;
@@ -177,4 +194,5 @@ module.exports = {
   checkUser,
   serverUsers,
   exitUser,
+  fetchState,
 };

@@ -21,10 +21,12 @@ const Game = ({ users, socket, room, user, initial }) => {
   userRef.current = user;
 
   useEffect(() => {
-    socket.emit("fetch-details");
+    socket.emit("fetch-details", { room });
     const onServerDetails = (data) => {
       setBidder(data.bidder);
       setAmount(data.amount);
+      if (data.player) setPlayer(data.player);
+      if (data.timer >= 0) setTimer(data.timer);
     };
     socket.on("server-details", onServerDetails);
     return () => {

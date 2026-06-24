@@ -7,6 +7,7 @@ const {
   checkUser,
   serverUsers,
   exitUser,
+  fetchState,
 } = require("../controller/game");
 
 const socketRouter = (io) => {
@@ -37,6 +38,10 @@ const socketRouter = (io) => {
 
     socket.on("server-users", ({ room }) => {
       serverUsers(io, room);
+    });
+
+    socket.on("fetch-details", (data) => {
+      fetchState(socket, data);
     });
 
     socket.on("exit", (data) => {
