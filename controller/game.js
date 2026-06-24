@@ -1,16 +1,17 @@
 const squadData = require("../data/squads.json");
 const Auction = require("./auction");
 
-// Squads come from the bundled data/squads.json. The Puppeteer scraper that
-// refreshed this nightly was removed — it pulled in a huge Chromium download
-// that caused out-of-memory failures on Render's free tier, and the static
-// data is already a valid fallback. If live scraping is needed again, it can
-// run as a separate scheduled job rather than inside the web service.
 const squads = squadData;
 
 const liveAuctions = new Map();
 
-// Called while creating a game
+const registerSocket = (auction, socket) => {
+  auction.addSocket(socket);
+  socket.on("disconnect", () => {
+    auction.removeSocket(socket.id);
+  });
+};
+
 const create = (io, socket, data) => {
   if (!data.room || !data.username) {
     return socket.emit("create-result", {
@@ -29,8 +30,9 @@ const create = (io, socket, data) => {
   socket.join(data.room);
   const auction = new Auction(io, data.room);
   auction.addUser(data.username);
+  registerSocket(auction, socket);
   liveAuctions.set(data.room, auction);
-  io.to(data.room).emit("users", {
+  auction.emitToRoom("users", {
     users: auction.users,
   });
   socket.emit("create-result", {
@@ -39,7 +41,6 @@ const create = (io, socket, data) => {
   });
 };
 
-// Called while joining a game
 const join = (io, socket, data) => {
   if (!data.room || !data.username) {
     return socket.emit("join-result", {
@@ -57,18 +58,15 @@ const join = (io, socket, data) => {
   }
   auction.addUser(data.username);
   socket.join(data.room);
+  registerSocket(auction, socket);
   socket.emit("join-result", {
     success: true,
     room: data.room,
     error: "",
   });
-  io.to(data.room).emit("users", {
+  auction.emitToRoom("users", {
     users: auction.users,
   });
-};
-
-const start = (io, data) => {
-  io.to(data.room).emit("start");
 };
 
 const play = (data) => {
@@ -131,6 +129,7 @@ const checkUser = (socket, user) => {
       return socket.emit("no-existing-user");
     }
     socket.join(room);
+    registerSocket(auction, socket);
     socket.emit("existing-user", {
       room: room,
       users: auction.fetchPlayers(),
@@ -147,7 +146,7 @@ const serverUsers = (io, room) => {
   if (!auction) {
     return;
   }
-  io.to(room).emit("users", {
+  auction.emitToRoom("users", {
     users: auction.users,
   });
 };
@@ -172,7 +171,6 @@ const exitUser = (io, data) => {
 module.exports = {
   create,
   join,
-  start,
   play,
   bid,
   next,

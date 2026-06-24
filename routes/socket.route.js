@@ -1,7 +1,6 @@
 const {
   create,
   join,
-  start,
   play,
   bid,
   next,
@@ -22,10 +21,6 @@ const socketRouter = (io) => {
 
     socket.on("joinAuction", (data) => {
       join(io, socket, data);
-    });
-
-    socket.on("requestPlay", (data) => {
-      start(io, data);
     });
 
     socket.on("start", (data) => {

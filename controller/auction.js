@@ -11,26 +11,25 @@ class Auction {
     this.interval = null;
     this.io = io;
     this.roomName = roomName;
+    this.sockets = new Map();
     this.squad = 0;
     this.player = 0;
     this.confirm = 0;
     this.started = false;
   }
 
+  addSocket(socket) {
+    this.sockets.set(socket.id, socket);
+  }
+
+  removeSocket(socketId) {
+    this.sockets.delete(socketId);
+  }
+
   emitToRoom(event, data) {
-    const { io, roomName } = this;
-    (async () => {
-      try {
-        const sockets = await io.in(roomName).fetchSockets();
-        sockets.forEach((s) => s.emit(event, data));
-      } catch (err) {
-        try {
-          io.to(roomName).emit(event, data);
-        } catch (e) {
-          console.error(`emitToRoom fallback error (${event}):`, e);
-        }
-      }
-    })();
+    for (const socket of this.sockets.values()) {
+      socket.emit(event, data);
+    }
   }
 
   startAuction() {
