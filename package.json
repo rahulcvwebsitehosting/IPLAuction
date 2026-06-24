@@ -13,7 +13,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
+    "prepare": "node -e \"if (process.env.CI || process.env.NODE_ENV === 'production') process.exit(0); require('child_process').execSync('husky install', {stdio:'inherit'})\"",
     "lint": "prettier --check .",
     "format": "prettier --write ."
   },
