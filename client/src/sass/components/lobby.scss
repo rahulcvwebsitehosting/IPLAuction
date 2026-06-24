@@ -1,6 +1,5 @@
 .lobby {
   @include glassmorphism;
-
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -9,13 +8,14 @@
 
   &--container {
     margin: auto;
-    padding: 1rem 0.2rem;
+    padding: 2.5rem 0.2rem;
     width: 45rem;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     @include glassmorphism;
-    border: none;
+    border: 1px solid rgba(129, 199, 132, 0.2);
     background-color: $background-color-tertiary;
+    animation: glow-pulse 3s ease-in-out infinite;
 
     &--content {
       padding: 0.2rem;
@@ -26,18 +26,43 @@
       flex-direction: column;
 
       &-1 {
+        font-size: 1.3rem;
+        color: $theme-color3;
+
         &-copy {
           .code {
             cursor: pointer;
             color: $hover-color;
             font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: rgba(255, 214, 0, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: rgba(255, 214, 0, 0.2);
+              transform: scale(1.05);
+            }
           }
         }
       }
 
       &-2 {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         color: $theme-color3;
+        font-size: 1.1rem;
+
+        div {
+          display: inline-block;
+          margin: 0.3rem 0.5rem;
+          padding: 0.3rem 0.8rem;
+          background: rgba(129, 199, 132, 0.1);
+          border-radius: 20px;
+          border: 1px solid rgba(129, 199, 132, 0.2);
+        }
       }
     }
 
@@ -46,6 +71,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
     }
   }
 }

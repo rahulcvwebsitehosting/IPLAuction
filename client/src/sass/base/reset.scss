@@ -14,9 +14,93 @@ html {
 
 .App {
   padding: 0 10rem;
-  background-color: $background-color-secondary;
-  color: $font-color-main;
   min-height: 100vh;
+  // Cricket pitch gradient background
+  background: linear-gradient(
+    135deg,
+    #0d2410 0%,
+    #1a3a1a 30%,
+    #1a3a1a 50%,
+    #0d2410 100%
+  );
+  color: $font-color-main;
+  position: relative;
+  overflow: hidden;
+}
+
+// Cricket pitch strip down the center
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 119, 90, 0.08) 15%,
+    rgba(139, 119, 90, 0.12) 50%,
+    rgba(139, 119, 90, 0.08) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+// Pitch crease lines
+.App::after {
+  content: "";
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: 0 200px 0 rgba(255, 255, 255, 0.06),
+    0 400px 0 rgba(255, 255, 255, 0.04);
+}
+
+// Stumps decoration at bottom
+.stumps-decoration {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.stumps-decoration::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 80px;
+  background: linear-gradient(to top, #d7ccc8, #8d6e63);
+  border-radius: 2px 2px 0 0;
+  box-shadow: -20px 0 0 #d7ccc8, 20px 0 0 #d7ccc8;
+}
+
+.stumps-decoration::after {
+  content: "";
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 3px;
+  background: #a1887f;
+  border-radius: 1px;
 }
 
 .ball {
@@ -29,36 +113,53 @@ html {
   pointer-events: none;
 }
 
+// Cricket ball floaters
 .ball1 {
-  background: radial-gradient(circle at 30% 30%, #388e3c, #1b5e20);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  opacity: 0.15;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff8a80,
+    $ball-red 50%,
+    #b71c1c
+  );
+  clip-path: circle(1.8% at 20% 15%);
+  opacity: 0.5;
+  animation: cricket-ball-float 18s ease-in-out infinite;
 }
 
 .ball2 {
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 30px,
-    rgba(255, 255, 255, 0.03) 30px,
-    rgba(255, 255, 255, 0.03) 32px
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff8a80,
+    $ball-red 50%,
+    #b71c1c
   );
-  clip-path: polygon(0 60%, 100% 60%, 100% 62%, 0 62%);
-  animation: pitch-line-glow 4s ease-in-out infinite alternate;
+  clip-path: circle(1.5% at 80% 30%);
+  opacity: 0.35;
+  animation: cricket-ball-float 22s ease-in-out infinite reverse;
 }
 
 .ball3 {
-  background: radial-gradient(circle at 50% 50%, #d32f2f, #b71c1c);
-  clip-path: circle(1.5% at 15% 20%);
-  opacity: 0.6;
-  animation: cricket-ball-float 12s ease-in-out infinite;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff8a80,
+    $ball-red 50%,
+    #b71c1c
+  );
+  clip-path: circle(1.2% at 50% 85%);
+  opacity: 0.3;
+  animation: cricket-ball-float 25s ease-in-out infinite 2s;
 }
 
 .ball4 {
-  background: radial-gradient(circle at 50% 50%, #d32f2f, #b71c1c);
-  clip-path: circle(1.2% at 85% 75%);
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff8a80,
+    $ball-red 50%,
+    #b71c1c
+  );
+  clip-path: circle(1% at 10% 70%);
   opacity: 0.4;
-  animation: cricket-ball-float 15s ease-in-out infinite reverse;
+  animation: cricket-ball-float 20s ease-in-out infinite 5s;
 }
 
 @media (max-width: $max-width) {

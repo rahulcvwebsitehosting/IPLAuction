@@ -45,20 +45,6 @@
   }
 }
 
-@keyframes move-up {
-  0% {
-    transform: translateY(700px);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(-800px);
-  }
-}
-
 @keyframes beat {
   0% {
     transform: scale(1);
@@ -71,44 +57,82 @@
 
 @keyframes cricket-ball-float {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 0.3;
   }
-  25% {
-    transform: translate(50px, -80px) scale(1.2);
+  20% {
+    transform: translate(80px, -100px) scale(1.1) rotate(72deg);
     opacity: 0.6;
   }
-  50% {
-    transform: translate(120px, -40px) scale(0.9);
+  40% {
+    transform: translate(180px, -40px) scale(0.9) rotate(144deg);
     opacity: 0.4;
   }
-  75% {
-    transform: translate(60px, 20px) scale(1.1);
+  60% {
+    transform: translate(100px, 30px) scale(1.05) rotate(216deg);
     opacity: 0.5;
   }
+  80% {
+    transform: translate(40px, -60px) scale(0.95) rotate(288deg);
+    opacity: 0.35;
+  }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(360deg);
     opacity: 0.3;
   }
 }
 
-@keyframes pitch-line-glow {
-  0% {
-    opacity: 0.3;
-  }
+@keyframes stump-wobble {
+  0%,
   100% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes stump-pulse {
-  0% {
-    transform: scaleY(1);
+    transform: rotate(-1deg);
   }
   50% {
-    transform: scaleY(1.05);
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes pitch-line-pulse {
+  0%,
+  100% {
+    opacity: 0.06;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(129, 199, 132, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(129, 199, 132, 0.6);
+  }
+}
+
+@keyframes bat-swing {
+  0% {
+    transform: rotate(-20deg) translateX(-10px);
+  }
+  50% {
+    transform: rotate(5deg) translateX(5px);
   }
   100% {
-    transform: scaleY(1);
+    transform: rotate(-20deg) translateX(-10px);
+  }
+}
+
+@keyframes scoreboard-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.97;
+  }
+  97% {
+    opacity: 0.99;
   }
 }

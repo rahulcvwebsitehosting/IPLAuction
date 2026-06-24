@@ -27,6 +27,7 @@ function App() {
         <div className="ball ball2"></div>
         <div className="ball ball3"></div>
         <div className="ball ball4"></div>
+        <div className="stumps-decoration"></div>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <PublicRoute exact path="/signup" component={SignUp} />

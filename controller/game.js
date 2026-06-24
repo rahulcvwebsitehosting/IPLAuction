@@ -77,9 +77,9 @@ const play = (data) => {
     return;
   }
   auction.startAuction();
+  auction.room.emit("start");
   auction.servePlayer(squads);
   auction.startInterval();
-  auction.room.emit("start");
 };
 
 const bid = (socket, data) => {

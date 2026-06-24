@@ -5,10 +5,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  border-bottom: 2px solid rgba(129, 199, 132, 0.2);
 
   &-logo {
     height: 1.5rem;
-    filter: brightness(1.2);
+    filter: brightness(1.2) drop-shadow(0 0 4px rgba(129, 199, 132, 0.3));
   }
 
   &-main {
@@ -45,6 +46,10 @@
       right: 0;
       transform: scale(0, 1);
       transition: transform ease-in-out 0.25s;
+    }
+
+    &-content:hover {
+      color: $theme-color3;
     }
 
     &-content:hover::before {

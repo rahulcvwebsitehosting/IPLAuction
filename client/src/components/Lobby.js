@@ -8,6 +8,7 @@ const Lobby = ({
   user,
   setCreated,
   setJoin,
+  setPlay,
 }) => {
   const copyToClipboard = () => {
     if ("clipboard" in navigator) navigator.clipboard.writeText(code);
@@ -25,6 +26,7 @@ const Lobby = ({
     socket.emit("start", {
       room: code,
     });
+    if (setPlay) setPlay(true);
   };
 
   const exit = () => {

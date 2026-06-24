@@ -5,29 +5,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  padding: 2rem;
 
   &-cards {
     display: flex;
     gap: 1.5rem;
     margin-top: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   &-card {
     color: $theme-color3;
     text-transform: uppercase;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease;
     transform-origin: left;
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
-    background-color: $background-color-tertiary;
+    background: rgba(129, 199, 132, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border-bottom: 0.2rem solid transparent;
+    border: 1px solid rgba(129, 199, 132, 0.15);
+
+    &:hover {
+      background: rgba(129, 199, 132, 0.2);
+      transform: translateY(-2px);
+    }
   }
 
   .apply-border {
     border-bottom: 0.2rem solid $hover-color;
+    background: rgba(255, 214, 0, 0.1);
   }
 }
