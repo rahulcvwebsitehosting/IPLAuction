@@ -19,6 +19,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: "18.20.4"
       - key: SECRET
         sync: false # set in dashboard: any random JWT secret string
       - key: PROD_MONGO_URL

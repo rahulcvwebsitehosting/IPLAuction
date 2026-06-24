@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const bcrypt = require("bcrypt");
+// bcryptjs is a pure-JavaScript implementation with the same API as the
+// native bcrypt. The native module ships prebuilt binaries that don't load
+// on some Node versions (ERR_DLOPEN_FAILED), crashing the app on startup.
+// bcryptjs avoids all native-compilation issues.
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 // User Schema
