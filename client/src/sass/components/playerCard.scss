@@ -6,6 +6,7 @@
   @include glassmorphism;
   border: none;
   background-color: $background-color-tertiary;
+  border-radius: 0.5rem;
 
   &-image {
     background-color: none;

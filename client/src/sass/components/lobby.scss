@@ -29,14 +29,15 @@
         &-copy {
           .code {
             cursor: pointer;
-            color: $theme-color;
+            color: $hover-color;
+            font-weight: 700;
           }
         }
       }
 
       &-2 {
         margin-top: 1rem;
-        color: $hover-color;
+        color: $theme-color3;
       }
     }
 
