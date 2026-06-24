@@ -28,17 +28,23 @@ class Auction {
     if (this.currentBidder === bidder) {
       return;
     }
+
     const user = this.findUser(bidder);
+    if (!user) {
+      return socket.emit("bid-error", {
+        message: "Bidder not found.",
+      });
+    }
 
     if (this.currentBid >= 5) {
-      if (user.budget <= this.currentBid + 1) {
+      if (user.budget < this.currentBid + 1) {
         return socket.emit("bid-error", {
           message: "The current bid exceeds your budget.",
         });
       }
       this.currentBid += 1;
     } else {
-      if (user.budget <= this.currentBid + 0.5) {
+      if (user.budget < this.currentBid + 0.5) {
         return socket.emit("bid-error", {
           message: "The current bid exceeds your budget.",
         });
@@ -57,7 +63,11 @@ class Auction {
   }
 
   servePlayer(squads) {
-    const player = squads[this.squad].players[this.player];
+    const squad = squads[this.squad];
+    if (!squad || !squad.players[this.player]) {
+      return;
+    }
+    const player = squad.players[this.player];
     this.currentPlayer = player;
     this.room.emit("player", {
       player,
@@ -120,25 +130,26 @@ class Auction {
     this.timer--;
   }
 
-  gameOver(squads, liveAuctions, room) {
+  async gameOver(squads, liveAuctions, room) {
     this.player++;
-    if (squads[this.squad].players.length === this.player) {
+    const currentSquad = squads[this.squad];
+    if (!currentSquad || currentSquad.players.length === this.player) {
       this.player = 0;
       this.squad++;
-      if (squads.length === this.squad) {
-        const auction = this;
+      if (this.squad >= squads.length) {
         this.room.emit("game-over");
-        this.users.forEach((u) => {
-          dbUser.findOneAndUpdate(
-            { username: u.user },
-            { $push: { auctions: { auction: auction.users } } },
-            (error, success) => {
-              if (error) {
-                console.log(error);
-              }
+        if (dbUser && dbUser.findOneAndUpdate) {
+          try {
+            for (const u of this.users) {
+              await dbUser.findOneAndUpdate(
+                { username: u.user },
+                { $push: { auctions: { auction: this.users } } }
+              );
             }
-          );
-        });
+          } catch (error) {
+            console.log(error);
+          }
+        }
         liveAuctions.delete(room);
         return true;
       }
@@ -162,10 +173,10 @@ class Auction {
     return true;
   }
 
-  next(squads, liveAuctions, room) {
+  async next(squads, liveAuctions, room) {
     this.confirm++;
     if (this.confirm >= this.users.length) {
-      if (!this.gameOver(squads, liveAuctions, room)) {
+      if (!(await this.gameOver(squads, liveAuctions, room))) {
         this.resetTimer();
         this.resetBid();
         this.startInterval();
@@ -176,6 +187,9 @@ class Auction {
 
   addPlayer(player, amount) {
     const currentUser = this.findUser(this.currentBidder);
+    if (!currentUser) {
+      return;
+    }
     currentUser.addPlayer(player);
     currentUser.deduct(amount);
     this.confirm = 0;

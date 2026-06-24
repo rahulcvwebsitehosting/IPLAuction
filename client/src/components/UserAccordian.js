@@ -2,11 +2,11 @@ import AccordianComponent from "./AccordianComponent";
 import { useState } from "react";
 const UserAccordian = ({
   user,
-  batsmen,
-  wicketKeepers,
-  allRounders,
-  bowlers,
-  unknown,
+  batsmen = [],
+  wicketKeepers = [],
+  allRounders = [],
+  bowlers = [],
+  unknown = [],
 }) => {
   const [show, setShow] = useState(false);
 

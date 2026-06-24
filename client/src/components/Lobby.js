@@ -22,9 +22,6 @@ const Lobby = ({
         lobby: "At least two users should join for the auction to start.",
       }));
     }
-    socket.emit("requestPlay", {
-      room: code,
-    });
     socket.emit("start", {
       room: code,
     });

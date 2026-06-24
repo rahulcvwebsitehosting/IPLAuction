@@ -15,6 +15,20 @@ const PlayerCard = ({ image, name, squad, stats }) => {
     pauseOnHover: true,
   };
 
+  if (!stats) {
+    return (
+      <div className="playerCard">
+        <div className="playerCard-image">
+          <img src={image} alt="player profile"></img>
+          <h2 className="playerCard-info-name">{name}</h2>
+        </div>
+        <div className="playerCard-info">
+          <div className="playerCard-info-role">Stats unavailable</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="playerCard">
       <div className="playerCard-image">

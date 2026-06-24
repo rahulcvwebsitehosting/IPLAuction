@@ -78,6 +78,8 @@ const getStats = async (playerProfile, browser) => {
   await page.goto(playerProfile, { waitUntil: "networkidle2" });
 
   const stats = await page.evaluate(() => {
+    const table = document.querySelectorAll(".table");
+
     const getBattingStats = () => {
       const battingTable = table[0];
       const careerRow = battingTable.querySelector(
@@ -122,7 +124,6 @@ const getStats = async (playerProfile, browser) => {
       return stats;
     };
 
-    const table = document.querySelectorAll(".table");
     let role = document.querySelector(".player-details__value");
 
     if (table.length === 0) {
@@ -168,15 +169,16 @@ const getStats = async (playerProfile, browser) => {
 };
 
 const fetchPlayers = async () => {
+  allSquads = [];
   return await getAllSquads().then(async (browser) => {
-    for (squad of allSquads) {
+    for (const squad of allSquads) {
       const players = squad.players;
       for (const [index, player] of players.entries()) {
         const stats = await getStats(player.profile, browser);
         players[index]["stats"] = stats;
       }
     }
-    disconnect(browser);
+    await disconnect(browser);
     return allSquads;
   });
 };

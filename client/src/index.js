@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./sass/main.scss";
 
-require("dotenv").config();
 
 ReactDOM.render(
   <BrowserRouter>

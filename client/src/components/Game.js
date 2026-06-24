@@ -3,6 +3,7 @@ import PlayerCard from "./PlayerCard";
 import UserAccordian from "./UserAccordian";
 import { useHistory } from "react-router-dom";
 import { saveAuction } from "../services/auction.service";
+
 const Game = ({ users, socket, room, user, initial }) => {
   const [timer, setTimer] = useState(-1);
   const [bidder, setBidder] = useState("");
@@ -12,46 +13,67 @@ const Game = ({ users, socket, room, user, initial }) => {
   const [displayNext, setNext] = useState(false);
   let history = useHistory();
 
-  // Keep the latest users in a ref so the one-time game-over listener can
-  // read the final standings without re-registering itself on every render.
+  // Keep the latest users/user in refs so one-time listeners can read current
+  // values without re-registering on every render.
   const usersRef = useRef(users);
   usersRef.current = users;
+  const userRef = useRef(user);
+  userRef.current = user;
 
   useEffect(() => {
     socket.emit("fetch-details");
-    socket.on("server-details", (data) => {
+    const onServerDetails = (data) => {
       setBidder(data.bidder);
       setAmount(data.amount);
-    });
+    };
+    socket.on("server-details", onServerDetails);
+    return () => {
+      socket.off("server-details", onServerDetails);
+    };
   }, [socket]);
 
   useEffect(() => {
-    socket.on("display", (data) => {
+    const onDisplay = (data) => {
       setTimer(data.time);
-    });
+    };
 
-    socket.on("bid", (data) => {
+    const onBid = (data) => {
       setBidder(data.currentBidder.bidder);
       setAmount(data.currentBidder.bid);
-    });
+    };
 
-    socket.on("bid-error", (data) => {
+    const onBidError = (data) => {
       setError(data.message);
-    });
+    };
 
-    socket.on("player", (data) => {
+    const onPlayer = (data) => {
       setPlayer(data.player);
-    });
+    };
 
-    socket.on("game-over", () => {
+    const onGameOver = () => {
       // Persist the finished auction to localStorage for the logged-in
       // user (replaces the old backend save keyed by username).
       const finalUsers = usersRef.current;
-      if (user && user.username && finalUsers.length > 0) {
-        saveAuction(user.username, finalUsers);
+      const currentUser = userRef.current;
+      if (currentUser && currentUser.username && finalUsers.length > 0) {
+        saveAuction(currentUser.username, finalUsers);
       }
       history.push("/auctions/played");
-    });
+    };
+
+    socket.on("display", onDisplay);
+    socket.on("bid", onBid);
+    socket.on("bid-error", onBidError);
+    socket.on("player", onPlayer);
+    socket.on("game-over", onGameOver);
+
+    return () => {
+      socket.off("display", onDisplay);
+      socket.off("bid", onBid);
+      socket.off("bid-error", onBidError);
+      socket.off("player", onPlayer);
+      socket.off("game-over", onGameOver);
+    };
   }, [socket, history]);
 
   useEffect(() => {
@@ -65,7 +87,7 @@ const Game = ({ users, socket, room, user, initial }) => {
   }, [timer]);
 
   const bid = () => {
-    if (timer > 0) {
+    if (timer > 0 && user && user.username) {
       socket.emit("bid", {
         room,
         user: user.username,
@@ -74,6 +96,7 @@ const Game = ({ users, socket, room, user, initial }) => {
   };
 
   const next = () => {
+    if (!user || !user.username) return;
     socket.emit("next", {
       room,
       user: user.username,
@@ -96,7 +119,7 @@ const Game = ({ users, socket, room, user, initial }) => {
               : ""
           }`}
           >
-            {timer}
+            {timer >= 0 ? timer : ""}
           </div>
           <div className="game-info">
             <div className="game-info-bidder">
@@ -132,7 +155,7 @@ const Game = ({ users, socket, room, user, initial }) => {
                   onClick={() => {
                     next();
                   }}
-                  className="button"
+                 className="button"
                 >
                   Next
                 </button>

@@ -41,7 +41,7 @@ const Auction = (props) => {
   }, [socket, user]);
 
   useEffect(() => {
-    socket.on("existing-user", (data) => {
+    const onExistingUser = (data) => {
       setUsers(data.users);
       setRoom(data.room);
       setInitial(false);
@@ -52,35 +52,61 @@ const Auction = (props) => {
         setCreated(true);
         setMain(data.starter);
       }
-    });
+    };
 
-    socket.on("no-existing-user", () => {
+    const onNoExistingUser = () => {
       setInitial(false);
-    });
+    };
 
-    socket.on("join-result", (message) => {
+    const onJoinResult = (message) => {
       console.log(message);
+      setLoading(false);
       if (message.success) {
         console.log(message);
         setRoom(message.room);
-        return setCreated(true);
+        setCreated(true);
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          form: message.error,
+        }));
       }
-      return setErrors((prev) => ({
-        ...prev,
-        form: message.error,
-      }));
-    });
+    };
 
-    socket.on("start", () => {
+    const onStart = () => {
       setPlay(true);
-    });
-  }, [socket, user, users]);
+    };
+
+    socket.on("existing-user", onExistingUser);
+    socket.on("no-existing-user", onNoExistingUser);
+    socket.on("join-result", onJoinResult);
+    socket.on("start", onStart);
+
+    return () => {
+      socket.off("existing-user", onExistingUser);
+      socket.off("no-existing-user", onNoExistingUser);
+      socket.off("join-result", onJoinResult);
+      socket.off("start", onStart);
+    };
+  }, [socket]);
 
   useEffect(() => {
-    socket.on("users", (data) => {
+    const onUsers = (data) => {
       setUsers(data.users);
-    });
-  }, [user, socket]);
+    };
+
+    socket.on("users", onUsers);
+
+    return () => {
+      socket.off("users", onUsers);
+    };
+  }, [socket]);
+
+  useEffect(() => {
+    return () => {
+      socket.disconnect();
+    };
+  }, [socket]);
 
   return (
     <div className="auction">

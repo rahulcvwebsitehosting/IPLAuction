@@ -21,11 +21,14 @@ const Form = ({
   error,
   loading,
 }) => {
+  const formId = `form-${
+    title ? title.toLowerCase().replace(/\s+/g, "-") : "default"
+  }-${Math.floor(Math.random() * 100000)}`;
   return (
     <div className="form">
       <div className="form-container">
         <h3 className="form-container-title">{title}</h3>
-        <form id="form" onSubmit={onFormSubmit} noValidate>
+        <form id={formId} onSubmit={onFormSubmit} noValidate>
           {data.map((inputFields, index) => {
             return <Input key={index} {...inputFields} />;
           })}

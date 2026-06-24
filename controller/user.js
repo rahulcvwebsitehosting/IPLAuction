@@ -22,7 +22,7 @@ class User {
   }
 
   addPlayer(player) {
-    if (player.stats.role) {
+    if (player.stats && player.stats.role) {
       const role = player.stats.role.toLowerCase();
       if (role.includes("wicket")) {
         this.wicketKeepers.push(player);
@@ -53,7 +53,7 @@ class User {
   }
 
   getTotalBatsmen() {
-    return this.players.length;
+    return this.batsmen.length;
   }
 
   getBowlers() {

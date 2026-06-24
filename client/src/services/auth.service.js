@@ -12,13 +12,29 @@ const SESSION_KEY = "ipl_auction_session"; // username of the currently logged-i
 
 const encoder = new TextEncoder();
 
+// Simple deterministic string-to-hex fallback when crypto.subtle is not
+// available (e.g. non-HTTPS origins). Not cryptographically secure, but keeps
+// local/demo parity with SHA-256-hashed passwords.
+const fallbackHash = (password) => {
+  let hash = 5381;
+  for (let i = 0; i < password.length; i++) {
+    hash = ((hash << 5) + hash) + password.charCodeAt(i);
+    hash = hash & 0xffffffff;
+  }
+  const h = (hash >>> 0).toString(16).padStart(8, "0");
+  return h.repeat(8).slice(0, 64);
+};
+
 // Hash a password with SHA-256 and return a hex string.
 const hashPassword = async (password) => {
-  const data = encoder.encode(password);
-  const digest = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
+  if (typeof crypto !== "undefined" && crypto.subtle) {
+    const data = encoder.encode(password);
+    const digest = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(digest))
+      .map((byte) => byte.toString(16).padStart(2, "0"))
+      .join("");
+  }
+  return fallbackHash(password);
 };
 
 const readUsers = () => {

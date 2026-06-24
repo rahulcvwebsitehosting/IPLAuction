@@ -33,7 +33,6 @@ const JoinAuction = ({
       username: user.username,
       room,
     });
-    setLoading(false);
   };
 
   return (

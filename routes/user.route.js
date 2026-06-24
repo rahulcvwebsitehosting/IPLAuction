@@ -77,30 +77,49 @@ router.post("/login", async (req, res) => {
 
 // Authenticating the http only cookie
 router.get("/user", auth, async (req, res) => {
-  const id = req.id;
-  const user = await User.findById(id);
-  if (user) {
-    res.send({
-      success: true,
-      message: "Successfully Authenticated",
-      user: user.getPublicProfile(),
-    });
-  } else {
-    res.status(401).send({
+  try {
+    const id = req.id;
+    const user = await User.findById(id);
+    if (user) {
+      res.send({
+        success: true,
+        message: "Successfully Authenticated",
+        user: user.getPublicProfile(),
+      });
+    } else {
+      res.status(401).send({
+        success: false,
+        message: "Not authenticated",
+      });
+    }
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({
       success: false,
-      message: "Not authenticated",
+      message: error.message,
     });
   }
 });
 
 router.get("/logout", auth, async (req, res) => {
-  await User.findByIdAndUpdate(req.id, {
-    $pull: { tokens: { token: req.token } },
-  });
-  res.clearCookie("jwt").send({
-    success: true,
-    message: "Successfully logged out",
-  });
+  try {
+    const user = await User.findById(req.id);
+    if (user) {
+      await User.findByIdAndUpdate(req.id, {
+        $pull: { tokens: { token: req.token } },
+      });
+    }
+    res.clearCookie("jwt").send({
+      success: true,
+      message: "Successfully logged out",
+    });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
 });
 
 module.exports = router;
