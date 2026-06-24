@@ -64,7 +64,16 @@ const SignUp = (props) => {
     }
 
     setLoading(true);
-    const data = await register(username, email, password);
+    let data;
+    try {
+      data = await register(username, email, password);
+    } catch {
+      setLoading(false);
+      return setErrors((prev) => ({
+        ...prev,
+        form: "Something went wrong. Please try again.",
+      }));
+    }
     setLoading(false);
 
     if (!data.success) {

@@ -42,7 +42,17 @@ const getSquad = async (squadName, browser) => {
 };
 
 const connect = async () => {
-  const browser = await puppeteer.launch();
+  // Args required to launch Chromium inside Linux containers (Render/Railway/
+  // Docker). --no-sandbox avoids the "No usable sandbox" crash; the rest
+  // reduce memory and dodge common shared-hosting failures.
+  const browser = await puppeteer.launch({
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--single-process",
+    ],
+  });
   return browser;
 };
 

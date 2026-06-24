@@ -1,9 +1,11 @@
 {
   "name": "ipl-auction",
-  "homepage": "https://ipl-mega-auction.herokuapp.com/",
   "version": "1.0.0",
   "description": "An Ipl auction application",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": ">=14.x"
+  },
   "scripts": {
     "start": "node app.js",
     "client-install": "npm install --prefix client",
@@ -11,7 +13,6 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "prepare": "husky install",
     "lint": "prettier --check .",
     "format": "prettier --write ."

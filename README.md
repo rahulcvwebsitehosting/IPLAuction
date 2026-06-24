@@ -32,6 +32,9 @@
     <li> 
    <a href='#structure'>Project Structure 💪</a>
    </li>
+  <li>
+   <a href='#deployment'>Deployment 🚀</a>
+  </li>
  </ul>
  
 <h2 id='tech-stack'> Tech Stack 👨‍💻</h2>
@@ -60,8 +63,11 @@ You can team up with your friends and dive into the fun world of auctioning IPL 
 - The news is fetched from the RSS feed of Times of India.
 - Puppeteer is used to scrape data from the IPLT20 Website.
 - Socket.io is used to establish a full-duplex connection with the server and the client.
-- HTTP-only cookies are used to store the information of the user on the client side.
-- bcrypt is used to hash the passwords of the user.
+- **User accounts and finished-auction history are stored entirely in the
+  browser** (localStorage/sessionStorage). Passwords are hashed with SHA-256
+  before being saved. There is **no login page** — a single Sign Up form is
+  the entry point, and it recognises returning users. This keeps the frontend
+  fully deployable on Vercel with no auth backend. See `client/src/services/auth.service.js`.
 - An auction object is created upon the creation of a new auction which stores the information of current auction.
 - User class stores the information of the user and the players purchased by him/her.
 - node-schedule is used to schedule the scraping process.
@@ -285,6 +291,108 @@ side running concurrently:
 ```
 npm run dev
 ```
+
+## Deployment 🚀
+
+This is a **split deployment**: the React frontend runs on **Vercel**, while the
+Node/Express backend (which needs WebSockets for the live auction, an in-memory
+auction store, and Puppeteer for scraping) runs on **Render**.
+
+> **MongoDB is now optional.** User accounts, auth, and finished-auction history
+> are stored entirely in the browser (localStorage). The backend's only required
+> jobs are the Socket.io auction server and (optionally) the `/news` feed. If you
+> don't care about the legacy DB-backed routes, you can skip Step 1 and leave
+> `PROD_MONGO_URL` unset — `database/connection.js` will log a connection error
+> but the auction still runs.
+
+> Why split? Vercel's serverless functions can't hold open WebSocket
+> connections, can't keep in-memory state alive between requests, and can't run
+> Puppeteer. The live multiplayer auction requires all three, so the backend
+> lives on a long-lived host (Render) and only the static frontend ships to Vercel.
+
+Deploy in this order: **(optional Database) → Backend → Frontend** (the frontend needs the
+backend's URL as an environment variable).
+
+---
+
+### Step 1 — MongoDB Atlas (database) — *optional*
+
+Only needed if you want the legacy DB-backed routes to work. Auth, sessions and
+finished-auction history no longer use the database.
+
+1. Create a free account at [mongodb.com/atlas](https://www.mongodb.com/atlas)
+   and build a free **M0** cluster.
+2. Under **Database Access**, add a user (username + password) — note these.
+3. Under **Network Access**, allow `0.0.0.0/0` (so Render/Vercel can reach it).
+4. Click **Connect → Drivers** and copy the connection string. It looks like:
+   ```
+   mongodb+srv://<user>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
+   ```
+   This is your **`PROD_MONGO_URL`**.
+
+---
+
+### Step 2 — Backend on Render
+
+1. Push this repo to GitHub.
+2. On [render.com](https://render.com): **New → Blueprint**, select this repo.
+   Render reads [`render.yaml`](./render.yaml) and creates a **Web Service**
+   (`npm start`, free plan).
+3. In the service's **Environment**, set:
+   - `CLIENT_URL` — `https://YOUR-FRONTEND.vercel.app` (from Step 3; you can
+     set a placeholder now and edit it after Step 3)
+   - `NODE_ENV` — `production` (already set by the blueprint)
+   - `PROD_MONGO_URL` — *optional*, only if you did Step 1 and want the DB routes
+   - `SECRET` — *optional* now (only the legacy JWT routes use it)
+4. Deploy. Note the backend URL, e.g. `https://ipl-auction-backend.onrender.com`.
+
+<details>
+<summary><b>Alternative backend hosts</b></summary>
+
+Render is recommended (has `render.yaml` one-click setup). Other WebSocket-capable
+options that work the same way:
+
+- **Railway** — `railway up`, set the same env vars, start command `npm start`.
+- **Fly.io** — needs a Dockerfile; works but more setup.
+- **A small VPS / DigitalOcean droplet** — `npm start` behind a reverse proxy
+  (Caddy/Nginx) for TLS.
+
+Avoid serverless-only platforms (plain Vercel functions, AWS Lambda, Cloudflare
+Workers) for the backend — they don't support long-lived WebSockets.
+</details>
+
+---
+
+### Step 3 — Frontend on Vercel
+
+1. On [vercel.com](https://vercel.com): **Add New → Project**, import the same
+   GitHub repo.
+2. Set **Root Directory** to `client` (Vercel will auto-detect Create React App
+   and use [`client/vercel.json`](./client/vercel.json)).
+3. Add an environment variable:
+   - `REACT_APP_API_URL` — your Render backend URL from Step 2, e.g.
+     `https://ipl-auction-backend.onrender.com` (no trailing slash issues — the
+     client code handles it).
+4. Deploy. Copy the resulting Vercel URL.
+5. **Go back to Render** and update `CLIENT_URL` to this Vercel URL, then redeploy
+   the backend (this enables CORS + cookies for your frontend).
+
+That's it — the auction is live. 🎉
+
+---
+
+### Notes on the production setup
+
+- **Cookies**: the JWT cookie is `httpOnly`, `secure` (in production), and
+  `sameSite=lax` so it travels correctly between the Vercel and Render origins.
+- **Puppeteer**: launched with `--no-sandbox` etc. so Chromium runs inside
+  Render's Linux container. If scraping ever fails, the app falls back to the
+  bundled [`data/squads.json`](./data/squads.json).
+- **Render free tier**: the backend sleeps after ~15 min of inactivity and takes
+  ~30s to wake on the first request. Upgrade to a paid plan for an always-on
+  service (recommended if you host a real game session).
+- **Local dev** still works exactly as before: `npm run dev` from the root, with
+  `DEV_MONGO_URL`, `SECRET`, and a local MongoDB running. See `.env.example`.
 
 ## Note
 

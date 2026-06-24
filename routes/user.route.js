@@ -9,9 +9,13 @@ router.post("/signup", async (req, res) => {
     const user = new User({ ...req.body });
     const token = await user.generateAuthToken();
 
-    // Creating a http only cookie, which is used for authorization
+    // Creating a http only cookie, which is used for authorization.
+    // sameSite "lax" + secure so it works cross-origin when the frontend
+    // (e.g. Vercel) and backend (e.g. Render) are on different domains,
+    // while staying protected against CSRF for cross-site requests.
     res.cookie("jwt", token, {
-      sameSite: "strict",
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
       path: "/",
       httpOnly: true,
     });
@@ -49,9 +53,11 @@ router.post("/login", async (req, res) => {
     const user = await User.findByCredentials({ ...req.body });
     const token = await user.generateAuthToken();
 
-    // Creating a http only cookie, which is used for authorization
+    // Creating a http only cookie, which is used for authorization.
+    // (See signup route for the sameSite/secure reasoning.)
     res.cookie("jwt", token, {
-      sameSite: "strict",
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
       path: "/",
       httpOnly: true,
     });

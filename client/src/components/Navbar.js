@@ -10,13 +10,13 @@ const Navbar = () => {
   const { user, setUser, loading } = useContext(UserContext);
   let history = useHistory();
 
-  const handleClick = async () => {
+  const handleClick = () => {
     if (!user) {
-      history.push("/login");
+      history.push("/signup");
       return;
     }
 
-    await logout();
+    logout();
     setUser(null);
   };
   return (
@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className={barState ? "activate" : "deactivate"}>
         {!loading ? (
           <button className="button" onClick={() => handleClick()}>
-            {user ? "Logout" : "Login"}
+            {user ? "Logout" : "Sign Up"}
           </button>
         ) : (
           <Loader size="2" />

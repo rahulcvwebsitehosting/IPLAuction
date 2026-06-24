@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PlayerCard from "./PlayerCard";
 import UserAccordian from "./UserAccordian";
 import { useHistory } from "react-router-dom";
+import { saveAuction } from "../services/auction.service";
 const Game = ({ users, socket, room, user, initial }) => {
   const [timer, setTimer] = useState(-1);
   const [bidder, setBidder] = useState("");
@@ -10,6 +11,11 @@ const Game = ({ users, socket, room, user, initial }) => {
   const [player, setPlayer] = useState(initial);
   const [displayNext, setNext] = useState(false);
   let history = useHistory();
+
+  // Keep the latest users in a ref so the one-time game-over listener can
+  // read the final standings without re-registering itself on every render.
+  const usersRef = useRef(users);
+  usersRef.current = users;
 
   useEffect(() => {
     socket.emit("fetch-details");
@@ -38,6 +44,12 @@ const Game = ({ users, socket, room, user, initial }) => {
     });
 
     socket.on("game-over", () => {
+      // Persist the finished auction to localStorage for the logged-in
+      // user (replaces the old backend save keyed by username).
+      const finalUsers = usersRef.current;
+      if (user && user.username && finalUsers.length > 0) {
+        saveAuction(user.username, finalUsers);
+      }
       history.push("/auctions/played");
     });
   }, [socket, history]);

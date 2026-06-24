@@ -1,0 +1,27 @@
+# Render Blueprint for the IPL Auction backend.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# After pushing this repo to GitHub, go to Render → New → Blueprint,
+# pick this repo, and Render will create the web service from this file.
+# Then fill in the secret environment variables (PROD_MONGO_URL, SECRET,
+# CLIENT_URL) in the Render dashboard.
+
+services:
+  - type: web
+    name: ipl-auction-backend
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SECRET
+        sync: false # set in dashboard: any random JWT secret string
+      - key: PROD_MONGO_URL
+        sync: false # set in dashboard: your MongoDB Atlas connection string
+      - key: CLIENT_URL
+        sync: false # set in dashboard: your Vercel frontend URL, e.g. https://your-app.vercel.app

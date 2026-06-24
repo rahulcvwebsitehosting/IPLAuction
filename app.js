@@ -13,12 +13,16 @@ const path = require("path");
 require("dotenv").config();
 require("./database/connection");
 
+// Client origin is environment-driven so the backend can serve a frontend
+// hosted on Vercel (or anywhere else). Falls back to the local dev server.
+const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000";
+
 const app = express();
 const server = http.createServer(app);
 
 const io = socketio(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: CLIENT_URL,
     credentials: true,
   },
 });
@@ -27,7 +31,7 @@ const io = socketio(server, {
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: CLIENT_URL,
     credentials: true,
   })
 );
@@ -50,7 +54,7 @@ if (process.env.NODE_ENV === "production") {
 
 require("./routes/socket.route")(io);
 
-server.listen(process.env.PORT || 8000, () => {
-  //User.collection.deleteMany({});
-  console.log("Listening on port 8000");
+const PORT = process.env.PORT || 8000;
+server.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
