@@ -18,7 +18,7 @@ const encoder = new TextEncoder();
 const fallbackHash = (password) => {
   let hash = 5381;
   for (let i = 0; i < password.length; i++) {
-    hash = ((hash << 5) + hash) + password.charCodeAt(i);
+    hash = (hash << 5) + hash + password.charCodeAt(i);
     hash = hash & 0xffffffff;
   }
   const h = (hash >>> 0).toString(16).padStart(8, "0");

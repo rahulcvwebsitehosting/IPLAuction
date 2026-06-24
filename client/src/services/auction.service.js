@@ -8,17 +8,16 @@ const HISTORY_KEY_PREFIX = "ipl_auction_history_"; // + username
 
 const readHistory = (username) => {
   try {
-    return JSON.parse(localStorage.getItem(HISTORY_KEY_PREFIX + username)) || [];
+    return (
+      JSON.parse(localStorage.getItem(HISTORY_KEY_PREFIX + username)) || []
+    );
   } catch (error) {
     return [];
   }
 };
 
 const writeHistory = (username, auctions) => {
-  localStorage.setItem(
-    HISTORY_KEY_PREFIX + username,
-    JSON.stringify(auctions)
-  );
+  localStorage.setItem(HISTORY_KEY_PREFIX + username, JSON.stringify(auctions));
 };
 
 // Fetch this user's finished auctions. If no username is given (e.g. not

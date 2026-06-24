@@ -315,7 +315,7 @@ backend's URL as an environment variable).
 
 ---
 
-### Step 1 — MongoDB Atlas (database) — *optional*
+### Step 1 — MongoDB Atlas (database) — _optional_
 
 Only needed if you want the legacy DB-backed routes to work. Auth, sessions and
 finished-auction history no longer use the database.
@@ -342,8 +342,8 @@ finished-auction history no longer use the database.
    - `CLIENT_URL` — `https://YOUR-FRONTEND.vercel.app` (from Step 3; you can
      set a placeholder now and edit it after Step 3)
    - `NODE_ENV` — `production` (already set by the blueprint)
-   - `PROD_MONGO_URL` — *optional*, only if you did Step 1 and want the DB routes
-   - `SECRET` — *optional* now (only the legacy JWT routes use it)
+   - `PROD_MONGO_URL` — _optional_, only if you did Step 1 and want the DB routes
+   - `SECRET` — _optional_ now (only the legacy JWT routes use it)
 4. Deploy. Note the backend URL, e.g. `https://ipl-auction-backend.onrender.com`.
 
 <details>
@@ -359,6 +359,7 @@ options that work the same way:
 
 Avoid serverless-only platforms (plain Vercel functions, AWS Lambda, Cloudflare
 Workers) for the backend — they don't support long-lived WebSockets.
+
 </details>
 
 ---

@@ -10,6 +10,7 @@ const newsRouter = require("./routes/news.route");
 const auctionRouter = require("./routes/auction.route");
 // const User = require("./database/models/user.model");
 const path = require("path");
+const fs = require("fs");
 require("dotenv").config();
 require("./database/connection");
 
@@ -45,10 +46,26 @@ app.use(userRouter);
 app.use(newsRouter);
 app.use(auctionRouter);
 
-if (process.env.NODE_ENV === "production") {
+// Health check — Render pings this path after every deploy to confirm the
+// service is up. It must return 200 even when the client build is absent
+// (e.g. when only the backend is deployed and the frontend lives on Vercel).
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok", service: "ipl-auction-backend" });
+});
+
+const clientBuildPath = path.resolve(
+  __dirname,
+  "client",
+  "build",
+  "index.html"
+);
+if (process.env.NODE_ENV === "production" && fs.existsSync(clientBuildPath)) {
+  // Only serve the bundled frontend when it actually exists. When the
+  // backend is deployed standalone, this block is skipped so unknown routes
+  // fall through to the health/json response above instead of 404ing.
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(clientBuildPath);
   });
 }
 

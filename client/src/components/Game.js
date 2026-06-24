@@ -155,7 +155,7 @@ const Game = ({ users, socket, room, user, initial }) => {
                   onClick={() => {
                     next();
                   }}
-                 className="button"
+                  className="button"
                 >
                   Next
                 </button>
