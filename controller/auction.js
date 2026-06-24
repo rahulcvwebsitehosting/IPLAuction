@@ -2,18 +2,35 @@ const User = require("./user");
 const dbUser = require("../database/models/user.model");
 
 class Auction {
-  constructor(room) {
+  constructor(io, roomName) {
     this.users = [];
     this.currentBidder = "";
     this.currentBid = 0;
     this.currentPlayer = "";
     this.timer = 10;
     this.interval = null;
-    this.room = room;
+    this.io = io;
+    this.roomName = roomName;
     this.squad = 0;
     this.player = 0;
     this.confirm = 0;
     this.started = false;
+  }
+
+  emitToRoom(event, data) {
+    const { io, roomName } = this;
+    (async () => {
+      try {
+        const sockets = await io.in(roomName).fetchSockets();
+        sockets.forEach((s) => s.emit(event, data));
+      } catch (err) {
+        try {
+          io.to(roomName).emit(event, data);
+        } catch (e) {
+          console.error(`emitToRoom fallback error (${event}):`, e);
+        }
+      }
+    })();
   }
 
   startAuction() {
@@ -69,9 +86,7 @@ class Auction {
     }
     const player = squad.players[this.player];
     this.currentPlayer = player;
-    this.room.emit("player", {
-      player,
-    });
+    this.emitToRoom("player", { player });
   }
 
   getCurrentPlayer() {
@@ -88,9 +103,7 @@ class Auction {
 
   displayBidder() {
     const currentBidder = this.getCurrentBid();
-    this.room.emit("bid", {
-      currentBidder,
-    });
+    this.emitToRoom("bid", { currentBidder });
   }
 
   resetBid() {
@@ -123,10 +136,7 @@ class Auction {
       this.resetBid();
     }
     const time = this.timer;
-    const room = this.room;
-    room.emit("display", {
-      time,
-    });
+    this.emitToRoom("display", { time });
     this.timer--;
   }
 
@@ -137,7 +147,7 @@ class Auction {
       this.player = 0;
       this.squad++;
       if (this.squad >= squads.length) {
-        this.room.emit("game-over");
+        this.emitToRoom("game-over");
         if (dbUser && dbUser.findOneAndUpdate) {
           try {
             for (const u of this.users) {
@@ -193,9 +203,7 @@ class Auction {
     currentUser.addPlayer(player);
     currentUser.deduct(amount);
     this.confirm = 0;
-    this.room.emit("users", {
-      users: this.users,
-    });
+    this.emitToRoom("users", { users: this.users });
   }
 
   fetchPlayers() {

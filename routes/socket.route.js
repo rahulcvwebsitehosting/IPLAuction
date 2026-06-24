@@ -30,7 +30,6 @@ const socketRouter = (io) => {
 
     socket.on("start", (data) => {
       play(data);
-      io.to(data.room).emit("start");
     });
 
     socket.on("bid", (data) => {

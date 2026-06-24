@@ -27,7 +27,7 @@ const create = (io, socket, data) => {
   }
 
   socket.join(data.room);
-  const auction = new Auction(io.to(data.room));
+  const auction = new Auction(io, data.room);
   auction.addUser(data.username);
   liveAuctions.set(data.room, auction);
   io.to(data.room).emit("users", {
@@ -77,7 +77,7 @@ const play = (data) => {
     return;
   }
   auction.startAuction();
-  auction.room.emit("start");
+  auction.emitToRoom("start");
   auction.servePlayer(squads);
   auction.startInterval();
 };
