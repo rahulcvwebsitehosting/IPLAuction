@@ -7,16 +7,17 @@ const CreateAuction = ({
   setJoin,
   setRoom,
   setMain,
+  setErrors,
 }) => {
   const newAuction = () => {
     const room = uuidv4();
+    // Emit and let the server's "create-result" response drive the state
+    // change (handled in Auction.js). Setting created=true here would put us
+    // in the lobby even if the server rejected the room (e.g. a collision).
     socket.emit("createAuction", {
       username: user.username,
       room,
     });
-    setCreated(true);
-    setRoom(room);
-    setMain(true);
   };
 
   const joinAuction = () => {

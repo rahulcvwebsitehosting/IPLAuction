@@ -58,11 +58,22 @@ const Auction = (props) => {
     };
 
     const onJoinResult = (message) => {
-      console.log(message);
       setLoading(false);
       if (message.success) {
-        console.log(message);
         setRoom(message.room);
+        setCreated(true);
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          form: message.error,
+        }));
+      }
+    };
+
+    const onCreateResult = (message) => {
+      if (message.success) {
+        setRoom(message.room);
+        setMain(true);
         setCreated(true);
       } else {
         setErrors((prev) => ({
@@ -79,12 +90,14 @@ const Auction = (props) => {
     socket.on("existing-user", onExistingUser);
     socket.on("no-existing-user", onNoExistingUser);
     socket.on("join-result", onJoinResult);
+    socket.on("create-result", onCreateResult);
     socket.on("start", onStart);
 
     return () => {
       socket.off("existing-user", onExistingUser);
       socket.off("no-existing-user", onNoExistingUser);
       socket.off("join-result", onJoinResult);
+      socket.off("create-result", onCreateResult);
       socket.off("start", onStart);
     };
   }, [socket]);
@@ -127,6 +140,7 @@ const Auction = (props) => {
           setJoin={setJoin}
           setRoom={setRoom}
           setMain={setMain}
+          setErrors={setErrors}
         />
       ) : created ? (
         <Lobby

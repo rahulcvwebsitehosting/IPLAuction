@@ -11,23 +11,23 @@ class Auction {
     this.interval = null;
     this.io = io;
     this.roomName = roomName;
-    this.sockets = new Map();
     this.squad = 0;
     this.player = 0;
     this.confirm = 0;
     this.started = false;
   }
 
-  addSocket(socket) {
-    this.sockets.set(socket.id, socket);
-  }
-
-  removeSocket(socketId) {
-    this.sockets.delete(socketId);
-  }
-
+  // Broadcast to everyone in the room. io.to(room).emit() is the correct,
+  // reliable way to reach all sockets in a room in socket.io (including the
+  // sender's own socket, since every player is a separate connection here).
   emitToRoom(event, data) {
-    for (const socket of this.sockets.values()) {
+    this.io.to(this.roomName).emit(event, data);
+  }
+
+  // Send to a single socket (used for errors that should only reach the
+  // bidder who triggered them).
+  emitToSocket(socket, event, data) {
+    if (socket && socket.emit) {
       socket.emit(event, data);
     }
   }
@@ -47,21 +47,21 @@ class Auction {
 
     const user = this.findUser(bidder);
     if (!user) {
-      return socket.emit("bid-error", {
+      return this.emitToSocket(socket, "bid-error", {
         message: "Bidder not found.",
       });
     }
 
     if (this.currentBid >= 5) {
       if (user.budget < this.currentBid + 1) {
-        return socket.emit("bid-error", {
+        return this.emitToSocket(socket, "bid-error", {
           message: "The current bid exceeds your budget.",
         });
       }
       this.currentBid += 1;
     } else {
       if (user.budget < this.currentBid + 0.5) {
-        return socket.emit("bid-error", {
+        return this.emitToSocket(socket, "bid-error", {
           message: "The current bid exceeds your budget.",
         });
       }
@@ -80,7 +80,15 @@ class Auction {
 
   servePlayer(squads) {
     const squad = squads[this.squad];
-    if (!squad || !squad.players[this.player]) {
+    if (!squad || !squad.players || !squad.players[this.player]) {
+      // Squad/player index is out of range — this would silently leave
+      // joiners staring at a blank screen. Emit a clear error instead.
+      console.error(
+        `servePlayer: no player at squad[${this.squad}].players[${this.player}]`
+      );
+      this.emitToRoom("bid-error", {
+        message: "No more players available.",
+      });
       return;
     }
     const player = squad.players[this.player];
