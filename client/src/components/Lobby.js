@@ -25,6 +25,7 @@ const Lobby = ({
     }
     socket.emit("start", {
       room: code,
+      user: user.username,
     });
     if (setPlay) setPlay(true);
   };

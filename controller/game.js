@@ -70,16 +70,16 @@ const join = (io, socket, data) => {
   });
 
   if (auction.started) {
-    socket.emit("start");
-    if (auction.getCurrentPlayer()) {
-      socket.emit("player", { player: auction.getCurrentPlayer() });
-    }
+    socket.emit("start", { player: auction.getCurrentPlayer() });
   }
 };
 
 const play = (data) => {
   const auction = liveAuctions.get(data.room);
   if (!auction) {
+    return;
+  }
+  if (data.user && auction.creator !== data.user) {
     return;
   }
   auction.startAuction();
