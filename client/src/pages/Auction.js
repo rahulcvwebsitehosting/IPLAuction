@@ -15,9 +15,16 @@ import io from "socket.io-client";
 // talks to the deployed backend (e.g. Render) instead of a dead URL.
 const url = process.env.REACT_APP_API_URL || "http://localhost:8000/";
 
+const socketOptions = {
+  transports: ["websocket", "polling"],
+  reconnection: true,
+  reconnectionAttempts: 10,
+  reconnectionDelay: 1000,
+};
+
 const Auction = (props) => {
   const { user } = useContext(UserContext);
-  const [socket] = useState(io(url));
+  const [socket] = useState(io(url, socketOptions));
   const [room, setRoom] = useState("");
   const [loading, setLoading] = useState(false);
   const [play, setPlay] = useState(false);
@@ -34,9 +41,12 @@ const Auction = (props) => {
   const [defaultPlayer, setDefaultPlayer] = useState("");
 
   useEffect(() => {
-    socket.emit("check-user", {
-      user: user,
-    });
+    const onConnect = () => {
+      socket.emit("check-user", { user });
+    };
+    socket.on("connect", onConnect);
+    socket.emit("check-user", { user });
+    return () => socket.off("connect", onConnect);
   }, [socket, user]);
 
   useEffect(() => {
@@ -83,7 +93,10 @@ const Auction = (props) => {
       }
     };
 
-    const onStart = () => {
+    const onStart = (data) => {
+      if (data && data.player) {
+        setDefaultPlayer(data.player);
+      }
       setPlay(true);
     };
 

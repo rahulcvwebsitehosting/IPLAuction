@@ -5,6 +5,13 @@ const squads = squadData;
 
 const liveAuctions = new Map();
 
+const registerSocket = (auction, socket) => {
+  auction.addSocket(socket);
+  socket.on("disconnect", () => {
+    auction.removeSocket(socket.id);
+  });
+};
+
 const create = (io, socket, data) => {
   if (!data.room || !data.username) {
     return socket.emit("create-result", {
@@ -22,7 +29,9 @@ const create = (io, socket, data) => {
 
   socket.join(data.room);
   const auction = new Auction(io, data.room);
+  auction.creator = data.username;
   auction.addUser(data.username);
+  registerSocket(auction, socket);
   liveAuctions.set(data.room, auction);
   auction.emitToRoom("users", {
     users: auction.users,
@@ -50,6 +59,7 @@ const join = (io, socket, data) => {
   }
   auction.addUser(data.username);
   socket.join(data.room);
+  registerSocket(auction, socket);
   socket.emit("join-result", {
     success: true,
     room: data.room,
@@ -58,6 +68,13 @@ const join = (io, socket, data) => {
   auction.emitToRoom("users", {
     users: auction.users,
   });
+
+  if (auction.started) {
+    socket.emit("start");
+    if (auction.getCurrentPlayer()) {
+      socket.emit("player", { player: auction.getCurrentPlayer() });
+    }
+  }
 };
 
 const play = (data) => {
@@ -66,7 +83,12 @@ const play = (data) => {
     return;
   }
   auction.startAuction();
-  auction.emitToRoom("start");
+  const firstSquad = squads[auction.squad];
+  const firstPlayer = firstSquad && firstSquad.players[auction.player];
+  if (firstPlayer) {
+    auction.currentPlayer = firstPlayer;
+  }
+  auction.emitToRoom("start", { player: auction.getCurrentPlayer() });
   auction.servePlayer(squads);
   auction.startInterval();
 };
@@ -119,14 +141,14 @@ const checkUser = (socket, user) => {
     if (!auction) {
       return socket.emit("no-existing-user");
     }
-    // Rejoin the socket.io room so io.to(room).emit() reaches this reconnecting
-    // client. (No per-socket registry needed — socket.io tracks room members.)
     socket.join(room);
+    registerSocket(auction, socket);
     socket.emit("existing-user", {
       room: room,
       users: auction.fetchPlayers(),
       initial: auction.getCurrentPlayer(),
       started: auction.getStatus(),
+      starter: auction.creator === user.username,
     });
   } else {
     socket.emit("no-existing-user");
