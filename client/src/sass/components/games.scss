@@ -1,13 +1,10 @@
-@import "../utilities/variables.scss";
-@import "../utilities/mixins.scss";
-
 .game {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 
   .bidder {
-    color: $theme-color3;
+    color: $primary-light;
     font-weight: 600;
   }
 
@@ -20,102 +17,74 @@
     color: $red;
     font-weight: 600;
   }
+
   &-main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 5rem;
+    gap: 3rem;
 
     &-content {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: auto;
-      gap: 2rem;
-      padding: 2rem;
-      @include glassmorphism;
-      border-radius: 1rem;
-      border: 1px solid rgba(129, 199, 132, 0.15);
+      gap: 1.5rem;
+      padding: 1.5rem;
+      @include glass;
+      border-radius: $radius-lg;
       min-width: 25rem;
     }
   }
 
   &-timer {
-    font-size: 8rem;
+    font-size: 5rem;
     font-weight: 800;
+    font-family: $font-mono;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
     transition: all 0.5s ease-in-out;
-    font-family: "Courier New", monospace;
-    text-shadow: 0 0 20px rgba(129, 199, 132, 0.3);
   }
 
   .animate-timer {
-    animation: beat 1s ease-in-out 0s infinite alternate;
+    animation: countdown-urgent 1s ease-in-out infinite alternate;
   }
 
   .timer-red {
     color: $red;
-    text-shadow: 0 0 20px rgba(229, 57, 53, 0.4);
+    text-shadow: 0 0 20px rgba(239, 83, 80, 0.3);
   }
 
   .timer-yellow {
-    color: $yellow;
-    text-shadow: 0 0 20px rgba(253, 216, 53, 0.3);
+    color: $accent-gold;
+    text-shadow: 0 0 20px rgba(255, 213, 79, 0.2);
   }
 
   &-info {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
 
     &-bidder {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem;
-      background: rgba(129, 199, 132, 0.05);
-      border-radius: 0.5rem;
-      border: 1px solid rgba(129, 199, 132, 0.1);
+      padding: 0.75rem;
+      background: rgba(76, 175, 80, 0.03);
+      border-radius: $radius-sm;
+      border: 1px solid rgba(76, 175, 80, 0.08);
     }
 
     &-budgets {
-      padding: 1rem;
-      background: rgba(129, 199, 132, 0.05);
-      border-radius: 0.5rem;
-      border: 1px solid rgba(129, 199, 132, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      padding: 0.75rem;
+      background: rgba(76, 175, 80, 0.03);
+      border-radius: $radius-sm;
+      border: 1px solid rgba(76, 175, 80, 0.08);
     }
-  }
-
-  &-buttons {
-    display: flex;
-    gap: 2rem;
-    margin-top: 0.5rem;
   }
 
   .users-info {
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-}
-
-@media (max-width: 650px) {
-  .game-main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &-content {
-      min-width: auto;
-      width: 100%;
-    }
   }
 }

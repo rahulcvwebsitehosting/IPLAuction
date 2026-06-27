@@ -1,0 +1,89 @@
+.chat-panel {
+  @include glass;
+  @include glow-border;
+  border-radius: $radius-md;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+
+  h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $white-muted;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    padding-right: 0.5rem;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $primary-dark;
+      border-radius: 2px;
+    }
+
+    .chat-empty {
+      color: $white-muted;
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .chat-msg {
+      padding: 0.3rem 0.5rem;
+      border-radius: $radius-sm;
+      background: rgba(255, 255, 255, 0.03);
+
+      .chat-user {
+        color: $primary-light;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+      }
+
+      .chat-text {
+        color: $white-dim;
+        font-size: 0.85rem;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .chat-input-form {
+    display: flex;
+    gap: 0.5rem;
+
+    .chat-input {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border-radius: $radius-sm;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      color: $white;
+      font-family: $font-main;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: rgba(76, 175, 80, 0.4);
+      }
+
+      &::placeholder {
+        color: $white-muted;
+      }
+    }
+  }
+}

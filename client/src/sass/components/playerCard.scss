@@ -1,105 +1,173 @@
-.playerCard {
-  padding: 1rem;
-  width: 21rem;
-  height: auto;
-  @include glassmorphism;
-  border: 1px solid rgba(129, 199, 132, 0.2);
-  background-color: $background-color-tertiary;
-  border-radius: 1rem;
+.player-card {
+  @include glass;
+  @include glow-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
   animation: glow-pulse 3s ease-in-out infinite;
+  position: relative;
 
-  &-image {
-    position: relative;
-    width: 100%;
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &.empty {
+    padding: 3rem 2rem;
     text-align: center;
+  }
 
-    img {
+  .player-waiting {
+    color: $white-muted;
+    font-size: 1.1rem;
+  }
+
+  .player-card-inner {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .player-image-wrapper {
+    position: relative;
+
+    .player-image {
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 2px solid rgba(129, 199, 132, 0.3);
+      object-fit: cover;
+      border: 2px solid rgba(76, 175, 80, 0.2);
       padding: 2px;
-      background: rgba(129, 199, 132, 0.1);
+      background: rgba(76, 175, 80, 0.05);
     }
 
-    h2 {
-      display: block;
-      margin: 0.5rem 0 0 0;
-      color: $theme-color3;
+    .player-image-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(76, 175, 80, 0.1);
+      border: 2px solid rgba(76, 175, 80, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $primary-light;
     }
 
-    &::before {
+    .player-status-ring {
       position: absolute;
-      content: "";
-      width: 50%;
-      height: 1.5%;
-      top: 105%;
-      left: 25.5%;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        $theme-color,
-        transparent
-      );
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+
+      &.open {
+        border-color: $primary;
+      }
+      &.bidding-active {
+        border-color: $accent-gold;
+      }
+      &.sold {
+        border-color: $primary-light;
+      }
+      &.unsold {
+        border-color: $red;
+      }
     }
   }
 
-  &-info {
-    padding: 1rem 0.4rem;
+  .player-info {
+    text-align: center;
+    width: 100%;
 
-    &-role {
-      text-align: center;
-      color: $hover-color;
-      text-transform: capitalize;
-      letter-spacing: 1.5px;
-      margin: 1rem 0;
-      font-weight: 600;
+    .player-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $white;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.5px;
     }
 
-    &-stats {
+    .player-meta {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      width: 100%;
-      height: auto;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
 
-      &-title {
-        letter-spacing: 1.5px;
-        padding: 0 1rem;
-        width: 100%;
-        margin-bottom: 0.5rem;
+      .player-role,
+      .player-nationality {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: $radius-sm;
+        background: rgba(76, 175, 80, 0.08);
+        color: $white-dim;
+        text-transform: capitalize;
       }
     }
 
-    &-slider {
-      width: auto;
+    .player-base {
+      font-size: 0.85rem;
+      color: $white-muted;
+      margin-bottom: 0.5rem;
     }
 
-    &-stat {
-      &-container {
-        span {
-          margin-right: 0.5rem;
-        }
-        display: inline-block;
-        width: 40%;
-        height: 1.5rem;
-        margin: 0.5rem 1rem;
+    .player-current-bid {
+      font-size: 1.15rem;
+      color: $accent-gold;
+      font-weight: 600;
+
+      strong {
+        font-size: 1.3rem;
+        color: $accent-gold;
       }
 
-      &-value {
-        color: $theme-color3;
+      .bidder-label {
+        font-size: 0.85rem;
+        color: $white-dim;
+        font-weight: 400;
       }
+    }
+  }
 
-      &-label {
-        border-left: 2px solid $hover-color;
-        padding-left: 0.3rem;
-        font-weight: 500;
+  .player-status-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    .player-status-badge {
+      padding: 0.35rem 1.25rem;
+      border-radius: $radius-sm;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      &.open {
+        background: rgba(76, 175, 80, 0.15);
+        color: $primary-light;
       }
+      &.bidding_active {
+        background: rgba(255, 213, 79, 0.15);
+        color: $accent-gold;
+      }
+      &.sold {
+        background: rgba(76, 175, 80, 0.2);
+        color: $primary-light;
+      }
+      &.unsold {
+        background: rgba(239, 83, 80, 0.15);
+        color: $red;
+      }
+    }
+
+    .recall-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: $radius-sm;
+      background: rgba(255, 213, 79, 0.1);
+      color: $accent-gold;
+      font-size: 0.75rem;
+      font-weight: 600;
     }
   }
 }

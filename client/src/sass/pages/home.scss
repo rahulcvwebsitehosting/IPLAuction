@@ -1,13 +1,215 @@
-.home {
-  @include glassmorphism;
-  min-height: 100vh;
+.home-page {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
 
-  &-title {
-    padding: 2rem;
+  .home-hero {
     text-align: center;
+    padding: 4rem 2rem 2rem;
+    animation: fadeInUp 0.8s ease;
 
-    .title h1 {
-      text-shadow: 0 0 20px rgba(129, 199, 132, 0.3);
+    .home-title {
+      font-family: $font-display;
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(
+        135deg,
+        $primary-light,
+        $accent-gold,
+        $primary-light
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .home-subtitle {
+      font-size: 1.15rem;
+      color: $white-dim;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+  }
+
+  .home-cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem 3rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .join-section {
+      width: 100%;
+      max-width: 440px;
+
+      .join-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        &::before,
+        &::after {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        span {
+          color: $white-muted;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+      }
+
+      .join-form {
+        display: flex;
+        gap: 0.75rem;
+
+        .join-input {
+          flex: 1;
+          padding: 0.85rem 1.25rem;
+          border-radius: $radius-md;
+          border: 1px solid rgba(76, 175, 80, 0.2);
+          background: rgba(255, 255, 255, 0.03);
+          color: $white;
+          font-family: $font-main;
+          font-size: 1.1rem;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          text-align: center;
+          outline: none;
+          transition: all 0.2s;
+
+          &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.15);
+          }
+
+          &::placeholder {
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            color: $white-muted;
+          }
+        }
+      }
+    }
+
+    .join-error {
+      margin-top: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: rgba(239, 83, 80, 0.1);
+      border: 1px solid rgba(239, 83, 80, 0.2);
+      border-radius: $radius-sm;
+      color: $red;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  }
+
+  .home-user-info {
+    text-align: center;
+    padding: 1rem;
+    color: $white-dim;
+    font-size: 0.85rem;
+    animation: fadeIn 0.5s ease;
+
+    strong {
+      color: $primary-light;
+    }
+  }
+
+  // Features section
+  .home-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .feature-card {
+      @include glass;
+      @include glow-border;
+      border-radius: $radius-md;
+      padding: 1.5rem;
+      text-align: center;
+      animation: fadeInUp 0.6s ease both;
+
+      &:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+
+      .feature-icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .feature-title {
+        font-size: 0.95rem;
+        color: $white;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+      }
+
+      .feature-desc {
+        font-size: 0.8rem;
+        color: $white-dim;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .home-news-section {
+    padding: 1rem 4rem 3rem;
+
+    h2 {
+      font-size: 1.1rem;
+      color: $white-dim;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $max-width) {
+  .home-page {
+    .home-hero {
+      padding: 2rem 1rem;
+
+      .home-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .home-features {
+      padding: 2rem 1rem;
+    }
+    .home-news-section {
+      padding: 1rem;
     }
   }
 }

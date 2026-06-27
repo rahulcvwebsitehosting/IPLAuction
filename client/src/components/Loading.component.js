@@ -1,12 +1,7 @@
-const LoaderComponent = ({ size = 5 }) => {
-  const dimensions = {
-    width: size + "rem",
-    height: size + "rem",
-  };
-
+const LoaderComponent = ({ size = 3 }) => {
   return (
-    <div className="loading-component">
-      <div style={dimensions} className="loading-component-main"></div>
+    <div className="loader" style={{ "--size": size + "rem" }}>
+      <div className="loader-spinner" />
     </div>
   );
 };

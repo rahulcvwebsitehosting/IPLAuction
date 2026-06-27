@@ -1,138 +1,109 @@
-@keyframes dashFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-45rem);
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
   }
   50% {
-    opacity: 0.5;
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
   }
-  80% {
-    transform: translate(2rem);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  100% {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@keyframes dashFromRight {
-  0% {
+@keyframes slideInRight {
+  from {
     opacity: 0;
-    transform: translateX(45rem);
+    transform: translateX(30px);
   }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  80% {
-    transform: translate(-2rem);
-  }
-
-  100% {
+  to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes countdown-urgent {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes stump-fall {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(var(--fall-angle, 15deg));
+  }
+}
+
+@keyframes bail-fly {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px) rotate(30deg);
+    opacity: 0;
   }
 }
 
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes beat {
+@keyframes shimmer {
   0% {
-    transform: scale(1);
+    background-position: -200% center;
   }
-
   100% {
-    transform: scale(1.5);
+    background-position: 200% center;
   }
 }
 
-@keyframes cricket-ball-float {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 0.3;
-  }
-  20% {
-    transform: translate(80px, -100px) scale(1.1) rotate(72deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: translate(180px, -40px) scale(0.9) rotate(144deg);
-    opacity: 0.4;
-  }
-  60% {
-    transform: translate(100px, 30px) scale(1.05) rotate(216deg);
-    opacity: 0.5;
-  }
-  80% {
-    transform: translate(40px, -60px) scale(0.95) rotate(288deg);
-    opacity: 0.35;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    opacity: 0.3;
-  }
-}
-
-@keyframes stump-wobble {
+@keyframes border-glow {
   0%,
   100% {
-    transform: rotate(-1deg);
+    border-color: rgba(76, 175, 80, 0.15);
   }
   50% {
-    transform: rotate(1deg);
-  }
-}
-
-@keyframes pitch-line-pulse {
-  0%,
-  100% {
-    opacity: 0.06;
-  }
-  50% {
-    opacity: 0.15;
-  }
-}
-
-@keyframes glow-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 5px rgba(129, 199, 132, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(129, 199, 132, 0.6);
-  }
-}
-
-@keyframes bat-swing {
-  0% {
-    transform: rotate(-20deg) translateX(-10px);
-  }
-  50% {
-    transform: rotate(5deg) translateX(5px);
-  }
-  100% {
-    transform: rotate(-20deg) translateX(-10px);
-  }
-}
-
-@keyframes scoreboard-flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 0.97;
-  }
-  97% {
-    opacity: 0.99;
+    border-color: rgba(76, 175, 80, 0.35);
   }
 }

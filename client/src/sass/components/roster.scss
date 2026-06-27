@@ -1,0 +1,55 @@
+.team-roster {
+  @include glass;
+  @include glow-border;
+  border-radius: $radius-md;
+  padding: 1rem;
+
+  h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $white-muted;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .roster-card {
+    .roster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 3px solid $primary;
+      padding-left: 0.5rem;
+
+      .roster-team {
+        font-weight: 700;
+        color: $white;
+        font-size: 0.95rem;
+      }
+
+      .roster-purse {
+        font-weight: 700;
+        color: $accent-gold;
+        font-family: $font-mono;
+        font-size: 0.9rem;
+      }
+    }
+
+    .roster-stats {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: $white-dim;
+    }
+  }
+
+  .roster-empty {
+    color: $white-muted;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}

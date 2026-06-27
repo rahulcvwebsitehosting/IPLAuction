@@ -1,0 +1,60 @@
+.squad-tracker {
+  @include glass;
+  @include glow-border;
+  border-radius: $radius-md;
+  padding: 1rem;
+
+  h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: $white-muted;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .squad-empty {
+    color: $white-muted;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .squad-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .squad-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: $radius-sm;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .squad-team {
+      font-weight: 600;
+      color: $white;
+      font-size: 0.85rem;
+    }
+
+    .squad-details {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: $white-dim;
+
+      .squad-purse {
+        font-family: $font-mono;
+        color: $accent-gold;
+      }
+    }
+  }
+}

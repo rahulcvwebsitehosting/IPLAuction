@@ -1,21 +1,18 @@
-.error-component {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.error-page {
+  padding: 3rem;
+  text-align: center;
+  min-height: 60vh;
+  position: relative;
+  z-index: 2;
 
-  &-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  img {
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
   }
 
-  &-image {
-    width: 20rem;
-  }
-
-  &-text {
-    font-size: 1.2rem;
-    color: $theme-color3;
+  p {
+    color: $white-dim;
+    font-size: 1.1rem;
   }
 }

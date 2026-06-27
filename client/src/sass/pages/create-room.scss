@@ -1,0 +1,31 @@
+.create-room-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+
+  h2 {
+    font-size: 1.5rem;
+    @include gradient-text;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .create-error {
+    padding: 0.5rem 0.75rem;
+    margin: 1rem 0;
+    background: rgba(239, 83, 80, 0.08);
+    border: 1px solid rgba(239, 83, 80, 0.2);
+    border-radius: $radius-sm;
+    color: $red;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .create-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+}

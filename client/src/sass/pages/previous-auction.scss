@@ -1,42 +1,131 @@
-.previous-auctions {
-  @include glassmorphism;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+.previous-auctions-page {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
+  position: relative;
+  z-index: 2;
 
-  &-cards {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  h2 {
+    font-size: 1.5rem;
+    @include gradient-text;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
-  &-card {
-    color: $theme-color3;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    transform-origin: left;
-    font-size: 1.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    background: rgba(129, 199, 132, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.2rem solid transparent;
-    border: 1px solid rgba(129, 199, 132, 0.15);
+  .auctions-empty {
+    text-align: center;
+    color: $white-muted;
+    padding: 3rem;
+    font-size: 1.05rem;
+  }
 
-    &:hover {
-      background: rgba(129, 199, 132, 0.2);
-      transform: translateY(-2px);
+  .auctions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .auction-item {
+    @include glass;
+    @include glow-border;
+    border-radius: $radius-md;
+    overflow: hidden;
+
+    .auction-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .auction-room {
+        font-family: $font-mono;
+        font-weight: 700;
+        color: $accent-gold;
+        letter-spacing: 1px;
+      }
+
+      .auction-mode {
+        color: $white-dim;
+        font-size: 0.85rem;
+      }
+
+      .auction-date {
+        color: $white-muted;
+        font-size: 0.8rem;
+      }
+    }
+
+    .auction-item-detail {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+      h4 {
+        font-size: 0.85rem;
+        color: $primary-light;
+        margin: 1rem 0 0.5rem;
+        font-weight: 600;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .auction-team {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0.5rem;
+        border-radius: $radius-sm;
+        background: rgba(255, 255, 255, 0.02);
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+
+        .team-name {
+          font-weight: 600;
+          color: $white;
+        }
+
+        span {
+          color: $white-dim;
+        }
+      }
+
+      .auction-players-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        max-height: 300px;
+        overflow-y: auto;
+
+        .auction-player {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.3rem 0.5rem;
+          border-radius: $radius-sm;
+          background: rgba(255, 255, 255, 0.02);
+          font-size: 0.8rem;
+
+          span {
+            color: $white-dim;
+            &:first-child {
+              color: $white;
+              font-weight: 500;
+            }
+          }
+        }
+      }
     }
   }
+}
 
-  .apply-border {
-    border-bottom: 0.2rem solid $hover-color;
-    background: rgba(255, 214, 0, 0.1);
+@media (max-width: $max-width) {
+  .previous-auctions-page {
+    padding: 1rem;
   }
 }

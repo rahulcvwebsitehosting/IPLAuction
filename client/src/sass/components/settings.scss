@@ -1,0 +1,79 @@
+.settings-panel {
+  position: relative;
+
+  .btn-settings-toggle {
+    @extend .btn-admin;
+  }
+
+  .settings-form {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 20;
+    @include glass;
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    min-width: 300px;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      label {
+        font-size: 0.85rem;
+        color: $white-dim;
+        flex: 1;
+      }
+
+      input[type="number"] {
+        width: 70px;
+        padding: 0.3rem 0.5rem;
+        border-radius: $radius-sm;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        color: $white;
+        font-family: $font-main;
+        font-size: 0.85rem;
+        text-align: center;
+        outline: none;
+
+        &:focus {
+          border-color: rgba(76, 175, 80, 0.4);
+        }
+      }
+
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: $primary;
+      }
+    }
+
+    .setting-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+
+      .btn-save {
+        @extend .btn;
+        @extend .btn-primary;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .btn-cancel {
+        @extend .btn;
+        @extend .btn-secondary;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

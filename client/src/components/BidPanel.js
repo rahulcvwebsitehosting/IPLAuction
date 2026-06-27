@@ -55,13 +55,13 @@ export default function BidPanel({
     <div className="bid-panel">
       <div className="purse-display">
         <span>
-          Purse Remaining: <strong>{formatCurrency(myPurse)}</strong>
+          Purse: <strong>{formatCurrency(myPurse)}</strong>
         </span>
         <span>
           Squad: {myTotalPlayers}/{maxSquadSize}
         </span>
         <span>
-          Overseas: {myOverseasUsed}/{overseasLimit}
+          OS: {myOverseasUsed}/{overseasLimit}
         </span>
       </div>
       {rtmCards > 0 && <div className="rtm-count">RTM Cards: {rtmCards}</div>}
@@ -69,11 +69,11 @@ export default function BidPanel({
       <div className="bid-controls">
         {canRTM && (
           <button className="btn btn-rtm" onClick={onRTM}>
-            RTM Match (₹{formatCurrency(currentBid)})
+            RTM Match ({formatCurrency(currentBid)})
           </button>
         )}
         <button className="btn btn-bid" disabled={!canBid} onClick={onBid}>
-          {canBid ? `Bid ${formatCurrency(nextBid)}` : "Cannot bid"}
+          {canBid ? `Bid ${formatCurrency(nextBid)}` : "Cannot Bid"}
         </button>
       </div>
     </div>

@@ -1,0 +1,70 @@
+.mode-selector {
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1rem;
+    color: $white-dim;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .mode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .mode-card {
+    @include glass;
+    @include glow-border;
+    @include card-hover;
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    cursor: pointer;
+
+    &.selected {
+      border-color: $primary;
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+    }
+
+    h4 {
+      font-size: 1rem;
+      color: $white;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $white-dim;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .mode-badges {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+
+      .badge {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: $radius-sm;
+        font-weight: 600;
+
+        &.retention {
+          background: rgba(76, 175, 80, 0.15);
+          color: $primary-light;
+        }
+        &.rtm {
+          background: rgba(171, 71, 188, 0.15);
+          color: #ab47bc;
+        }
+        &.sets {
+          background: rgba(255, 213, 79, 0.15);
+          color: $accent-gold;
+        }
+      }
+    }
+  }
+}

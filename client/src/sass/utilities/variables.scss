@@ -1,17 +1,50 @@
-//Colors - Cricket Theme
-$background-color-main: hsla(120, 40%, 12%, 0.4);
-$background-color-tertiary: hsla(120, 25%, 15%, 0.35);
-$background-color-secondary: #0d2410;
-$font-color-main: #f0f7e6;
-$theme-color: #388e3c;
-$theme-color2: #1b5e20;
-$theme-color3: #81c784;
-$hover-color: #ffd600;
-$red: #e53935;
-$yellow: #fdd835;
-$pitch-brown: #5d4037;
+// Cricket Premier League Theme
+$bg-dark: #0a1a0a;
+$bg-mid: #0f220f;
+$bg-light: #162e16;
+$bg-card: rgba(15, 34, 15, 0.85);
+
+$pitch-dark: #2d1f14;
+$pitch-mid: #5d4037;
 $pitch-light: #8d6e63;
+$pitch-strip: rgba(139, 119, 90, 0.15);
+
+$primary: #4caf50;
+$primary-light: #81c784;
+$primary-dark: #2e7d32;
+$primary-glow: rgba(76, 175, 80, 0.3);
+
+$accent-gold: #ffd54f;
+$accent-gold-dark: #ffb300;
+$accent-gold-glow: rgba(255, 213, 79, 0.25);
+
+$white: #f0f7e6;
+$white-dim: rgba(240, 247, 230, 0.7);
+$white-muted: rgba(240, 247, 230, 0.5);
+
+$red: #ef5350;
+$red-dark: #c62828;
+$red-glow: rgba(239, 83, 80, 0.3);
+
+$ball-color: #d32f2f;
+$ball-highlight: #ff8a80;
+
 $stump-cream: #d7ccc8;
-$ball-red: #e53935;
+$stump-dark: #a1887f;
+
+$font-main: "Inter", "Roboto Slab", serif;
+$font-display: "Playfair Display", serif;
+$font-mono: "JetBrains Mono", "Courier New", monospace;
+
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+$shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+$shadow-glow: 0 0 20px $primary-glow;
+
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-xl: 28px;
+
 $max-width: 1000px;
 $min-width: 650px;

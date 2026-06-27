@@ -1,5 +1,3 @@
-@import "../utilities/variables.scss";
-
 .news-loader {
   display: flex;
   justify-content: center;
@@ -11,54 +9,71 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: $background-color-tertiary;
-  border: 1px solid rgba(129, 199, 132, 0.15);
-  border-radius: 1rem;
+  background: $bg-card;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  border-radius: $radius-md;
   overflow: hidden;
   transition: all 0.3s ease;
 
+  &:hover {
+    border-color: rgba(76, 175, 80, 0.25);
+    box-shadow: $shadow-md;
+  }
+
   &-image {
     width: 100%;
-    height: 220px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   &-container {
-    padding: 1.2rem;
+    padding: 1rem;
+  }
+
+  &-card {
+    border-radius: $radius-md;
+    overflow: hidden;
   }
 
   &-content {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
+  }
 
-    &-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: $theme-color3;
-      line-height: 1.4;
+  &-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $white;
+    line-height: 1.4;
+  }
+
+  &-description {
+    font-size: 0.8rem;
+    color: $white-dim;
+    line-height: 1.5;
+  }
+
+  &-date {
+    font-size: 0.75rem;
+    color: $white-muted;
+  }
+}
+
+.slick-slider {
+  .slick-dots {
+    bottom: -30px;
+
+    li button:before {
+      color: $primary-light;
+      opacity: 0.3;
     }
 
-    &-desc {
-      font-size: 0.9rem;
-      color: $font-color-main;
-      opacity: 0.85;
-      line-height: 1.5;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    &-date {
-      display: flex;
-      gap: 0.8rem;
-      font-size: 0.8rem;
-      color: $hover-color;
-      font-weight: 500;
-      margin-top: 0.3rem;
+    li.slick-active button:before {
+      color: $primary;
+      opacity: 1;
     }
   }
 }

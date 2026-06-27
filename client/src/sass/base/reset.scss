@@ -5,64 +5,108 @@
 }
 
 :root {
-  font-family: "Roboto Slab", serif;
+  font-family: $font-main;
 }
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $bg-dark;
+  overflow-x: hidden;
 }
 
 .App {
-  padding: 0 10rem;
   min-height: 100vh;
-  // Cricket pitch gradient background
   background: linear-gradient(
-    135deg,
-    #0d2410 0%,
-    #1a3a1a 30%,
-    #1a3a1a 50%,
-    #0d2410 100%
+    180deg,
+    $bg-dark 0%,
+    $bg-mid 40%,
+    $bg-light 70%,
+    $bg-mid 100%
   );
-  color: $font-color-main;
+  color: $white;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-// Cricket pitch strip down the center
+// Stadium floodlight glow - top
 .App::before {
   content: "";
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(76, 175, 80, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+// Pitch strip down the center
+.pitch-strip {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 30%;
+  width: 36%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(139, 119, 90, 0.08) 15%,
-    rgba(139, 119, 90, 0.12) 50%,
-    rgba(139, 119, 90, 0.08) 85%,
+    $pitch-strip 10%,
+    $pitch-strip 90%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.04) 15%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.04) 85%,
+      transparent 100%
+    );
+  }
 }
 
-// Pitch crease lines
-.App::after {
-  content: "";
+// Crease lines
+.crease-line {
   position: fixed;
-  top: 30%;
   left: 50%;
   transform: translateX(-50%);
-  width: 28%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.06);
+  width: 32%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.04);
   pointer-events: none;
   z-index: 0;
-  box-shadow: 0 200px 0 rgba(255, 255, 255, 0.06),
-    0 400px 0 rgba(255, 255, 255, 0.04);
+}
+
+.crease-line:nth-child(2) {
+  top: 25%;
+}
+.crease-line:nth-child(3) {
+  top: 50%;
+}
+.crease-line:nth-child(4) {
+  top: 75%;
 }
 
 // Stumps decoration at bottom
@@ -71,100 +115,202 @@ html {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 12%;
-  height: 120px;
+  width: 100px;
+  height: 110px;
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.15;
+  z-index: 1;
+  opacity: 0.12;
+  transition: opacity 0.8s ease;
+
+  &.hit {
+    opacity: 0.25;
+    .stump {
+      animation: stump-fall 0.6s ease forwards;
+    }
+    .stump:nth-child(1) {
+      animation-delay: 0s;
+      transform-origin: bottom left;
+    }
+    .stump:nth-child(2) {
+      animation-delay: 0.1s;
+      transform-origin: bottom center;
+    }
+    .stump:nth-child(3) {
+      animation-delay: 0.2s;
+      transform-origin: bottom right;
+    }
+    .bails {
+      animation: bail-fly 0.4s ease forwards;
+    }
+  }
 }
 
-.stumps-decoration::before {
-  content: "";
+.stump {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 80px;
-  background: linear-gradient(to top, #d7ccc8, #8d6e63);
+  width: 6px;
+  height: 70px;
+  background: linear-gradient(to top, $stump-dark, $stump-cream);
   border-radius: 2px 2px 0 0;
-  box-shadow: -20px 0 0 #d7ccc8, 20px 0 0 #d7ccc8;
+
+  &:nth-child(1) {
+    left: 50%;
+    transform: translateX(-300%);
+  }
+  &:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:nth-child(3) {
+    left: 50%;
+    transform: translateX(200%);
+  }
 }
 
-.stumps-decoration::after {
-  content: "";
+.bails {
   position: absolute;
-  bottom: 75px;
+  bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
-  width: 52px;
+  width: 40px;
   height: 3px;
-  background: #a1887f;
-  border-radius: 1px;
+  background: $accent-gold;
+  border-radius: 2px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 3px;
+    height: 3px;
+    background: $accent-gold;
+    border-radius: 50%;
+  }
+  &::before {
+    left: -2px;
+  }
+  &::after {
+    right: -2px;
+  }
 }
 
-.ball {
-  content: "";
+// Scroll cricket ball
+.scroll-ball {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: 50%;
+  margin-left: 220px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    $ball-highlight,
+    $ball-color 50%,
+    #7f0000
+  );
+  box-shadow: 0 0 15px rgba(211, 47, 47, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  z-index: 5;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 1px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 1px;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
 }
 
-// Cricket ball floaters
-.ball1 {
-  background: radial-gradient(
-    circle at 35% 35%,
-    #ff8a80,
-    $ball-red 50%,
-    #b71c1c
-  );
-  clip-path: circle(1.8% at 20% 15%);
-  opacity: 0.5;
-  animation: cricket-ball-float 18s ease-in-out infinite;
+// Ball trail
+.scroll-ball-trail {
+  position: fixed;
+  left: 50%;
+  margin-left: 220px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(211, 47, 47, 0.2), transparent);
+  z-index: 4;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
-.ball2 {
-  background: radial-gradient(
-    circle at 35% 35%,
-    #ff8a80,
-    $ball-red 50%,
-    #b71c1c
-  );
-  clip-path: circle(1.5% at 80% 30%);
-  opacity: 0.35;
-  animation: cricket-ball-float 22s ease-in-out infinite reverse;
+// Page container
+.page-container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
 }
 
-.ball3 {
-  background: radial-gradient(
-    circle at 35% 35%,
-    #ff8a80,
-    $ball-red 50%,
-    #b71c1c
-  );
-  clip-path: circle(1.2% at 50% 85%);
-  opacity: 0.3;
-  animation: cricket-ball-float 25s ease-in-out infinite 2s;
+// Page loading
+.page-loading {
+  @include flex-center;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: $white-dim;
+  position: relative;
+  z-index: 2;
 }
 
-.ball4 {
-  background: radial-gradient(
-    circle at 35% 35%,
-    #ff8a80,
-    $ball-red 50%,
-    #b71c1c
-  );
-  clip-path: circle(1% at 10% 70%);
-  opacity: 0.4;
-  animation: cricket-ball-float 20s ease-in-out infinite 5s;
+.page-error {
+  @include flex-center;
+  min-height: 60vh;
+  font-size: 1.2rem;
+  color: $red;
+  position: relative;
+  z-index: 2;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-dark;
+  border-radius: 3px;
+
+  &:hover {
+    background: $primary;
+  }
+}
+
+// Selection
+::selection {
+  background: rgba(76, 175, 80, 0.3);
+  color: $white;
 }
 
 @media (max-width: $max-width) {
   .App {
-    padding: 0 0;
+    padding: 0;
   }
 }
 

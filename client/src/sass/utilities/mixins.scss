@@ -1,15 +1,40 @@
-@mixin theme {
-  background-color: $background-color-main;
-  color: $font-color-main;
+@mixin glass {
+  background: $bg-card;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(76, 175, 80, 0.12);
+  box-shadow: $shadow-md;
 }
 
-@mixin glassmorphism {
-  position: relative;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  background-color: $background-color-main;
-  overflow: hidden;
-  border-left: 1px solid rgba(129, 199, 132, 0.1);
-  border-right: 1px solid rgba(129, 199, 132, 0.1);
-  z-index: 1;
-  backdrop-filter: blur(5px);
+@mixin card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg, $shadow-glow;
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, $primary-light, $accent-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin glow-border {
+  border: 1px solid rgba(76, 175, 80, 0.15);
+  box-shadow: inset 0 0 30px rgba(76, 175, 80, 0.03);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
