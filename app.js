@@ -8,7 +8,8 @@ const http = require("http");
 const userRouter = require("./routes/user.route");
 const newsRouter = require("./routes/news.route");
 const auctionRouter = require("./routes/auction.route");
-// const User = require("./database/models/user.model");
+const roomRouter = require("./routes/room.route");
+const historyRouter = require("./routes/history.route");
 const path = require("path");
 const fs = require("fs");
 require("dotenv").config();
@@ -45,6 +46,8 @@ app.use(express.json());
 app.use(userRouter);
 app.use(newsRouter);
 app.use(auctionRouter);
+app.use(roomRouter);
+app.use(historyRouter);
 
 // Health check — Render pings this path after every deploy to confirm the
 // service is up. It must return 200 even when the client build is absent

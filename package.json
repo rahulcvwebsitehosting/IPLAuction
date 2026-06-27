@@ -4,7 +4,7 @@
   "description": "An Ipl auction application",
   "main": "app.js",
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "scripts": {
     "start": "node app.js",
@@ -12,7 +12,7 @@
     "server": "nodemon app.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --forceExit --detectOpenHandles",
     "prepare": "node -e \"if (process.env.CI || process.env.NODE_ENV === 'production') process.exit(0); require('child_process').execSync('husky install', {stdio:'inherit'})\"",
     "lint": "prettier --check .",
     "format": "prettier --write ."
@@ -31,11 +31,13 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.7",
     "morgan": "^1.10.0",
+    "nanoid": "^3.3.15",
     "socket.io": "^4.1.2"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
     "husky": "^7.0.0",
+    "jest": "^30.4.2",
     "prettier": "2.4.1"
   }
 }

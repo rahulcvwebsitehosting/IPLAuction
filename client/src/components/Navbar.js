@@ -36,7 +36,7 @@ const Navbar = () => {
         <Link to="/" className="nav-container-main-content">
           Home
         </Link>
-        <Link to="/auction" className="nav-container-main-content">
+        <Link to="/create-room" className="nav-container-main-content">
           Auction
         </Link>
         <Link to="/auctions/played" className="nav-container-main-content">

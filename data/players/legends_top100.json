@@ -1,0 +1,6736 @@
+{
+  "players": [
+    {
+      "id": "player_0",
+      "name": "MS Dhoni",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 1,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "211"
+          },
+          {
+            "label": "No",
+            "value": "70"
+          },
+          {
+            "label": "Runs",
+            "value": "4669"
+          },
+          {
+            "label": "HS",
+            "value": "84*"
+          },
+          {
+            "label": "Ave",
+            "value": "40.25"
+          },
+          {
+            "label": "BF",
+            "value": "3,417"
+          },
+          {
+            "label": "SR",
+            "value": "136.64"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "23"
+          },
+          {
+            "label": "4s",
+            "value": "317"
+          },
+          {
+            "label": "6s",
+            "value": "217"
+          },
+          {
+            "label": "CT",
+            "value": "118"
+          },
+          {
+            "label": "ST",
+            "value": "39"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_1",
+      "name": "Bhagath Varma",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/7105.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_2",
+      "name": "Imran Tahir",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "59"
+          },
+          {
+            "label": "Balls",
+            "value": "1,316"
+          },
+          {
+            "label": "Runs",
+            "value": "1,703"
+          },
+          {
+            "label": "WKTS",
+            "value": "82"
+          },
+          {
+            "label": "BBM",
+            "value": "4/12"
+          },
+          {
+            "label": "Ave",
+            "value": "20.76"
+          },
+          {
+            "label": "Econ",
+            "value": "7.76"
+          },
+          {
+            "label": "SR",
+            "value": "16.04"
+          },
+          {
+            "label": "4W",
+            "value": "3"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/898.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_3",
+      "name": "Harishankar Reddy",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/9474.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_4",
+      "name": "Ruturaj Gaikwad",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "13"
+          },
+          {
+            "label": "No",
+            "value": "2"
+          },
+          {
+            "label": "Runs",
+            "value": "400"
+          },
+          {
+            "label": "HS",
+            "value": "75"
+          },
+          {
+            "label": "Ave",
+            "value": "36.36"
+          },
+          {
+            "label": "BF",
+            "value": "321"
+          },
+          {
+            "label": "SR",
+            "value": "124.61"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "5"
+          },
+          {
+            "label": "4s",
+            "value": "41"
+          },
+          {
+            "label": "6s",
+            "value": "11"
+          },
+          {
+            "label": "CT",
+            "value": "7"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/5443.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_5",
+      "name": "Moeen Ali",
+      "role": "Batting all-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 1,
+      "tier": "a",
+      "stats": {
+        "role": "Batting all-rounder",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "25"
+          },
+          {
+            "label": "Balls",
+            "value": "331"
+          },
+          {
+            "label": "Runs",
+            "value": "382"
+          },
+          {
+            "label": "WKTS",
+            "value": "15"
+          },
+          {
+            "label": "BBM",
+            "value": "3/7"
+          },
+          {
+            "label": "Ave",
+            "value": "25.46"
+          },
+          {
+            "label": "Econ",
+            "value": "6.92"
+          },
+          {
+            "label": "SR",
+            "value": "22.06"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1735.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_6",
+      "name": "C Hari Nishaanth",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/7111.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_7",
+      "name": "Ravindra Jadeja",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 1,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "191"
+          },
+          {
+            "label": "No",
+            "value": "59"
+          },
+          {
+            "label": "Runs",
+            "value": "2290"
+          },
+          {
+            "label": "HS",
+            "value": "62*"
+          },
+          {
+            "label": "Ave",
+            "value": "26.62"
+          },
+          {
+            "label": "BF",
+            "value": "1,788"
+          },
+          {
+            "label": "SR",
+            "value": "128.07"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "2"
+          },
+          {
+            "label": "4s",
+            "value": "168"
+          },
+          {
+            "label": "6s",
+            "value": "82"
+          },
+          {
+            "label": "CT",
+            "value": "76"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "191"
+          },
+          {
+            "label": "Balls",
+            "value": "2,857"
+          },
+          {
+            "label": "Runs",
+            "value": "3,631"
+          },
+          {
+            "label": "WKTS",
+            "value": "120"
+          },
+          {
+            "label": "BBM",
+            "value": "5/16"
+          },
+          {
+            "label": "Ave",
+            "value": "30.25"
+          },
+          {
+            "label": "Econ",
+            "value": "7.62"
+          },
+          {
+            "label": "SR",
+            "value": "23.80"
+          },
+          {
+            "label": "4W",
+            "value": "3"
+          },
+          {
+            "label": "5W",
+            "value": "1"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/9.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_8",
+      "name": "Deepak Chahar",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 1,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "55"
+          },
+          {
+            "label": "Balls",
+            "value": "1,144"
+          },
+          {
+            "label": "Runs",
+            "value": "1,464"
+          },
+          {
+            "label": "WKTS",
+            "value": "53"
+          },
+          {
+            "label": "BBM",
+            "value": "4/13"
+          },
+          {
+            "label": "Ave",
+            "value": "27.62"
+          },
+          {
+            "label": "Econ",
+            "value": "7.67"
+          },
+          {
+            "label": "SR",
+            "value": "21.58"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/140.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_9",
+      "name": "Narayan Jagadeesan",
+      "role": "wicket-keeper batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 1,
+      "tier": "a",
+      "stats": {
+        "role": "wicket-keeper batsman",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/0"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "-"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/4942.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_10",
+      "name": "Suresh Raina",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "200"
+          },
+          {
+            "label": "No",
+            "value": "29"
+          },
+          {
+            "label": "Runs",
+            "value": "5491"
+          },
+          {
+            "label": "HS",
+            "value": "100*"
+          },
+          {
+            "label": "Ave",
+            "value": "33.07"
+          },
+          {
+            "label": "BF",
+            "value": "4,011"
+          },
+          {
+            "label": "SR",
+            "value": "136.89"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "39"
+          },
+          {
+            "label": "4s",
+            "value": "502"
+          },
+          {
+            "label": "6s",
+            "value": "202"
+          },
+          {
+            "label": "CT",
+            "value": "103"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/14.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_11",
+      "name": "KM Asif",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 2,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "HS",
+            "value": "0*"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "BF",
+            "value": "0"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "0"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "Balls",
+            "value": "36"
+          },
+          {
+            "label": "Runs",
+            "value": "75"
+          },
+          {
+            "label": "WKTS",
+            "value": "3"
+          },
+          {
+            "label": "BBM",
+            "value": "2/43"
+          },
+          {
+            "label": "Ave",
+            "value": "25.00"
+          },
+          {
+            "label": "Econ",
+            "value": "12.50"
+          },
+          {
+            "label": "SR",
+            "value": "12.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/4944.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_12",
+      "name": "Shardul Thakur",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "52"
+          },
+          {
+            "label": "Balls",
+            "value": "1,056"
+          },
+          {
+            "label": "Runs",
+            "value": "1,607"
+          },
+          {
+            "label": "WKTS",
+            "value": "51"
+          },
+          {
+            "label": "BBM",
+            "value": "3/19"
+          },
+          {
+            "label": "Ave",
+            "value": "31.50"
+          },
+          {
+            "label": "Econ",
+            "value": "9.13"
+          },
+          {
+            "label": "SR",
+            "value": "20.70"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1745.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_13",
+      "name": "R Sai Kishore",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/7123.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_14",
+      "name": "Faf du Plessis",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "91"
+          },
+          {
+            "label": "No",
+            "value": "9"
+          },
+          {
+            "label": "Runs",
+            "value": "2622"
+          },
+          {
+            "label": "HS",
+            "value": "96"
+          },
+          {
+            "label": "Ave",
+            "value": "34.96"
+          },
+          {
+            "label": "BF",
+            "value": "2,001"
+          },
+          {
+            "label": "SR",
+            "value": "131.03"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "20"
+          },
+          {
+            "label": "4s",
+            "value": "234"
+          },
+          {
+            "label": "6s",
+            "value": "86"
+          },
+          {
+            "label": "CT",
+            "value": "59"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/24.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_15",
+      "name": "Dwayne Bravo",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 2,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "144"
+          },
+          {
+            "label": "No",
+            "value": "39"
+          },
+          {
+            "label": "Runs",
+            "value": "1510"
+          },
+          {
+            "label": "HS",
+            "value": "70*"
+          },
+          {
+            "label": "Ave",
+            "value": "22.87"
+          },
+          {
+            "label": "BF",
+            "value": "1,170"
+          },
+          {
+            "label": "SR",
+            "value": "129.05"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "5"
+          },
+          {
+            "label": "4s",
+            "value": "118"
+          },
+          {
+            "label": "6s",
+            "value": "62"
+          },
+          {
+            "label": "CT",
+            "value": "76"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "144"
+          },
+          {
+            "label": "Balls",
+            "value": "2,778"
+          },
+          {
+            "label": "Runs",
+            "value": "3,882"
+          },
+          {
+            "label": "WKTS",
+            "value": "156"
+          },
+          {
+            "label": "BBM",
+            "value": "4/22"
+          },
+          {
+            "label": "Ave",
+            "value": "24.88"
+          },
+          {
+            "label": "Econ",
+            "value": "8.38"
+          },
+          {
+            "label": "SR",
+            "value": "17.80"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/25.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_16",
+      "name": "Cheteshwar Pujara",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "30"
+          },
+          {
+            "label": "No",
+            "value": "3"
+          },
+          {
+            "label": "Runs",
+            "value": "390"
+          },
+          {
+            "label": "HS",
+            "value": "51"
+          },
+          {
+            "label": "Ave",
+            "value": "20.52"
+          },
+          {
+            "label": "BF",
+            "value": "391"
+          },
+          {
+            "label": "SR",
+            "value": "99.74"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "1"
+          },
+          {
+            "label": "4s",
+            "value": "50"
+          },
+          {
+            "label": "6s",
+            "value": "4"
+          },
+          {
+            "label": "CT",
+            "value": "6"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/156.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_17",
+      "name": "Karn Sharma",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 2,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "67"
+          },
+          {
+            "label": "No",
+            "value": "14"
+          },
+          {
+            "label": "Runs",
+            "value": "316"
+          },
+          {
+            "label": "HS",
+            "value": "39*"
+          },
+          {
+            "label": "Ave",
+            "value": "15.80"
+          },
+          {
+            "label": "BF",
+            "value": "271"
+          },
+          {
+            "label": "SR",
+            "value": "116.60"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "18"
+          },
+          {
+            "label": "6s",
+            "value": "14"
+          },
+          {
+            "label": "CT",
+            "value": "14"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "67"
+          },
+          {
+            "label": "Balls",
+            "value": "1,222"
+          },
+          {
+            "label": "Runs",
+            "value": "1,610"
+          },
+          {
+            "label": "WKTS",
+            "value": "59"
+          },
+          {
+            "label": "BBM",
+            "value": "4/16"
+          },
+          {
+            "label": "Ave",
+            "value": "27.28"
+          },
+          {
+            "label": "Econ",
+            "value": "7.90"
+          },
+          {
+            "label": "SR",
+            "value": "20.71"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1118.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_18",
+      "name": "Lungi Ngidi",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 2,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "14"
+          },
+          {
+            "label": "Balls",
+            "value": "324"
+          },
+          {
+            "label": "Runs",
+            "value": "448"
+          },
+          {
+            "label": "WKTS",
+            "value": "25"
+          },
+          {
+            "label": "BBM",
+            "value": "4/10"
+          },
+          {
+            "label": "Ave",
+            "value": "17.92"
+          },
+          {
+            "label": "Econ",
+            "value": "8.29"
+          },
+          {
+            "label": "SR",
+            "value": "12.96"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3746.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_19",
+      "name": "Ambati Rayudu",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 2,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "166"
+          },
+          {
+            "label": "No",
+            "value": "28"
+          },
+          {
+            "label": "Runs",
+            "value": "3795"
+          },
+          {
+            "label": "HS",
+            "value": "100*"
+          },
+          {
+            "label": "Ave",
+            "value": "29.64"
+          },
+          {
+            "label": "BF",
+            "value": "2,970"
+          },
+          {
+            "label": "SR",
+            "value": "127.77"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "20"
+          },
+          {
+            "label": "4s",
+            "value": "314"
+          },
+          {
+            "label": "6s",
+            "value": "145"
+          },
+          {
+            "label": "CT",
+            "value": "56"
+          },
+          {
+            "label": "ST",
+            "value": "2"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/100.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_20",
+      "name": "Jason Behrendorff",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "114"
+          },
+          {
+            "label": "Runs",
+            "value": "165"
+          },
+          {
+            "label": "WKTS",
+            "value": "5"
+          },
+          {
+            "label": "BBM",
+            "value": "2/22"
+          },
+          {
+            "label": "Ave",
+            "value": "33.00"
+          },
+          {
+            "label": "Econ",
+            "value": "8.68"
+          },
+          {
+            "label": "SR",
+            "value": "22.80"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/Photo-Missing.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_21",
+      "name": "Mitchell Santner",
+      "role": "Bowling all-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 3,
+      "tier": "a",
+      "stats": {
+        "role": "Bowling all-rounder",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "6"
+          },
+          {
+            "label": "Balls",
+            "value": "126"
+          },
+          {
+            "label": "Runs",
+            "value": "147"
+          },
+          {
+            "label": "WKTS",
+            "value": "6"
+          },
+          {
+            "label": "BBM",
+            "value": "2/13"
+          },
+          {
+            "label": "Ave",
+            "value": "24.50"
+          },
+          {
+            "label": "Econ",
+            "value": "7.00"
+          },
+          {
+            "label": "SR",
+            "value": "21.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1903.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_22",
+      "name": "Krishnappa Gowtham",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "24"
+          },
+          {
+            "label": "No",
+            "value": "6"
+          },
+          {
+            "label": "Runs",
+            "value": "186"
+          },
+          {
+            "label": "HS",
+            "value": "33*"
+          },
+          {
+            "label": "Ave",
+            "value": "14.30"
+          },
+          {
+            "label": "BF",
+            "value": "110"
+          },
+          {
+            "label": "SR",
+            "value": "169.09"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "13"
+          },
+          {
+            "label": "6s",
+            "value": "12"
+          },
+          {
+            "label": "CT",
+            "value": "10"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "24"
+          },
+          {
+            "label": "Balls",
+            "value": "408"
+          },
+          {
+            "label": "Runs",
+            "value": "562"
+          },
+          {
+            "label": "WKTS",
+            "value": "13"
+          },
+          {
+            "label": "BBM",
+            "value": "2/12"
+          },
+          {
+            "label": "Ave",
+            "value": "43.23"
+          },
+          {
+            "label": "Econ",
+            "value": "8.26"
+          },
+          {
+            "label": "SR",
+            "value": "31.38"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3834.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_23",
+      "name": "Sam Curran",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 3,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "30"
+          },
+          {
+            "label": "No",
+            "value": "8"
+          },
+          {
+            "label": "Runs",
+            "value": "333"
+          },
+          {
+            "label": "HS",
+            "value": "55*"
+          },
+          {
+            "label": "Ave",
+            "value": "23.78"
+          },
+          {
+            "label": "BF",
+            "value": "221"
+          },
+          {
+            "label": "SR",
+            "value": "150.67"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "2"
+          },
+          {
+            "label": "4s",
+            "value": "30"
+          },
+          {
+            "label": "6s",
+            "value": "18"
+          },
+          {
+            "label": "CT",
+            "value": "10"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "30"
+          },
+          {
+            "label": "Balls",
+            "value": "600"
+          },
+          {
+            "label": "Runs",
+            "value": "884"
+          },
+          {
+            "label": "WKTS",
+            "value": "32"
+          },
+          {
+            "label": "BBM",
+            "value": "4/11"
+          },
+          {
+            "label": "Ave",
+            "value": "27.62"
+          },
+          {
+            "label": "Econ",
+            "value": "8.84"
+          },
+          {
+            "label": "SR",
+            "value": "18.75"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/2939.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_24",
+      "name": "Robin Uthappa",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "189"
+          },
+          {
+            "label": "No",
+            "value": "17"
+          },
+          {
+            "label": "Runs",
+            "value": "4607"
+          },
+          {
+            "label": "HS",
+            "value": "87"
+          },
+          {
+            "label": "Ave",
+            "value": "27.92"
+          },
+          {
+            "label": "BF",
+            "value": "3,544"
+          },
+          {
+            "label": "SR",
+            "value": "129.99"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "24"
+          },
+          {
+            "label": "4s",
+            "value": "454"
+          },
+          {
+            "label": "6s",
+            "value": "163"
+          },
+          {
+            "label": "CT",
+            "value": "87"
+          },
+          {
+            "label": "ST",
+            "value": "32"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/127.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_25",
+      "name": "Virat Kohli",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "199"
+          },
+          {
+            "label": "No",
+            "value": "31"
+          },
+          {
+            "label": "Runs",
+            "value": "6076"
+          },
+          {
+            "label": "HS",
+            "value": "113"
+          },
+          {
+            "label": "Ave",
+            "value": "37.97"
+          },
+          {
+            "label": "BF",
+            "value": "4,659"
+          },
+          {
+            "label": "SR",
+            "value": "130.41"
+          },
+          {
+            "label": "100",
+            "value": "5"
+          },
+          {
+            "label": "50",
+            "value": "40"
+          },
+          {
+            "label": "4s",
+            "value": "524"
+          },
+          {
+            "label": "6s",
+            "value": "205"
+          },
+          {
+            "label": "CT",
+            "value": "80"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/164.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_26",
+      "name": "AB de Villiers",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 3,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "176"
+          },
+          {
+            "label": "No",
+            "value": "38"
+          },
+          {
+            "label": "Runs",
+            "value": "5056"
+          },
+          {
+            "label": "HS",
+            "value": "133*"
+          },
+          {
+            "label": "Ave",
+            "value": "40.77"
+          },
+          {
+            "label": "BF",
+            "value": "3,318"
+          },
+          {
+            "label": "SR",
+            "value": "152.38"
+          },
+          {
+            "label": "100",
+            "value": "3"
+          },
+          {
+            "label": "50",
+            "value": "40"
+          },
+          {
+            "label": "4s",
+            "value": "406"
+          },
+          {
+            "label": "6s",
+            "value": "245"
+          },
+          {
+            "label": "CT",
+            "value": "111"
+          },
+          {
+            "label": "ST",
+            "value": "8"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/233.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_27",
+      "name": "Adam Zampa",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "14"
+          },
+          {
+            "label": "Balls",
+            "value": "287"
+          },
+          {
+            "label": "Runs",
+            "value": "370"
+          },
+          {
+            "label": "WKTS",
+            "value": "21"
+          },
+          {
+            "label": "BBM",
+            "value": "6/19"
+          },
+          {
+            "label": "Ave",
+            "value": "17.61"
+          },
+          {
+            "label": "Econ",
+            "value": "7.73"
+          },
+          {
+            "label": "SR",
+            "value": "13.66"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "1"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/958.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_28",
+      "name": "Devdutt Padikkal",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "21"
+          },
+          {
+            "label": "No",
+            "value": "1"
+          },
+          {
+            "label": "Runs",
+            "value": "668"
+          },
+          {
+            "label": "HS",
+            "value": "101*"
+          },
+          {
+            "label": "Ave",
+            "value": "33.40"
+          },
+          {
+            "label": "BF",
+            "value": "507"
+          },
+          {
+            "label": "SR",
+            "value": "131.75"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "5"
+          },
+          {
+            "label": "4s",
+            "value": "73"
+          },
+          {
+            "label": "6s",
+            "value": "17"
+          },
+          {
+            "label": "CT",
+            "value": "10"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/5430.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_29",
+      "name": "Kane Richardson",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 3,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "15"
+          },
+          {
+            "label": "Balls",
+            "value": "335"
+          },
+          {
+            "label": "Runs",
+            "value": "472"
+          },
+          {
+            "label": "WKTS",
+            "value": "19"
+          },
+          {
+            "label": "BBM",
+            "value": "3/13"
+          },
+          {
+            "label": "Ave",
+            "value": "24.84"
+          },
+          {
+            "label": "Econ",
+            "value": "8.45"
+          },
+          {
+            "label": "SR",
+            "value": "17.63"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/798.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_30",
+      "name": "Mohammed Siraj",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "42"
+          },
+          {
+            "label": "Balls",
+            "value": "872"
+          },
+          {
+            "label": "Runs",
+            "value": "1,275"
+          },
+          {
+            "label": "WKTS",
+            "value": "45"
+          },
+          {
+            "label": "BBM",
+            "value": "4/32"
+          },
+          {
+            "label": "Ave",
+            "value": "28.33"
+          },
+          {
+            "label": "Econ",
+            "value": "8.77"
+          },
+          {
+            "label": "SR",
+            "value": "19.37"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3840.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_31",
+      "name": "Navdeep Saini",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "27"
+          },
+          {
+            "label": "Balls",
+            "value": "574"
+          },
+          {
+            "label": "Runs",
+            "value": "803"
+          },
+          {
+            "label": "WKTS",
+            "value": "17"
+          },
+          {
+            "label": "BBM",
+            "value": "2/24"
+          },
+          {
+            "label": "Ave",
+            "value": "47.23"
+          },
+          {
+            "label": "Econ",
+            "value": "8.39"
+          },
+          {
+            "label": "SR",
+            "value": "33.76"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3824.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_32",
+      "name": "Pavan Deshpande",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/4957.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_33",
+      "name": "Shahbaz Ahmed",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "7"
+          },
+          {
+            "label": "Balls",
+            "value": "66"
+          },
+          {
+            "label": "Runs",
+            "value": "76"
+          },
+          {
+            "label": "WKTS",
+            "value": "6"
+          },
+          {
+            "label": "BBM",
+            "value": "3/7"
+          },
+          {
+            "label": "Ave",
+            "value": "12.66"
+          },
+          {
+            "label": "Econ",
+            "value": "6.90"
+          },
+          {
+            "label": "SR",
+            "value": "11.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/13803.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_34",
+      "name": "Washington Sundar",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 4,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "42"
+          },
+          {
+            "label": "No",
+            "value": "10"
+          },
+          {
+            "label": "Runs",
+            "value": "217"
+          },
+          {
+            "label": "HS",
+            "value": "35"
+          },
+          {
+            "label": "Ave",
+            "value": "13.56"
+          },
+          {
+            "label": "BF",
+            "value": "195"
+          },
+          {
+            "label": "SR",
+            "value": "111.28"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "17"
+          },
+          {
+            "label": "6s",
+            "value": "6"
+          },
+          {
+            "label": "CT",
+            "value": "9"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "42"
+          },
+          {
+            "label": "Balls",
+            "value": "750"
+          },
+          {
+            "label": "Runs",
+            "value": "867"
+          },
+          {
+            "label": "WKTS",
+            "value": "27"
+          },
+          {
+            "label": "BBM",
+            "value": "3/16"
+          },
+          {
+            "label": "Ave",
+            "value": "32.11"
+          },
+          {
+            "label": "Econ",
+            "value": "6.93"
+          },
+          {
+            "label": "SR",
+            "value": "27.77"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/2973.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_35",
+      "name": "Yuzvendra Chahal",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "106"
+          },
+          {
+            "label": "Balls",
+            "value": "2,268"
+          },
+          {
+            "label": "Runs",
+            "value": "2,913"
+          },
+          {
+            "label": "WKTS",
+            "value": "125"
+          },
+          {
+            "label": "BBM",
+            "value": "4/25"
+          },
+          {
+            "label": "Ave",
+            "value": "23.30"
+          },
+          {
+            "label": "Econ",
+            "value": "7.70"
+          },
+          {
+            "label": "SR",
+            "value": "18.14"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/111.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_36",
+      "name": "Daniel Sams",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 4,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "No",
+            "value": "1"
+          },
+          {
+            "label": "Runs",
+            "value": "6"
+          },
+          {
+            "label": "HS",
+            "value": "3*"
+          },
+          {
+            "label": "Ave",
+            "value": "3.00"
+          },
+          {
+            "label": "BF",
+            "value": "8"
+          },
+          {
+            "label": "SR",
+            "value": "75.00"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "3"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "108"
+          },
+          {
+            "label": "Runs",
+            "value": "153"
+          },
+          {
+            "label": "WKTS",
+            "value": "1"
+          },
+          {
+            "label": "BBM",
+            "value": "1/24"
+          },
+          {
+            "label": "Ave",
+            "value": "153.00"
+          },
+          {
+            "label": "Econ",
+            "value": "8.50"
+          },
+          {
+            "label": "SR",
+            "value": "108.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/4649.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_37",
+      "name": "Harshal Patel",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "55"
+          },
+          {
+            "label": "Balls",
+            "value": "1,094"
+          },
+          {
+            "label": "Runs",
+            "value": "1,606"
+          },
+          {
+            "label": "WKTS",
+            "value": "63"
+          },
+          {
+            "label": "BBM",
+            "value": "5/27"
+          },
+          {
+            "label": "Ave",
+            "value": "25.49"
+          },
+          {
+            "label": "Econ",
+            "value": "8.80"
+          },
+          {
+            "label": "SR",
+            "value": "17.36"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "1"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/157.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_38",
+      "name": "Glenn Maxwell",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 4,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "89"
+          },
+          {
+            "label": "No",
+            "value": "11"
+          },
+          {
+            "label": "Runs",
+            "value": "1728"
+          },
+          {
+            "label": "HS",
+            "value": "95"
+          },
+          {
+            "label": "Ave",
+            "value": "23.35"
+          },
+          {
+            "label": "BF",
+            "value": "1,127"
+          },
+          {
+            "label": "SR",
+            "value": "153.32"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "8"
+          },
+          {
+            "label": "4s",
+            "value": "139"
+          },
+          {
+            "label": "6s",
+            "value": "101"
+          },
+          {
+            "label": "CT",
+            "value": "33"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "89"
+          },
+          {
+            "label": "Balls",
+            "value": "558"
+          },
+          {
+            "label": "Runs",
+            "value": "804"
+          },
+          {
+            "label": "WKTS",
+            "value": "19"
+          },
+          {
+            "label": "BBM",
+            "value": "2/15"
+          },
+          {
+            "label": "Ave",
+            "value": "42.31"
+          },
+          {
+            "label": "Econ",
+            "value": "8.64"
+          },
+          {
+            "label": "SR",
+            "value": "29.36"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/282.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_39",
+      "name": "Sachin Baby",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 4,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "18"
+          },
+          {
+            "label": "No",
+            "value": "1"
+          },
+          {
+            "label": "Runs",
+            "value": "137"
+          },
+          {
+            "label": "HS",
+            "value": "33"
+          },
+          {
+            "label": "Ave",
+            "value": "15.22"
+          },
+          {
+            "label": "BF",
+            "value": "101"
+          },
+          {
+            "label": "SR",
+            "value": "135.64"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "11"
+          },
+          {
+            "label": "6s",
+            "value": "5"
+          },
+          {
+            "label": "CT",
+            "value": "5"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1115.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_40",
+      "name": "Rajat Patidar",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "4"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "71"
+          },
+          {
+            "label": "HS",
+            "value": "31"
+          },
+          {
+            "label": "Ave",
+            "value": "17.75"
+          },
+          {
+            "label": "BF",
+            "value": "62"
+          },
+          {
+            "label": "SR",
+            "value": "114.51"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "3"
+          },
+          {
+            "label": "6s",
+            "value": "3"
+          },
+          {
+            "label": "CT",
+            "value": "1"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/5471.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_41",
+      "name": "Mohammed Azharuddeen",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/7743.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_42",
+      "name": "Kyle Jamieson",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 5,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "7"
+          },
+          {
+            "label": "No",
+            "value": "2"
+          },
+          {
+            "label": "Runs",
+            "value": "59"
+          },
+          {
+            "label": "HS",
+            "value": "16*"
+          },
+          {
+            "label": "Ave",
+            "value": "19.66"
+          },
+          {
+            "label": "BF",
+            "value": "41"
+          },
+          {
+            "label": "SR",
+            "value": "143.90"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "5"
+          },
+          {
+            "label": "6s",
+            "value": "3"
+          },
+          {
+            "label": "CT",
+            "value": "2"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "7"
+          },
+          {
+            "label": "Balls",
+            "value": "144"
+          },
+          {
+            "label": "Runs",
+            "value": "221"
+          },
+          {
+            "label": "WKTS",
+            "value": "9"
+          },
+          {
+            "label": "BBM",
+            "value": "3/41"
+          },
+          {
+            "label": "Ave",
+            "value": "24.55"
+          },
+          {
+            "label": "Econ",
+            "value": "9.20"
+          },
+          {
+            "label": "SR",
+            "value": "16.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1616.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_43",
+      "name": "Dan Christian",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 5,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "43"
+          },
+          {
+            "label": "No",
+            "value": "9"
+          },
+          {
+            "label": "Runs",
+            "value": "449"
+          },
+          {
+            "label": "HS",
+            "value": "39"
+          },
+          {
+            "label": "Ave",
+            "value": "16.03"
+          },
+          {
+            "label": "BF",
+            "value": "382"
+          },
+          {
+            "label": "SR",
+            "value": "117.53"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "22"
+          },
+          {
+            "label": "6s",
+            "value": "19"
+          },
+          {
+            "label": "CT",
+            "value": "23"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "43"
+          },
+          {
+            "label": "Balls",
+            "value": "813"
+          },
+          {
+            "label": "Runs",
+            "value": "1,077"
+          },
+          {
+            "label": "WKTS",
+            "value": "34"
+          },
+          {
+            "label": "BBM",
+            "value": "2/10"
+          },
+          {
+            "label": "Ave",
+            "value": "31.67"
+          },
+          {
+            "label": "Econ",
+            "value": "7.94"
+          },
+          {
+            "label": "SR",
+            "value": "23.91"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/181.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_44",
+      "name": "Suyash Prabhudessai",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/7002.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_45",
+      "name": "K.S Bharat",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/2734.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_46",
+      "name": "Finn Allen",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/3020.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_47",
+      "name": "Scott Kuggeleijn",
+      "role": "Bowling all-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 5,
+      "tier": "a",
+      "stats": {
+        "role": "Bowling all-rounder",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "Balls",
+            "value": "48"
+          },
+          {
+            "label": "Runs",
+            "value": "71"
+          },
+          {
+            "label": "WKTS",
+            "value": "2"
+          },
+          {
+            "label": "BBM",
+            "value": "2/37"
+          },
+          {
+            "label": "Ave",
+            "value": "35.50"
+          },
+          {
+            "label": "Econ",
+            "value": "8.87"
+          },
+          {
+            "label": "SR",
+            "value": "24.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/Photo-Missing.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_48",
+      "name": "KL Rahul",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 5,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "88"
+          },
+          {
+            "label": "No",
+            "value": "15"
+          },
+          {
+            "label": "Runs",
+            "value": "2978"
+          },
+          {
+            "label": "HS",
+            "value": "132*"
+          },
+          {
+            "label": "Ave",
+            "value": "46.53"
+          },
+          {
+            "label": "BF",
+            "value": "2,192"
+          },
+          {
+            "label": "SR",
+            "value": "135.85"
+          },
+          {
+            "label": "100",
+            "value": "2"
+          },
+          {
+            "label": "50",
+            "value": "25"
+          },
+          {
+            "label": "4s",
+            "value": "261"
+          },
+          {
+            "label": "6s",
+            "value": "120"
+          },
+          {
+            "label": "CT",
+            "value": "44"
+          },
+          {
+            "label": "ST",
+            "value": "5"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1125.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_49",
+      "name": "Harpreet Brar",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 5,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "96"
+          },
+          {
+            "label": "Runs",
+            "value": "127"
+          },
+          {
+            "label": "WKTS",
+            "value": "4"
+          },
+          {
+            "label": "BBM",
+            "value": "3/19"
+          },
+          {
+            "label": "Ave",
+            "value": "31.75"
+          },
+          {
+            "label": "Econ",
+            "value": "7.93"
+          },
+          {
+            "label": "SR",
+            "value": "24.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/5441.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_50",
+      "name": "Ishan Porel",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/3777.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_51",
+      "name": "Utkarsh Singh",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/3841.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_52",
+      "name": "Moises Henriques",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 6,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "60"
+          },
+          {
+            "label": "No",
+            "value": "16"
+          },
+          {
+            "label": "Runs",
+            "value": "985"
+          },
+          {
+            "label": "HS",
+            "value": "74*"
+          },
+          {
+            "label": "Ave",
+            "value": "27.36"
+          },
+          {
+            "label": "BF",
+            "value": "776"
+          },
+          {
+            "label": "SR",
+            "value": "126.93"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "5"
+          },
+          {
+            "label": "4s",
+            "value": "87"
+          },
+          {
+            "label": "6s",
+            "value": "27"
+          },
+          {
+            "label": "CT",
+            "value": "28"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "60"
+          },
+          {
+            "label": "Balls",
+            "value": "920"
+          },
+          {
+            "label": "Runs",
+            "value": "1,268"
+          },
+          {
+            "label": "WKTS",
+            "value": "39"
+          },
+          {
+            "label": "BBM",
+            "value": "3/16"
+          },
+          {
+            "label": "Ave",
+            "value": "32.51"
+          },
+          {
+            "label": "Econ",
+            "value": "8.26"
+          },
+          {
+            "label": "SR",
+            "value": "23.58"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/388.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_53",
+      "name": "Jhye Richardson",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "3"
+          },
+          {
+            "label": "Balls",
+            "value": "66"
+          },
+          {
+            "label": "Runs",
+            "value": "117"
+          },
+          {
+            "label": "WKTS",
+            "value": "3"
+          },
+          {
+            "label": "BBM",
+            "value": "2/41"
+          },
+          {
+            "label": "Ave",
+            "value": "39.00"
+          },
+          {
+            "label": "Econ",
+            "value": "10.63"
+          },
+          {
+            "label": "SR",
+            "value": "22.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3781.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_54",
+      "name": "Mandeep Singh",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 6,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "104"
+          },
+          {
+            "label": "No",
+            "value": "16"
+          },
+          {
+            "label": "Runs",
+            "value": "1659"
+          },
+          {
+            "label": "HS",
+            "value": "77*"
+          },
+          {
+            "label": "Ave",
+            "value": "22.12"
+          },
+          {
+            "label": "BF",
+            "value": "1,335"
+          },
+          {
+            "label": "SR",
+            "value": "124.26"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "6"
+          },
+          {
+            "label": "4s",
+            "value": "170"
+          },
+          {
+            "label": "6s",
+            "value": "37"
+          },
+          {
+            "label": "CT",
+            "value": "36"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "104"
+          },
+          {
+            "label": "Balls",
+            "value": "30"
+          },
+          {
+            "label": "Runs",
+            "value": "49"
+          },
+          {
+            "label": "WKTS",
+            "value": "1"
+          },
+          {
+            "label": "BBM",
+            "value": "1/23"
+          },
+          {
+            "label": "Ave",
+            "value": "49.00"
+          },
+          {
+            "label": "Econ",
+            "value": "9.80"
+          },
+          {
+            "label": "SR",
+            "value": "30.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/72.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_55",
+      "name": "Chris Jordan",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "23"
+          },
+          {
+            "label": "No",
+            "value": "2"
+          },
+          {
+            "label": "Runs",
+            "value": "64"
+          },
+          {
+            "label": "HS",
+            "value": "30"
+          },
+          {
+            "label": "Ave",
+            "value": "9.14"
+          },
+          {
+            "label": "BF",
+            "value": "57"
+          },
+          {
+            "label": "SR",
+            "value": "112.28"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "3"
+          },
+          {
+            "label": "6s",
+            "value": "3"
+          },
+          {
+            "label": "CT",
+            "value": "9"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "23"
+          },
+          {
+            "label": "Balls",
+            "value": "441"
+          },
+          {
+            "label": "Runs",
+            "value": "678"
+          },
+          {
+            "label": "WKTS",
+            "value": "23"
+          },
+          {
+            "label": "BBM",
+            "value": "4/11"
+          },
+          {
+            "label": "Ave",
+            "value": "29.47"
+          },
+          {
+            "label": "Econ",
+            "value": "9.22"
+          },
+          {
+            "label": "SR",
+            "value": "19.17"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1299.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_56",
+      "name": "Deepak Hooda",
+      "role": "Bowling All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 6,
+      "tier": "a",
+      "stats": {
+        "role": "Bowling All-rounder",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "76"
+          },
+          {
+            "label": "Balls",
+            "value": "313"
+          },
+          {
+            "label": "Runs",
+            "value": "421"
+          },
+          {
+            "label": "WKTS",
+            "value": "9"
+          },
+          {
+            "label": "BBM",
+            "value": "2/16"
+          },
+          {
+            "label": "Ave",
+            "value": "46.77"
+          },
+          {
+            "label": "Econ",
+            "value": "8.07"
+          },
+          {
+            "label": "SR",
+            "value": "34.77"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1556.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_57",
+      "name": "Ravi Bishnoi",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "18"
+          },
+          {
+            "label": "Balls",
+            "value": "402"
+          },
+          {
+            "label": "Runs",
+            "value": "475"
+          },
+          {
+            "label": "WKTS",
+            "value": "16"
+          },
+          {
+            "label": "BBM",
+            "value": "3/29"
+          },
+          {
+            "label": "Ave",
+            "value": "29.68"
+          },
+          {
+            "label": "Econ",
+            "value": "7.08"
+          },
+          {
+            "label": "SR",
+            "value": "25.12"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/19351.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_58",
+      "name": "Riley Meredith",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "102"
+          },
+          {
+            "label": "Runs",
+            "value": "169"
+          },
+          {
+            "label": "WKTS",
+            "value": "4"
+          },
+          {
+            "label": "BBM",
+            "value": "1/29"
+          },
+          {
+            "label": "Ave",
+            "value": "42.25"
+          },
+          {
+            "label": "Econ",
+            "value": "9.94"
+          },
+          {
+            "label": "SR",
+            "value": "25.50"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/4055.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_59",
+      "name": "Arshdeep Singh",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 6,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "17"
+          },
+          {
+            "label": "No",
+            "value": "2"
+          },
+          {
+            "label": "Runs",
+            "value": "2"
+          },
+          {
+            "label": "HS",
+            "value": "1*"
+          },
+          {
+            "label": "Ave",
+            "value": "2.00"
+          },
+          {
+            "label": "BF",
+            "value": "6"
+          },
+          {
+            "label": "SR",
+            "value": "33.33"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "3"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "17"
+          },
+          {
+            "label": "Balls",
+            "value": "319"
+          },
+          {
+            "label": "Runs",
+            "value": "477"
+          },
+          {
+            "label": "WKTS",
+            "value": "19"
+          },
+          {
+            "label": "BBM",
+            "value": "3/23"
+          },
+          {
+            "label": "Ave",
+            "value": "25.10"
+          },
+          {
+            "label": "Econ",
+            "value": "8.97"
+          },
+          {
+            "label": "SR",
+            "value": "16.78"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/4698.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_60",
+      "name": "Sarfaraz Khan",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "38"
+          },
+          {
+            "label": "No",
+            "value": "9"
+          },
+          {
+            "label": "Runs",
+            "value": "441"
+          },
+          {
+            "label": "HS",
+            "value": "67"
+          },
+          {
+            "label": "Ave",
+            "value": "25.94"
+          },
+          {
+            "label": "BF",
+            "value": "315"
+          },
+          {
+            "label": "SR",
+            "value": "140.00"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "1"
+          },
+          {
+            "label": "4s",
+            "value": "50"
+          },
+          {
+            "label": "6s",
+            "value": "11"
+          },
+          {
+            "label": "CT",
+            "value": "4"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1564.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_61",
+      "name": "Mayank Agarwal",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "95"
+          },
+          {
+            "label": "No",
+            "value": "4"
+          },
+          {
+            "label": "Runs",
+            "value": "1950"
+          },
+          {
+            "label": "HS",
+            "value": "106"
+          },
+          {
+            "label": "Ave",
+            "value": "22.67"
+          },
+          {
+            "label": "BF",
+            "value": "1,443"
+          },
+          {
+            "label": "SR",
+            "value": "135.13"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "9"
+          },
+          {
+            "label": "4s",
+            "value": "185"
+          },
+          {
+            "label": "6s",
+            "value": "78"
+          },
+          {
+            "label": "CT",
+            "value": "37"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/158.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_62",
+      "name": "Mohammad Shami",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "73"
+          },
+          {
+            "label": "Balls",
+            "value": "1,526"
+          },
+          {
+            "label": "Runs",
+            "value": "2,241"
+          },
+          {
+            "label": "WKTS",
+            "value": "68"
+          },
+          {
+            "label": "BBM",
+            "value": "3/15"
+          },
+          {
+            "label": "Ave",
+            "value": "32.95"
+          },
+          {
+            "label": "Econ",
+            "value": "8.81"
+          },
+          {
+            "label": "SR",
+            "value": "22.44"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/94.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_63",
+      "name": "Darshan Nalkande",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/4447.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_64",
+      "name": "Shahrukh Khan",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "8"
+          },
+          {
+            "label": "No",
+            "value": "2"
+          },
+          {
+            "label": "Runs",
+            "value": "107"
+          },
+          {
+            "label": "HS",
+            "value": "47"
+          },
+          {
+            "label": "Ave",
+            "value": "21.40"
+          },
+          {
+            "label": "BF",
+            "value": "84"
+          },
+          {
+            "label": "SR",
+            "value": "127.38"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "7"
+          },
+          {
+            "label": "6s",
+            "value": "6"
+          },
+          {
+            "label": "CT",
+            "value": "3"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/7779.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_65",
+      "name": "Nicholas Pooran",
+      "role": "Wicketkeeper-batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 7,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper-batsman",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "28"
+          },
+          {
+            "label": "Balls",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/0"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "-"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1703.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_66",
+      "name": "Fabian Allen",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 7,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "6"
+          },
+          {
+            "label": "HS",
+            "value": "6"
+          },
+          {
+            "label": "Ave",
+            "value": "6.00"
+          },
+          {
+            "label": "BF",
+            "value": "11"
+          },
+          {
+            "label": "SR",
+            "value": "54.54"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "1"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "Balls",
+            "value": "42"
+          },
+          {
+            "label": "Runs",
+            "value": "52"
+          },
+          {
+            "label": "WKTS",
+            "value": "1"
+          },
+          {
+            "label": "BBM",
+            "value": "1/22"
+          },
+          {
+            "label": "Ave",
+            "value": "52.00"
+          },
+          {
+            "label": "Econ",
+            "value": "7.42"
+          },
+          {
+            "label": "SR",
+            "value": "42.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1707.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_67",
+      "name": "Chris Gayle",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 7,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "140"
+          },
+          {
+            "label": "No",
+            "value": "16"
+          },
+          {
+            "label": "Runs",
+            "value": "4950"
+          },
+          {
+            "label": "HS",
+            "value": "175*"
+          },
+          {
+            "label": "Ave",
+            "value": "40.24"
+          },
+          {
+            "label": "BF",
+            "value": "3,312"
+          },
+          {
+            "label": "SR",
+            "value": "149.45"
+          },
+          {
+            "label": "100",
+            "value": "6"
+          },
+          {
+            "label": "50",
+            "value": "31"
+          },
+          {
+            "label": "4s",
+            "value": "404"
+          },
+          {
+            "label": "6s",
+            "value": "357"
+          },
+          {
+            "label": "CT",
+            "value": "28"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "140"
+          },
+          {
+            "label": "Balls",
+            "value": "554"
+          },
+          {
+            "label": "Runs",
+            "value": "729"
+          },
+          {
+            "label": "WKTS",
+            "value": "18"
+          },
+          {
+            "label": "BBM",
+            "value": "3/21"
+          },
+          {
+            "label": "Ave",
+            "value": "40.50"
+          },
+          {
+            "label": "Econ",
+            "value": "7.89"
+          },
+          {
+            "label": "SR",
+            "value": "30.77"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/236.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_68",
+      "name": "Murugan Ashwin",
+      "role": "Legbreak googly",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Legbreak googly",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "34"
+          },
+          {
+            "label": "Balls",
+            "value": "672"
+          },
+          {
+            "label": "Runs",
+            "value": "881"
+          },
+          {
+            "label": "WKTS",
+            "value": "26"
+          },
+          {
+            "label": "BBM",
+            "value": "3/21"
+          },
+          {
+            "label": "Ave",
+            "value": "33.88"
+          },
+          {
+            "label": "Econ",
+            "value": "7.86"
+          },
+          {
+            "label": "SR",
+            "value": "25.84"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3187.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_69",
+      "name": "Dawid Malan",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 7,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "1"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "26"
+          },
+          {
+            "label": "HS",
+            "value": "26"
+          },
+          {
+            "label": "Ave",
+            "value": "26.00"
+          },
+          {
+            "label": "BF",
+            "value": "26"
+          },
+          {
+            "label": "SR",
+            "value": "100.00"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "1"
+          },
+          {
+            "label": "6s",
+            "value": "1"
+          },
+          {
+            "label": "CT",
+            "value": "1"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3318.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_70",
+      "name": "Prabhsimran Singh",
+      "role": "Wicket -Keeper",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 8,
+      "tier": "a",
+      "stats": {
+        "role": "Wicket -Keeper",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "5"
+          },
+          {
+            "label": "Balls",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/0"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "-"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/5436.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_71",
+      "name": "Saurabh Kumar",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/3836.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_72",
+      "name": "Jalaj Saxena",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 8,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "1"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "HS",
+            "value": "0*"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "BF",
+            "value": "0"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "0"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "1"
+          },
+          {
+            "label": "Balls",
+            "value": "18"
+          },
+          {
+            "label": "Runs",
+            "value": "27"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/27"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "9.00"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1087.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_73",
+      "name": "Rohit Sharma",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "207"
+          },
+          {
+            "label": "No",
+            "value": "28"
+          },
+          {
+            "label": "Runs",
+            "value": "5480"
+          },
+          {
+            "label": "HS",
+            "value": "109*"
+          },
+          {
+            "label": "Ave",
+            "value": "31.49"
+          },
+          {
+            "label": "BF",
+            "value": "4,199"
+          },
+          {
+            "label": "SR",
+            "value": "130.50"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "40"
+          },
+          {
+            "label": "4s",
+            "value": "476"
+          },
+          {
+            "label": "6s",
+            "value": "224"
+          },
+          {
+            "label": "CT",
+            "value": "89"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/107.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_74",
+      "name": "Quinton de Kock",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 8,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "72"
+          },
+          {
+            "label": "No",
+            "value": "5"
+          },
+          {
+            "label": "Runs",
+            "value": "2114"
+          },
+          {
+            "label": "HS",
+            "value": "108"
+          },
+          {
+            "label": "Ave",
+            "value": "31.55"
+          },
+          {
+            "label": "BF",
+            "value": "1,599"
+          },
+          {
+            "label": "SR",
+            "value": "132.20"
+          },
+          {
+            "label": "100",
+            "value": "1"
+          },
+          {
+            "label": "50",
+            "value": "15"
+          },
+          {
+            "label": "4s",
+            "value": "216"
+          },
+          {
+            "label": "6s",
+            "value": "79"
+          },
+          {
+            "label": "CT",
+            "value": "51"
+          },
+          {
+            "label": "ST",
+            "value": "14"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/834.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_75",
+      "name": "Arjun Tendulkar",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/10244.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_76",
+      "name": "Nathan Coulter-Nile",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "34"
+          },
+          {
+            "label": "Balls",
+            "value": "743"
+          },
+          {
+            "label": "Runs",
+            "value": "960"
+          },
+          {
+            "label": "WKTS",
+            "value": "41"
+          },
+          {
+            "label": "BBM",
+            "value": "4/20"
+          },
+          {
+            "label": "Ave",
+            "value": "23.41"
+          },
+          {
+            "label": "Econ",
+            "value": "7.75"
+          },
+          {
+            "label": "SR",
+            "value": "18.12"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/840.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_77",
+      "name": "Trent Boult",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "55"
+          },
+          {
+            "label": "Balls",
+            "value": "1,267"
+          },
+          {
+            "label": "Runs",
+            "value": "1,800"
+          },
+          {
+            "label": "WKTS",
+            "value": "71"
+          },
+          {
+            "label": "BBM",
+            "value": "4/18"
+          },
+          {
+            "label": "Ave",
+            "value": "25.35"
+          },
+          {
+            "label": "Econ",
+            "value": "8.52"
+          },
+          {
+            "label": "SR",
+            "value": "17.84"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/969.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_78",
+      "name": "Jimmy Neesham",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 8,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "10"
+          },
+          {
+            "label": "No",
+            "value": "1"
+          },
+          {
+            "label": "Runs",
+            "value": "61"
+          },
+          {
+            "label": "HS",
+            "value": "22"
+          },
+          {
+            "label": "Ave",
+            "value": "10.16"
+          },
+          {
+            "label": "BF",
+            "value": "65"
+          },
+          {
+            "label": "SR",
+            "value": "93.84"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "3"
+          },
+          {
+            "label": "6s",
+            "value": "2"
+          },
+          {
+            "label": "CT",
+            "value": "1"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "10"
+          },
+          {
+            "label": "Balls",
+            "value": "156"
+          },
+          {
+            "label": "Runs",
+            "value": "265"
+          },
+          {
+            "label": "WKTS",
+            "value": "3"
+          },
+          {
+            "label": "BBM",
+            "value": "1/17"
+          },
+          {
+            "label": "Ave",
+            "value": "88.33"
+          },
+          {
+            "label": "Econ",
+            "value": "10.19"
+          },
+          {
+            "label": "SR",
+            "value": "52.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/971.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_79",
+      "name": "Jayant Yadav",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 8,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "17"
+          },
+          {
+            "label": "Balls",
+            "value": "330"
+          },
+          {
+            "label": "Runs",
+            "value": "371"
+          },
+          {
+            "label": "WKTS",
+            "value": "7"
+          },
+          {
+            "label": "BBM",
+            "value": "1/8"
+          },
+          {
+            "label": "Ave",
+            "value": "53.00"
+          },
+          {
+            "label": "Econ",
+            "value": "6.74"
+          },
+          {
+            "label": "SR",
+            "value": "47.14"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1740.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_80",
+      "name": "Piyush Chawla",
+      "role": "Bowling All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 9,
+      "tier": "a",
+      "stats": {
+        "role": "Bowling All-rounder",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "164"
+          },
+          {
+            "label": "Balls",
+            "value": "3,250"
+          },
+          {
+            "label": "Runs",
+            "value": "4,263"
+          },
+          {
+            "label": "WKTS",
+            "value": "156"
+          },
+          {
+            "label": "BBM",
+            "value": "4/17"
+          },
+          {
+            "label": "Ave",
+            "value": "27.32"
+          },
+          {
+            "label": "Econ",
+            "value": "7.87"
+          },
+          {
+            "label": "SR",
+            "value": "20.83"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/76.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_81",
+      "name": "Kieron Pollard",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 9,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "171"
+          },
+          {
+            "label": "No",
+            "value": "50"
+          },
+          {
+            "label": "Runs",
+            "value": "3191"
+          },
+          {
+            "label": "HS",
+            "value": "87*"
+          },
+          {
+            "label": "Ave",
+            "value": "30.68"
+          },
+          {
+            "label": "BF",
+            "value": "2,115"
+          },
+          {
+            "label": "SR",
+            "value": "150.87"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "16"
+          },
+          {
+            "label": "4s",
+            "value": "207"
+          },
+          {
+            "label": "6s",
+            "value": "211"
+          },
+          {
+            "label": "CT",
+            "value": "92"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "171"
+          },
+          {
+            "label": "Balls",
+            "value": "1,368"
+          },
+          {
+            "label": "Runs",
+            "value": "2,014"
+          },
+          {
+            "label": "WKTS",
+            "value": "63"
+          },
+          {
+            "label": "BBM",
+            "value": "4/44"
+          },
+          {
+            "label": "Ave",
+            "value": "31.96"
+          },
+          {
+            "label": "Econ",
+            "value": "8.83"
+          },
+          {
+            "label": "SR",
+            "value": "21.71"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/210.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_82",
+      "name": "Anmolpreet Singh",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/2965.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_83",
+      "name": "Mohsin Khan",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/4952.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_84",
+      "name": "Yudhvir Charak",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {},
+      "image": "https://static.iplt20.com/players/210/10842.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_85",
+      "name": "Ishan Kishan",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "56"
+          },
+          {
+            "label": "No",
+            "value": "4"
+          },
+          {
+            "label": "Runs",
+            "value": "1284"
+          },
+          {
+            "label": "HS",
+            "value": "99"
+          },
+          {
+            "label": "Ave",
+            "value": "27.31"
+          },
+          {
+            "label": "BF",
+            "value": "973"
+          },
+          {
+            "label": "SR",
+            "value": "131.96"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "7"
+          },
+          {
+            "label": "4s",
+            "value": "103"
+          },
+          {
+            "label": "6s",
+            "value": "66"
+          },
+          {
+            "label": "CT",
+            "value": "16"
+          },
+          {
+            "label": "ST",
+            "value": "2"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "56"
+          },
+          {
+            "label": "Balls",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/0"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "-"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/2975.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_86",
+      "name": "Aditya Tare",
+      "role": "Wicketkeeper batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 9,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "35"
+          },
+          {
+            "label": "No",
+            "value": "4"
+          },
+          {
+            "label": "Runs",
+            "value": "339"
+          },
+          {
+            "label": "HS",
+            "value": "59"
+          },
+          {
+            "label": "Ave",
+            "value": "14.12"
+          },
+          {
+            "label": "BF",
+            "value": "273"
+          },
+          {
+            "label": "SR",
+            "value": "124.17"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "1"
+          },
+          {
+            "label": "4s",
+            "value": "40"
+          },
+          {
+            "label": "6s",
+            "value": "11"
+          },
+          {
+            "label": "CT",
+            "value": "3"
+          },
+          {
+            "label": "ST",
+            "value": "5"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/99.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_87",
+      "name": "Saurabh Tiwary",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "88"
+          },
+          {
+            "label": "No",
+            "value": "19"
+          },
+          {
+            "label": "Runs",
+            "value": "1379"
+          },
+          {
+            "label": "HS",
+            "value": "61"
+          },
+          {
+            "label": "Ave",
+            "value": "27.58"
+          },
+          {
+            "label": "BF",
+            "value": "1,147"
+          },
+          {
+            "label": "SR",
+            "value": "120.22"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "7"
+          },
+          {
+            "label": "4s",
+            "value": "101"
+          },
+          {
+            "label": "6s",
+            "value": "48"
+          },
+          {
+            "label": "CT",
+            "value": "24"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/163.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_88",
+      "name": "Jasprit Bumrah",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "99"
+          },
+          {
+            "label": "Balls",
+            "value": "2,254"
+          },
+          {
+            "label": "Runs",
+            "value": "2,777"
+          },
+          {
+            "label": "WKTS",
+            "value": "115"
+          },
+          {
+            "label": "BBM",
+            "value": "4/14"
+          },
+          {
+            "label": "Ave",
+            "value": "24.14"
+          },
+          {
+            "label": "Econ",
+            "value": "7.39"
+          },
+          {
+            "label": "SR",
+            "value": "19.60"
+          },
+          {
+            "label": "4W",
+            "value": "2"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1124.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_89",
+      "name": "Dhawal Kulkarni",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 9,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "92"
+          },
+          {
+            "label": "Balls",
+            "value": "1,787"
+          },
+          {
+            "label": "Runs",
+            "value": "2,474"
+          },
+          {
+            "label": "WKTS",
+            "value": "86"
+          },
+          {
+            "label": "BBM",
+            "value": "4/14"
+          },
+          {
+            "label": "Ave",
+            "value": "28.76"
+          },
+          {
+            "label": "Econ",
+            "value": "8.30"
+          },
+          {
+            "label": "SR",
+            "value": "20.77"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/101.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_90",
+      "name": "Suryakumar Yadav",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "108"
+          },
+          {
+            "label": "No",
+            "value": "19"
+          },
+          {
+            "label": "Runs",
+            "value": "2197"
+          },
+          {
+            "label": "HS",
+            "value": "79*"
+          },
+          {
+            "label": "Ave",
+            "value": "29.68"
+          },
+          {
+            "label": "BF",
+            "value": "1,624"
+          },
+          {
+            "label": "SR",
+            "value": "135.28"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "12"
+          },
+          {
+            "label": "4s",
+            "value": "243"
+          },
+          {
+            "label": "6s",
+            "value": "63"
+          },
+          {
+            "label": "CT",
+            "value": "54"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/108.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_91",
+      "name": "Marco Jansen",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 10,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "HS",
+            "value": "0*"
+          },
+          {
+            "label": "Ave",
+            "value": "0.00"
+          },
+          {
+            "label": "BF",
+            "value": "3"
+          },
+          {
+            "label": "SR",
+            "value": "0.00"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "1"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "2"
+          },
+          {
+            "label": "Balls",
+            "value": "36"
+          },
+          {
+            "label": "Runs",
+            "value": "45"
+          },
+          {
+            "label": "WKTS",
+            "value": "2"
+          },
+          {
+            "label": "BBM",
+            "value": "2/28"
+          },
+          {
+            "label": "Ave",
+            "value": "22.50"
+          },
+          {
+            "label": "Econ",
+            "value": "7.50"
+          },
+          {
+            "label": "SR",
+            "value": "18.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/17068.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_92",
+      "name": "Krunal Pandya",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 10,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "78"
+          },
+          {
+            "label": "No",
+            "value": "21"
+          },
+          {
+            "label": "Runs",
+            "value": "1100"
+          },
+          {
+            "label": "HS",
+            "value": "86"
+          },
+          {
+            "label": "Ave",
+            "value": "23.91"
+          },
+          {
+            "label": "BF",
+            "value": "778"
+          },
+          {
+            "label": "SR",
+            "value": "141.38"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "1"
+          },
+          {
+            "label": "4s",
+            "value": "103"
+          },
+          {
+            "label": "6s",
+            "value": "44"
+          },
+          {
+            "label": "CT",
+            "value": "26"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "78"
+          },
+          {
+            "label": "Balls",
+            "value": "1,347"
+          },
+          {
+            "label": "Runs",
+            "value": "1,636"
+          },
+          {
+            "label": "WKTS",
+            "value": "49"
+          },
+          {
+            "label": "BBM",
+            "value": "3/14"
+          },
+          {
+            "label": "Ave",
+            "value": "33.38"
+          },
+          {
+            "label": "Econ",
+            "value": "7.28"
+          },
+          {
+            "label": "SR",
+            "value": "27.48"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3183.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_93",
+      "name": "Adam Milne",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "6"
+          },
+          {
+            "label": "Balls",
+            "value": "126"
+          },
+          {
+            "label": "Runs",
+            "value": "210"
+          },
+          {
+            "label": "WKTS",
+            "value": "4"
+          },
+          {
+            "label": "BBM",
+            "value": "2/27"
+          },
+          {
+            "label": "Ave",
+            "value": "52.50"
+          },
+          {
+            "label": "Econ",
+            "value": "10.00"
+          },
+          {
+            "label": "SR",
+            "value": "31.50"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/434.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_94",
+      "name": "Chris Lynn",
+      "role": "Batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "Batsman",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "42"
+          },
+          {
+            "label": "No",
+            "value": "3"
+          },
+          {
+            "label": "Runs",
+            "value": "1329"
+          },
+          {
+            "label": "HS",
+            "value": "93*"
+          },
+          {
+            "label": "Ave",
+            "value": "34.07"
+          },
+          {
+            "label": "BF",
+            "value": "945"
+          },
+          {
+            "label": "SR",
+            "value": "140.63"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "10"
+          },
+          {
+            "label": "4s",
+            "value": "132"
+          },
+          {
+            "label": "6s",
+            "value": "66"
+          },
+          {
+            "label": "CT",
+            "value": "12"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/179.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_95",
+      "name": "Rahul Chahar",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "38"
+          },
+          {
+            "label": "No",
+            "value": "4"
+          },
+          {
+            "label": "Runs",
+            "value": "31"
+          },
+          {
+            "label": "HS",
+            "value": "10"
+          },
+          {
+            "label": "Ave",
+            "value": "6.20"
+          },
+          {
+            "label": "BF",
+            "value": "30"
+          },
+          {
+            "label": "SR",
+            "value": "103.33"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "3"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "10"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "38"
+          },
+          {
+            "label": "Balls",
+            "value": "810"
+          },
+          {
+            "label": "Runs",
+            "value": "1,001"
+          },
+          {
+            "label": "WKTS",
+            "value": "41"
+          },
+          {
+            "label": "BBM",
+            "value": "4/27"
+          },
+          {
+            "label": "Ave",
+            "value": "24.41"
+          },
+          {
+            "label": "Econ",
+            "value": "7.41"
+          },
+          {
+            "label": "SR",
+            "value": "19.75"
+          },
+          {
+            "label": "4W",
+            "value": "1"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3763.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_96",
+      "name": "Hardik Pandya",
+      "role": "All-rounder",
+      "nationality": "indian",
+      "basePrice": 150,
+      "set": 10,
+      "tier": "a",
+      "stats": {
+        "role": "All-rounder",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "87"
+          },
+          {
+            "label": "No",
+            "value": "29"
+          },
+          {
+            "label": "Runs",
+            "value": "1401"
+          },
+          {
+            "label": "HS",
+            "value": "91"
+          },
+          {
+            "label": "Ave",
+            "value": "27.47"
+          },
+          {
+            "label": "BF",
+            "value": "891"
+          },
+          {
+            "label": "SR",
+            "value": "157.23"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "4"
+          },
+          {
+            "label": "4s",
+            "value": "91"
+          },
+          {
+            "label": "6s",
+            "value": "95"
+          },
+          {
+            "label": "CT",
+            "value": "50"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "87"
+          },
+          {
+            "label": "Balls",
+            "value": "869"
+          },
+          {
+            "label": "Runs",
+            "value": "1,313"
+          },
+          {
+            "label": "WKTS",
+            "value": "42"
+          },
+          {
+            "label": "BBM",
+            "value": "3/20"
+          },
+          {
+            "label": "Ave",
+            "value": "31.26"
+          },
+          {
+            "label": "Econ",
+            "value": "9.06"
+          },
+          {
+            "label": "SR",
+            "value": "20.69"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/2740.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_97",
+      "name": "Anukul Roy",
+      "role": "batsman",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "",
+        "batting": [
+          {
+            "label": "Mat",
+            "value": "1"
+          },
+          {
+            "label": "No",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "HS",
+            "value": "0*"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "BF",
+            "value": "0"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "100",
+            "value": "0"
+          },
+          {
+            "label": "50",
+            "value": "0"
+          },
+          {
+            "label": "4s",
+            "value": "0"
+          },
+          {
+            "label": "6s",
+            "value": "0"
+          },
+          {
+            "label": "CT",
+            "value": "0"
+          },
+          {
+            "label": "ST",
+            "value": "0"
+          }
+        ],
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "1"
+          },
+          {
+            "label": "Balls",
+            "value": "12"
+          },
+          {
+            "label": "Runs",
+            "value": "11"
+          },
+          {
+            "label": "WKTS",
+            "value": "1"
+          },
+          {
+            "label": "BBM",
+            "value": "1/11"
+          },
+          {
+            "label": "Ave",
+            "value": "11.00"
+          },
+          {
+            "label": "Econ",
+            "value": "5.50"
+          },
+          {
+            "label": "SR",
+            "value": "12.00"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/3774.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_98",
+      "name": "Rishabh Pant",
+      "role": "Wicketkeeper-batsman",
+      "nationality": "indian",
+      "basePrice": 100,
+      "set": 10,
+      "tier": "a",
+      "stats": {
+        "role": "Wicketkeeper-batsman",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "76"
+          },
+          {
+            "label": "Balls",
+            "value": "0"
+          },
+          {
+            "label": "Runs",
+            "value": "0"
+          },
+          {
+            "label": "WKTS",
+            "value": "0"
+          },
+          {
+            "label": "BBM",
+            "value": "0/0"
+          },
+          {
+            "label": "Ave",
+            "value": "-"
+          },
+          {
+            "label": "Econ",
+            "value": "-"
+          },
+          {
+            "label": "SR",
+            "value": "-"
+          },
+          {
+            "label": "4W",
+            "value": "0"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/2972.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    },
+    {
+      "id": "player_99",
+      "name": "Kagiso Rabada",
+      "role": "Bowler",
+      "nationality": "indian",
+      "basePrice": 50,
+      "set": 10,
+      "tier": "b",
+      "stats": {
+        "role": "Bowler",
+        "bowling": [
+          {
+            "label": "Mat",
+            "value": "42"
+          },
+          {
+            "label": "Balls",
+            "value": "960"
+          },
+          {
+            "label": "Runs",
+            "value": "1,332"
+          },
+          {
+            "label": "WKTS",
+            "value": "69"
+          },
+          {
+            "label": "BBM",
+            "value": "4/21"
+          },
+          {
+            "label": "Ave",
+            "value": "19.30"
+          },
+          {
+            "label": "Econ",
+            "value": "8.32"
+          },
+          {
+            "label": "SR",
+            "value": "13.91"
+          },
+          {
+            "label": "4W",
+            "value": "4"
+          },
+          {
+            "label": "5W",
+            "value": "0"
+          }
+        ]
+      },
+      "image": "https://static.iplt20.com/players/210/1664.png",
+      "isRetained": false,
+      "retainedBy": null,
+      "retentionCost": null
+    }
+  ]
+}

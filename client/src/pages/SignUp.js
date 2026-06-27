@@ -89,7 +89,7 @@ const SignUp = (props) => {
     }));
 
     setUser(data.user);
-    props.history.push("/auction");
+    props.history.push("/");
   };
 
   return (

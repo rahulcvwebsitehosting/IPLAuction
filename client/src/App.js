@@ -1,18 +1,16 @@
 import { Switch, Route } from "react-router-dom";
 
-// Pages
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
-import Auction from "./pages/Auction";
+import CreateRoom from "./pages/CreateRoom";
+import RoomPage from "./pages/RoomPage";
 import About from "./pages/About";
 import PreviousAuctions from "./pages/PreviousAuctions";
 
-// Custom Hooks
 import { UserContext } from "./hooks/UserContext";
 import useFindUser from "./hooks/useFindUser";
 
-// Custom Routes
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 
@@ -29,10 +27,11 @@ function App() {
         <div className="ball ball4"></div>
         <div className="stumps-decoration"></div>
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/" component={Home} />
           <PublicRoute exact path="/signup" component={SignUp} />
-          <Route exact path="/about" render={(props) => <About {...props} />} />
-          <PrivateRoute exact path="/auction" component={Auction} />
+          <Route exact path="/about" component={About} />
+          <PrivateRoute exact path="/create-room" component={CreateRoom} />
+          <PrivateRoute exact path="/room/:code" component={RoomPage} />
           <PrivateRoute
             exact
             path="/auctions/played"

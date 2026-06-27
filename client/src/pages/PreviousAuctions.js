@@ -1,128 +1,86 @@
-import { useState, useEffect, useContext } from "react";
-import { fetchAuctions } from "../services/auction.service";
-import PlayerCard from "../components/PlayerCard";
+import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../hooks/UserContext";
+import { useHistory } from "react-router-dom";
+import API from "../services/api.service";
 
-const PreviousAuctions = () => {
+export default function PreviousAuctions() {
   const { user } = useContext(UserContext);
+  const history = useHistory();
   const [auctions, setAuctions] = useState([]);
-  const [clicked, setClicked] = useState(0);
-  const [current, setCurrent] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    // History is read from localStorage for the logged-in user.
-    fetchAuctions(user && user.username)
-      .then((data) => {
-        setAuctions(data.auctions || []);
+    if (!user) {
+      history.push("/signup");
+      return;
+    }
+    API.getUserHistory(user.username)
+      .then((res) => {
+        if (res.success) setAuctions(res.auctions || []);
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }, [user]);
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [user, history]);
 
-  const auctionClick = (index) => {
-    setCurrent(index);
-    setClicked(0);
-  };
-
-  const userClick = (index) => {
-    setClicked(index);
-  };
+  if (loading) return <div className="page-loading">Loading...</div>;
 
   return (
-    <div className="previous-auctions">
-      {auctions.length > 0 ? (
-        <div>
-          <div className="previous-auctions-cards">
-            {auctions.map((a, index) => {
-              return (
-                <div
-                  className={`previous-auctions-card ${
-                    current === index ? "apply-border" : ""
-                  }`}
-                  key={index}
-                  onClick={() => auctionClick(index)}
-                >
-                  Auction {index + 1}
-                </div>
-              );
-            })}
-          </div>
-          <div className="previous-auctions-cards">
-            {auctions[current] && auctions[current].auction
-              ? auctions[current].auction.map((u, index) => {
-                  return (
-                    <div
-                      className={`previous-auctions-card ${
-                        clicked === index ? "apply-border" : ""
-                      }`}
-                      key={index}
-                      onClick={() => userClick(index)}
-                    >
-                      {u.user}
-                    </div>
-                  );
-                })
-              : ""}
-          </div>
-          <div>
-            {auctions[current] &&
-            auctions[current].auction &&
-            auctions[current].auction[clicked] ? (
-              <div>
-                {auctions[current].auction[clicked].batsmen
-                  ? auctions[current].auction[clicked].batsmen.map(
-                      (b, index) => {
-                        return <PlayerCard key={b.image} {...b} />;
-                      }
-                    )
-                  : ""}
-                {auctions[current].auction[clicked].wicketKeepers
-                  ? auctions[current].auction[clicked].wicketKeepers.map(
-                      (w, index) => {
-                        return <PlayerCard key={w.image} {...w} />;
-                      }
-                    )
-                  : ""}
-                {auctions[current].auction[clicked].allRounders
-                  ? auctions[current].auction[clicked].allRounders.map(
-                      (w, index) => {
-                        return <PlayerCard key={w.image} {...w} />;
-                      }
-                    )
-                  : ""}
-                {auctions[current].auction[clicked].bowlers
-                  ? auctions[current].auction[clicked].bowlers.map(
-                      (w, index) => {
-                        return <PlayerCard key={w.image} {...w} />;
-                      }
-                    )
-                  : ""}
-                {auctions[current].auction[clicked].unknown
-                  ? auctions[current].auction[clicked].unknown.map(
-                      (w, index) => {
-                        return <PlayerCard key={w.image} {...w} />;
-                      }
-                    )
-                  : ""}
-                {!auctions[current].auction[clicked].batsmen &&
-                !auctions[current].auction[clicked].wicketKeepers &&
-                !auctions[current].auction[clicked].allRounders &&
-                !auctions[current].auction[clicked].bowlers &&
-                !auctions[current].auction[clicked].unknown
-                  ? "No player data available"
-                  : ""}
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
+    <div className="previous-auctions-page">
+      <h2>Previous Auctions</h2>
+      {auctions.length === 0 ? (
+        <div className="auctions-empty">No previous auctions found</div>
       ) : (
-        "NO DATA Available"
+        <div className="auctions-list">
+          {auctions.map((a) => (
+            <div key={a._id || a.roomCode} className="auction-item">
+              <div
+                className="auction-item-header"
+                onClick={() =>
+                  setSelected(selected === a.roomCode ? null : a.roomCode)
+                }
+              >
+                <span className="auction-room">{a.roomCode}</span>
+                <span className="auction-mode">{a.mode}</span>
+                <span className="auction-date">
+                  {a.completedAt
+                    ? new Date(a.completedAt).toLocaleDateString()
+                    : ""}
+                </span>
+              </div>
+              {selected === a.roomCode && (
+                <div className="auction-item-detail">
+                  <h4>Teams</h4>
+                  {(a.teams || []).map((t, i) => (
+                    <div key={i} className="auction-team">
+                      <span className="team-name">{t.team}</span>
+                      <span>Players: {t.playersBought || 0}</span>
+                      <span>Purse Spent: {t.purseSpent || 0}</span>
+                    </div>
+                  ))}
+                  <h4>Players Sold</h4>
+                  <div className="auction-players-list">
+                    {(a.players || [])
+                      .filter((p) => p.status === "sold" || p.status === "rtm")
+                      .map((p, i) => (
+                        <div key={i} className="auction-player">
+                          <span>{p.name}</span>
+                          <span>{p.role}</span>
+                          <span>{p.soldTo}</span>
+                          <span>
+                            {p.soldAmount
+                              ? `₹${(p.soldAmount / 100).toFixed(1)}Cr`
+                              : ""}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
-};
-
-export default PreviousAuctions;
+}

@@ -1,58 +1,74 @@
-import PlayerStats from "./PlayerStats";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import TimerDisplay from "./TimerDisplay";
 
-const PlayerCard = ({ image, name, squad, stats }) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-  };
+function formatCurrency(lakhs) {
+  if (lakhs >= 100) return `₹${(lakhs / 100).toFixed(1)} Cr`;
+  return `₹${lakhs} L`;
+}
 
-  if (!stats) {
+export default function PlayerCard({
+  player,
+  basePrice,
+  currentBid,
+  timerRemaining,
+  maxTimer,
+  playerState,
+  highBidderId,
+  bidderTeam,
+  round,
+}) {
+  if (!player) {
     return (
-      <div className="playerCard">
-        <div className="playerCard-image">
-          <img src={image} alt="player profile"></img>
-          <h2 className="playerCard-info-name">{name}</h2>
-        </div>
-        <div className="playerCard-info">
-          <div className="playerCard-info-role">Stats unavailable</div>
-        </div>
+      <div className="player-card empty">
+        <div className="player-waiting">Waiting for next player...</div>
       </div>
     );
   }
 
   return (
-    <div className="playerCard">
-      <div className="playerCard-image">
-        <img src={image} alt="player profile"></img>
-        <h2 className="playerCard-info-name">{name}</h2>
-      </div>
-
-      <div className="playerCard-info">
-        <div className="playerCard-info-role">{stats.role}</div>
-        {stats.batting && stats.bowling ? (
-          <div className="playerCard-info-slider">
-            <Slider {...settings}>
-              <PlayerStats stats={stats.batting} role="Batting" />
-              <PlayerStats stats={stats.bowling} role="Bowling" />
-            </Slider>
-          </div>
-        ) : stats.batting ? (
-          <PlayerStats stats={stats.batting} role="Batting" />
+    <div className="player-card">
+      <div className="player-image-wrapper">
+        {player.image ? (
+          <img src={player.image} alt={player.name} className="player-image" />
         ) : (
-          <PlayerStats stats={stats.bowling} role="Bowling" />
+          <div className="player-image-placeholder">
+            {player.name?.charAt(0)}
+          </div>
         )}
+      </div>
+      <div className="player-info">
+        <h2 className="player-name">{player.name}</h2>
+        <div className="player-meta">
+          <span className="player-role">{player.role}</span>
+          <span className="player-nationality">{player.nationality}</span>
+        </div>
+        <div className="player-base">
+          Base: {formatCurrency(player.basePrice || 20)}
+        </div>
+        {currentBid > 0 && (
+          <div className="player-current-bid">
+            Current Bid: <strong>{formatCurrency(currentBid)}</strong>
+            {bidderTeam && (
+              <span className="bidder-label"> by {bidderTeam}</span>
+            )}
+          </div>
+        )}
+      </div>
+      <div className="player-status-section">
+        <TimerDisplay remaining={timerRemaining} max={maxTimer} />
+        <div
+          className={`player-status-badge ${(playerState || "").toLowerCase()}`}
+        >
+          {playerState === "SOLD"
+            ? "SOLD"
+            : playerState === "UNSOLD"
+            ? "UNSOLD"
+            : playerState === "BIDDING_ACTIVE"
+            ? "BIDDING"
+            : "OPEN"}
+        </div>
+        {round > 0 && <div className="recall-badge">Recall R{round}</div>}
       </div>
     </div>
   );
-};
-
-export default PlayerCard;
+}
