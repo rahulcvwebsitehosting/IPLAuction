@@ -55,12 +55,10 @@ router.post("/api/rooms/create", async (req, res) => {
     console.error("Room creation error:", err.message);
     if (err.code === 11000) {
       releaseRoomCode(err.keyValue?.roomCode);
-      return res
-        .status(409)
-        .json({
-          success: false,
-          error: "Room code collision, please try again",
-        });
+      return res.status(409).json({
+        success: false,
+        error: "Room code collision, please try again",
+      });
     }
     res.status(500).json({ success: false, error: "Failed to create room" });
   }

@@ -1,400 +1,568 @@
-# Ipl-Auction
+# IPL Auction — Real-Time Multiplayer Auction Engine
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://ipl-mega-auction.herokuapp.com/)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/67f92738bcce4a2c83e2b0885e3bf649)](https://www.codacy.com/gh/Coder-Srinivas/Ipl-Auction/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Coder-Srinivas/Ipl-Auction&utm_campaign=Badge_Grade)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![GitHub Release](https://img.shields.io/github/v/release/rahulcvwebsitehosting/IPLAuction)](https://github.com/rahulcvwebsitehosting/IPLAuction/releases)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/rahulcvwebsitehosting/IPLAuction/actions)
+[![License: ISC](https://img.shields.io/badge/license-ISC-blue)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
-![Ipl-Auction](https://socialify.git.ci/Coder-Srinivas/Ipl-Auction/image?description=1&font=Source%20Code%20Pro&forks=1&language=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark)
+> **Built with passion, released as open-source.**  
+> A complete, server-authoritative, room-based IPL auction simulator — designed for friends who love cricket, built for developers who value clean architecture.
 
-## Hit ⭐ if you like this project
+---
 
-<h2> Overview </h2>
- <ul>
-  <li>
-    <a href ='#tech-stack'> Tech Stack 👨‍💻</a>
-  </li>
-  <li>
-   <a href ='#inspiration'> My Inspiration 💡</a>
-  </li>
-  <li>
-   <a href ='#features'> What it does ✨</a>
-  </li>
-  <li>
-     <a href ='#build'> How I built it 🐺</a>
-  </li>
-  <li> 
-   <a href='#screenshots'>Screenshots 🖼️</a>
-   </li>
-   <li> 
-   <a href='#play'>How to play 🎭</a>
-   </li>
-    <li> 
-   <a href='#structure'>Project Structure 💪</a>
-   </li>
-  <li>
-   <a href='#deployment'>Deployment 🚀</a>
-  </li>
- </ul>
- 
-<h2 id='tech-stack'> Tech Stack 👨‍💻</h2>
+## About
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+IPL Auction is a real-time multiplayer auction engine that lets you and your friends experience the IPL mega auction from your browser. Every bid is validated server-side, timers are drift-proof, and the entire state machine — recall rounds, RTM, retention, undo — runs on the backend. The frontend is a thin rendering layer that never decides a bid's validity.
 
-<h2 id='inspiration'> My Inspiration 💡</h2>
+This project was **painstakingly engineered over hundreds of hours** — from the state machine design to the MongoDB schema, from the socket event catalog to the four curated player datasets. It is released open-source so that every cricket-loving developer can run their own auction, learn from the architecture, and contribute back.
 
-![YoureMyInspirationBrynnElliottGIF](https://user-images.githubusercontent.com/59244289/136423443-7dd54f9f-e9b7-45a4-a700-037558abd1a1.gif)
+---
 
-It began back during my childhood days, the urge to play the IPL Auction depicting real players. I used to team up with my friends and play the auction manually with a pen and paper, with a organizer to keep track. Over the last 1 year, I wondered, can I do anything to make my experience better? So I came up with the idea of building a IPL auction app, based on the MERN stack.
+## Creator
 
-<h2 id='features'> What it does ✨</h2>
+**Rahul Shyam** — Full-stack developer, cricket enthusiast, open-source advocate.
 
-![AndThatsWhatItDoesDigibyteGIF](https://user-images.githubusercontent.com/59244289/136423729-777b2bb9-3d7c-4ec3-a9e3-742167451853.gif)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahulshyamcivil/)
+[![X / Twitter](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/RahulShyamCv)
+[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://threads.com/@RahulCvJPS)
 
-You can team up with your friends and dive into the fun world of auctioning IPL players. The application is capable of auctioning players belonging to various IPL Teams. The bid timer is reset with each bid and the time slot to buy a player is 10 seconds so be quick. It's a fun application to experience the the real IPL Auction with friends. Simply create an account, gather your friends and jump staright into the auction.
+---
 
-<h2 id='build'> How I built it 🐺</h2>
+## Architecture
 
-![HowItsMadeCuriousGIF](https://user-images.githubusercontent.com/59244289/136423987-f44902a6-a93b-423d-af6d-1d2c525bdfa4.gif)
+### High-Level System Design
 
-- React is used on the client side.
-- Node.js is used on the server side.
-- The news is fetched from the RSS feed of Times of India.
-- Puppeteer is used to scrape data from the IPLT20 Website.
-- Socket.io is used to establish a full-duplex connection with the server and the client.
-- **User accounts and finished-auction history are stored entirely in the
-  browser** (localStorage/sessionStorage). Passwords are hashed with SHA-256
-  before being saved. There is **no login page** — a single Sign Up form is
-  the entry point, and it recognises returning users. This keeps the frontend
-  fully deployable on Vercel with no auth backend. See `client/src/services/auth.service.js`.
-- An auction object is created upon the creation of a new auction which stores the information of current auction.
-- User class stores the information of the user and the players purchased by him/her.
-- node-schedule is used to schedule the scraping process.
-- Mongodb database is used to store the incomming data.
+```mermaid
+flowchart TB
+    subgraph Client["React 18 Frontend"]
+        UI["UI Components\n(PlayerCard, BidPanel,\nTimerDisplay, Chat, etc.)"]
+        Hooks["Custom Hooks\n(useSocket, useAuction)"]
+        Services["Services\n(api.service.js, socket.service.js)"]
+    end
 
-<h2 id='screenshots'>Screenshots 🖼️</h2>
+    subgraph Server["Node.js / Express Backend"]
+        HTTP["REST API\n(/api/rooms/*, /api/modes, /api/history/*)"]
+        WS["Socket.IO Server\n(25+ events)"]
+        AM["AuctionMachine\n(In-Memory State Map)"]
+        BE["Bid Engine\n(validateBid, getIncrement)"]
+        TS["Timer Service\n(drift-proof expiresAt)"]
+        HM["Host Migration\n(30s grace + claim)"]
+        US["Undo Stack\n(LIFO, max 5 actions)"]
+        RTM["RTM Logic\n(15s window, card-gated)"]
+        RL["Retention Logic\n(pre-assign, deduct purse)"]
+    end
 
-<div align="center">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-1.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-2.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-3.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-4.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-5.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-6.png">
-  <img width="45%" src="https://github.com/Coder-Srinivas/Ipl-Auction/blob/master/client/public/Images/Screenshot-7.png">
-</div>
+    subgraph Database["MongoDB"]
+        Rooms["rooms\n(metadata only)"]
+        RoomPlayers["room_players\n(one doc per player)"]
+        AuctionLogs["auction_logs\n(append-only audit trail)"]
+        ChatMessages["chat_messages\n(30-day TTL)"]
+        AuctionResults["auction_results\n(written once at end)"]
+    end
 
-<h2 id='play'>How to play 🎭</h2>
+    subgraph Data["Static Datasets"]
+        Players["players/*.json\n(4 auction modes)"]
+        Teams["teams.json\n(10 IPL franchises)"]
+        Tiers["increment-tiers.json\n(bid step rules)"]
+    end
 
-![TypicalDayPaningningTheRealPaningningGIF](https://user-images.githubusercontent.com/59244289/136424082-80c3bbc0-5575-472b-a4e7-97942c4b10b5.gif)
-
-- Login/Signup using your email address and password
-- Create a new auction
-- Share the generated code with your friends
-- Bid on your favourite players
-- Most important part is to enjoy
-
-<h2 id='structure'>Project Structure 💪</h2>
-
-    .
-    │   .gitignore
-    │   app.js
-    │   package-lock.json
-    │   package.json
-    │   README.md
-    │
-    ├───.github
-    │   └───workflows
-    │           codeql-analysis.yml
-    │
-    ├───.husky
-    │       pre-commit
-    │
-    ├───.vscode
-    │       settings.json
-    │
-    ├───client
-    │   │   .gitignore
-    │   │   package-lock.json
-    │   │   package.json
-    │   │
-    │   ├───public
-    │   │   │   index.html
-    │   │   │
-    │   │   └───Images
-    │   │           arrow.svg
-    │   │           error.svg
-    │   │           logo.png
-    │   │           profile.jpeg
-    │   │           Screenshot-1.png
-    │   │           Screenshot-2.png
-    │   │           Screenshot-3.png
-    │   │           Screenshot-4.png
-    │   │           Screenshot-5.png
-    │   │           Screenshot-6.png
-    │   │           Screenshot-7.png
-    │   │
-    │   └───src
-    │       │   App.js
-    │       │   index.js
-    │       │
-    │       ├───components
-    │       │       AccordianComponent.js
-    │       │       Bars.js
-    │       │       CreateAuction.js
-    │       │       Error.js
-    │       │       Form.js
-    │       │       Game.js
-    │       │       Input.js
-    │       │       JoinAuction.js
-    │       │       Loading.component.js
-    │       │       Lobby.js
-    │       │       Navbar.js
-    │       │       News.js
-    │       │       NewsCard.js
-    │       │       NewsContent.js
-    │       │       NewsDate.js
-    │       │       NewsDescription.js
-    │       │       NewsImage.js
-    │       │       NewsTitle.js
-    │       │       PlayerCard.js
-    │       │       PlayerStats.js
-    │       │       Title.js
-    │       │       UserAccordian.js
-    │       │
-    │       ├───hooks
-    │       │       useFindUser.js
-    │       │       UserContext.js
-    │       │
-    │       ├───pages
-    │       │       About.js
-    │       │       Auction.js
-    │       │       Home.js
-    │       │       Loading.js
-    │       │       Login.js
-    │       │       PreviousAuctions.js
-    │       │       SignUp.js
-    │       │
-    │       ├───routes
-    │       │       PrivateRoute.js
-    │       │       PublicRoute.js
-    │       │
-    │       ├───sass
-    │       │   │   main.scss
-    │       │   │
-    │       │   ├───base
-    │       │   │       animations.scss
-    │       │   │       reset.scss
-    │       │   │
-    │       │   ├───components
-    │       │   │       bars.scss
-    │       │   │       button.scss
-    │       │   │       create-auction.scss
-    │       │   │       error.scss
-    │       │   │       form.scss
-    │       │   │       games.scss
-    │       │   │       loading.scss
-    │       │   │       lobby.scss
-    │       │   │       navbar.scss
-    │       │   │       news.scss
-    │       │   │       playerCard.scss
-    │       │   │       title.scss
-    │       │   │       user-accordian.scss
-    │       │   │
-    │       │   ├───pages
-    │       │   │       about.scss
-    │       │   │       auction.scss
-    │       │   │       home.scss
-    │       │   │       loading.scss
-    │       │   │       previous-auction.scss
-    │       │   │
-    │       │   └───utilities
-    │       │           classes.scss
-    │       │           mixins.scss
-    │       │           variables.scss
-    │       │
-    │       ├───services
-    │       │       auction.service.js
-    │       │       auth.service.js
-    │       │       news.service.js
-    │       │       players.service.js
-    │       │       sockets.service.js
-    │       │
-    │       └───utilities
-    │               axiosInstance.js
-    │               handleChanges.js
-    │               validation.js
-    │
-    ├───controller
-    │       auction.js
-    │       bidding.js
-    │       game.js
-    │       user.js
-    │
-    ├───data
-    │       squads.json
-    │
-    ├───database
-    │   │   connection.js
-    │   │
-    │   └───models
-    │           user.model.js
-    │
-    ├───middleware
-    │       auth.js
-    │
-    ├───routes
-    │       auction.route.js
-    │       news.route.js
-    │       socket.route.js
-    │       user.route.js
-    │
-    └───utilities
-            players.js...
-
-## Steps to get the project running locally on your machine
-
-#### Setting Up Environment Variables
-
-1. Create a .env file in the backend directory
-2. Initialize DEV_MONGO_URL to mongodb://localhost:27017/
-3. Initialize DEV_REACT_URL to http://localhost:3000
-4. Initialize DEV_SERVER_URL to http://localhost:8000
-5. Initialize SECRET to a JWT secret key
-
-#### Installing the dependencies
-
-Run the following command in the root
-of the project to install the packages
-on the server side:
-
-```
-npm i
+    Client -->|"Socket.IO (WebSocket)"| WS
+    Client -->|"REST (fetch/join)"| HTTP
+    WS --> AM
+    AM --> BE
+    AM --> TS
+    AM --> HM
+    AM --> US
+    AM --> RTM
+    AM --> RL
+    AM -->|"append-only writes"| AuctionLogs
+    HTTP --> Rooms
+    HTTP --> RoomPlayers
+    AM -->|"final snapshot"| AuctionResults
+    WS --> ChatMessages
+    AM --> Players
+    AM --> Teams
+    BE --> Tiers
 ```
 
-Run the following command in the root
-of the project to install the packages
-on the client side:
+### Auction State Machine
+
+```mermaid
+stateDiagram-v2
+    [*] --> WAITING: Room created
+    WAITING --> LIVE: Admin clicks Start
+
+    LIVE --> PLAYER_SERVED: servePlayer()
+    PLAYER_SERVED --> BIDDING_ACTIVE: applyBid()
+    BIDDING_ACTIVE --> BIDDING_ACTIVE: applyBid() (new high bidder)
+
+    BIDDING_ACTIVE --> SOLD: markSold() / timer expires (with bid)
+    BIDDING_ACTIVE --> UNSOLD: markUnsold() / timer expires (no bid)
+    PLAYER_SERVED --> UNSOLD: markUnsold()
+
+    SOLD --> PLAYER_SERVED: advancePlayer()
+    UNSOLD --> PLAYER_SERVED: advancePlayer()
+
+    SOLD --> RTM_WINDOW: checkRTM() (eligible)
+    RTM_WINDOW --> SOLD_RTM: exerciseRTM()
+    RTM_WINDOW --> SOLD: RTM declined (15s timeout)
+    SOLD_RTM --> PLAYER_SERVED: advancePlayer()
+
+    UNSOLD --> RECALL_ROUND: beginRecallRound() (all sets exhausted)
+    RECALL_ROUND --> PLAYER_SERVED: advancePlayer()
+
+    LIVE --> PAUSED: pauseAuction()
+    PAUSED --> LIVE: resumeAuction()
+
+    LIVE --> ENDED: endAuction() / all players processed
+    PAUSED --> ENDED: endAuction()
+    ENDED --> [*]
+```
+
+### Data Flow: Bid Lifecycle
+
+```mermaid
+sequenceDiagram
+    participant C as Client (Bidder)
+    participant S as Socket.IO Server
+    participant BE as Bid Engine
+    participant TS as Timer Service
+    participant M as AuctionMachine
+    participant DB as MongoDB
+
+    C->>S: place_bid { roomCode, seq }
+    S->>S: rateLimitCheck (500ms)
+    S->>S: shouldProcess (idempotency)
+    S->>M: applyBid(userId)
+    M->>BE: validateBid(machine, teamPlayer, isOverseas)
+    alt Validation Fails
+        BE-->>M: { valid: false, errorCode }
+        M-->>S: bid_error { code, message }
+        S-->>C: bid_error
+    else Validation Passes
+        BE-->>M: { valid: true }
+        M->>M: currentBid += increment
+        M->>M: currentHighBidder = userId
+        M->>TS: resetTimer(resetDuration)
+        M->>DB: logEvent("bid_placed")
+        M-->>S: bid_placed { bidderId, amount }
+        S-->>C: bid_placed
+    end
+
+    Note over TS: Timer ticks every second via expiresAt
+    TS-->>S: timer_tick { remaining }
+    S-->>C: timer_tick
+
+    Note over TS: Timer expires
+    TS->>M: resolveBid()
+    alt Has High Bidder
+        M->>M: markSoldInternal()
+        M-->>S: player_sold { buyerId, amount }
+        S-->>C: player_sold
+    else No High Bidder
+        M->>M: markUnsoldInternal()
+        M-->>S: player_unsold
+        S-->>C: player_unsold
+    end
+```
+
+---
+
+## Tech Stack
+
+### Backend
+
+| Layer     | Technology                           |
+| --------- | ------------------------------------ |
+| Runtime   | Node.js 24.x                         |
+| Framework | Express 4.17                         |
+| Real-Time | Socket.IO 4.1.2                      |
+| Database  | MongoDB 6.x (Mongoose)               |
+| Auth      | Client-side (localStorage + SHA-256) |
+| Testing   | Jest                                 |
+
+### Frontend
+
+| Layer     | Technology                                   |
+| --------- | -------------------------------------------- |
+| Framework | React 18                                     |
+| Routing   | React Router 5.2                             |
+| State     | useReducer (20-action auction state machine) |
+| Real-Time | socket.io-client 4.1.2                       |
+| Styling   | Sass (SCSS)                                  |
+| HTTP      | Axios 0.21                                   |
+| Build     | Create React App 4                           |
+
+### Player Datasets
+
+| Mode                  | Players | Features                          |
+| --------------------- | ------- | --------------------------------- |
+| IPL 2026 Mock Auction | 200     | Retentions, RTM, 42 sets          |
+| IPL Legends Upgraded  | 248     | 26 sets (Marquee to Spinners)     |
+| IPL Legends Top 100   | 100     | Top batters & bowlers (2008-2025) |
+| Mega Auction          | 230+    | Clean slate, full 120 Cr budget   |
+
+---
+
+## Features
+
+- **Server-Authoritative Bidding** — The frontend never decides bid validity. Every bid is validated server-side against purse, squad size, overseas limit, self-bid rules, and timer state.
+- **Drift-Proof Timer** — Uses `expiresAt` timestamps rather than `remaining--`, preventing clock drift from corrupting auction timing.
+- **Recall Rounds** — Up to 3 recall rounds with descending price multipliers (1.0x, 0.75x, 0.50x, 0.25x), floor of INR 10 Lakh.
+- **RTM (Right to Match)** — In `mock_2026` mode, the retained team gets a 15-second window to match the winning bid.
+- **Retention Logic** — Pre-assigns retained players to teams, deducts their cost from the purse, and removes them from the auction pool.
+- **Undo Stack** — LIFO undo (max 5 actions) for admin error recovery.
+- **Host Migration** — 30-second grace period after admin disconnect; any remaining player can claim host.
+- **Idempotent Events** — Client-side monotonic seq counter prevents duplicate bid/chat processing.
+- **Rate Limiting** — 500ms between bids, 200ms between chat messages per socket.
+- **Append-Only Audit Log** — Every state change is written to `auction_logs` (never updated, only inserted). The auction machine can be reconstructed from logs on restart.
+- **4 Auction Modes** — Each with a curated dataset, configurable settings (timer, squad size, overseas limit, RTM cards, recall rounds, auto-advance).
+- **Chat** — Per-room chat with 500-char limit, HTML sanitization, 30-day TTL in MongoDB.
+
+---
+
+## Project Structure
 
 ```
+├── app.js                          # Express + Socket.IO server entry
+├── config/
+│   └── constants.js                # Enums, defaults, tiers, mode configs
+├── controller/
+│   ├── auction.service.js          # AuctionMachine orchestrator (736 lines)
+│   ├── bid.engine.js               # Tiered increment + bid validation
+│   ├── host.migration.js           # Graceful admin failover
+│   ├── retention.logic.js          # Pre-auction retention processing
+│   ├── timer.service.js            # Server-authoritative countdown
+│   └── undo.stack.js               # Bounded LIFO undo (max 5)
+├── data/
+│   ├── players/                    # 4 JSON player datasets
+│   ├── teams.json                  # 10 IPL franchise definitions
+│   └── increment-tiers.json        # Bid increment rules
+├── database/
+│   ├── connection.js               # Mongoose connection
+│   └── models/                     # 5 Mongoose schemas
+├── routes/
+│   ├── socket.route.js             # 25+ socket event handlers
+│   ├── room.route.js               # REST: create, join, validate, modes
+│   └── history.route.js            # REST: export, user history
+├── utilities/
+│   ├── currency.js                 # Lakh ↔ Crore normalizer
+│   ├── generateCode.js             # 6-char uppercase room codes
+│   └── idempotency.js              # Socket sequence tracker
+├── tests/
+│   ├── bid.engine.test.js          # 14 unit tests (all validation paths)
+│   └── currency.test.js            # 6 unit tests (conversion + format)
+├── client/
+│   ├── src/
+│   │   ├── components/             # 14 UI components
+│   │   ├── hooks/                  # useSocket, useAuction, UserContext
+│   │   ├── pages/                  # Home, CreateRoom, RoomPage, etc.
+│   │   ├── services/               # api.service.js, socket.service.js
+│   │   ├── sass/                   # SCSS stylesheets
+│   │   └── utilities/              # Axios instance, validation
+│   ├── public/
+│   └── package.json
+├── PLAN.md                          # Full engineering specification (1516 lines)
+└── README.md                        # This file
+```
+
+---
+
+## How to Use (Beginner Guide)
+
+### Prerequisites
+
+- **Node.js** 18+ (v24 recommended)
+- **npm** 9+
+- **MongoDB** — local installation or [MongoDB Atlas](https://www.mongodb.com/atlas) free tier (optional: the app can run without it for basic functionality)
+
+### Quick Start (5 minutes)
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/rahulcvwebsitehosting/IPLAuction.git
+cd IPLAuction
+
+# 2. Install backend dependencies
+npm install
+
+# 3. Install frontend dependencies
 cd client
-npm i
-```
+npm install --legacy-peer-deps
+cd ..
 
-#### Running the project
-
-Run the following command in the root
-to get the client side and the server
-side running concurrently:
-
-```
+# 4. Start both servers concurrently
 npm run dev
 ```
 
-## Deployment 🚀
+This starts:
 
-This is a **split deployment**: the React frontend runs on **Vercel**, while the
-Node/Express backend (which needs WebSockets for the live auction, an in-memory
-auction store, and Puppeteer for scraping) runs on **Render**.
+- **Backend** at `http://localhost:8000` (Express + Socket.IO)
+- **Frontend** at `http://localhost:3000` (React dev server with hot reload)
 
-> **MongoDB is now optional.** User accounts, auth, and finished-auction history
-> are stored entirely in the browser (localStorage). The backend's only required
-> jobs are the Socket.io auction server and (optionally) the `/news` feed. If you
-> don't care about the legacy DB-backed routes, you can skip Step 1 and leave
-> `PROD_MONGO_URL` unset — `database/connection.js` will log a connection error
-> but the auction still runs.
+Open `http://localhost:3000` in your browser.
 
-> Why split? Vercel's serverless functions can't hold open WebSocket
-> connections, can't keep in-memory state alive between requests, and can't run
-> Puppeteer. The live multiplayer auction requires all three, so the backend
-> lives on a long-lived host (Render) and only the static frontend ships to Vercel.
+### Step-by-Step Walkthrough
 
-Deploy in this order: **(optional Database) → Backend → Frontend** (the frontend needs the
-backend's URL as an environment variable).
+#### 1. Create an Account
+
+- Click **Sign Up** in the top-right corner.
+- Enter a username, email, and password.
+- Accounts are stored in your browser (localStorage). Returning users are recognised automatically.
+
+#### 2. Create a Room
+
+- Click **Auction** in the navbar, or click **Create Room** on the homepage.
+- **Select a mode**: IPL 2026 Mock Auction (retentions + RTM), Legends Upgraded (26 sets), Legends Top 100, or Mega Auction.
+- **Pick your team**: Choose from 10 IPL franchises (CSK, DC, GT, KKR, LSG, MI, PBKS, RR, RCB, SRH).
+- Click **Create Room**. A unique 6-character room code is generated (e.g. `XK4M9P`).
+
+#### 3. Invite Friends
+
+- Share the room code with friends.
+- Friends go to `http://localhost:3000`, create an account, enter the room code on the homepage, select an untaken team, and click **Join Room**.
+
+#### 4. Start the Auction
+
+- Only the room creator (admin) can start the auction.
+- In the lobby, click **Start Auction**.
+
+#### 5. Bidding
+
+- When a player is served, all participants see their name, role, nationality, base price, and a countdown timer.
+- Click **Bid** to place a bid. The bid amount is automatically calculated using tiered increments:
+  - ₹5L up to ₹20L
+  - ₹5L from ₹20L to ₹75L
+  - ₹10L from ₹75L to ₹1Cr
+  - ₹25L from ₹1Cr to ₹2Cr
+  - ₹50L beyond ₹2Cr
+- The timer resets after each bid (configurable, default +5s, max 20s).
+- If the timer expires with an active high bidder, the player is sold automatically.
+- If the timer expires with no bids, the player is marked unsold.
+
+#### 6. Admin Controls
+
+Only the room creator can:
+
+- **Start / Pause / Resume** the auction
+- **Mark Sold / Mark Unsold** (ends bidding immediately)
+- **Advance** to the next player
+- **Undo** the last action (max 5 undos)
+- **Update Settings** (timer duration, squad size, overseas limit, RTM cards, recall rounds, auto-advance)
+- **End Auction** (writes final results to MongoDB)
+
+#### 7. Recall Rounds
+
+When all players in all sets have been auctioned, unsold players enter recall rounds. Each round applies a lower price multiplier (0.75x, 0.50x, 0.25x). The admin advances through recall rounds manually.
+
+#### 8. RTM (Right to Match)
+
+In `mock_2026` mode, when a retained player is sold to a different team, the original retaining team gets a 15-second RTM window. If they have RTM cards and sufficient purse, they can match the bid and acquire the player.
+
+#### 9. Auction End
+
+Once all players are sold or permanently unsold, or the admin clicks **End Auction**, results are persisted to MongoDB and broadcast to all clients.
+
+### Running in Production
+
+See the [deployment guide](#deployment) below.
 
 ---
 
-### Step 1 — MongoDB Atlas (database) — _optional_
+## API Reference
 
-Only needed if you want the legacy DB-backed routes to work. Auth, sessions and
-finished-auction history no longer use the database.
+### REST Endpoints
 
-1. Create a free account at [mongodb.com/atlas](https://www.mongodb.com/atlas)
-   and build a free **M0** cluster.
-2. Under **Database Access**, add a user (username + password) — note these.
-3. Under **Network Access**, allow `0.0.0.0/0` (so Render/Vercel can reach it).
-4. Click **Connect → Drivers** and copy the connection string. It looks like:
-   ```
-   mongodb+srv://<user>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
-   ```
-   This is your **`PROD_MONGO_URL`**.
+| Method | Path                             | Description                   |
+| ------ | -------------------------------- | ----------------------------- |
+| POST   | `/api/rooms/create`              | Create a new auction room     |
+| GET    | `/api/rooms/:code`               | Get room details + players    |
+| POST   | `/api/rooms/:code/join`          | Join a room with a team       |
+| GET    | `/api/rooms/:code/validate-team` | Check if a team is available  |
+| GET    | `/api/modes`                     | List available auction modes  |
+| GET    | `/api/history/:username`         | Get user's auction history    |
+| GET    | `/api/rooms/:code/export`        | Export results as JSON or CSV |
+
+### Socket Events
+
+#### Client → Server (18 events)
+
+| Event             | Payload                      | Auth  | Description                        |
+| ----------------- | ---------------------------- | ----- | ---------------------------------- |
+| `create_room`     | `{ mode, team, userId }`     | —     | Create room (deprecated; use REST) |
+| `join_room`       | `{ roomCode, team, userId }` | —     | Join a room                        |
+| `leave_room`      | `{ roomCode }`               | —     | Leave a room                       |
+| `start_auction`   | `{ roomCode }`               | Admin | Start the auction                  |
+| `place_bid`       | `{ roomCode }`               | —     | Place next increment bid           |
+| `advance_player`  | `{ roomCode }`               | Admin | Skip to next player                |
+| `mark_sold`       | `{ roomCode }`               | Admin | Force-sell current player          |
+| `mark_unsold`     | `{ roomCode }`               | Admin | Mark player unsold                 |
+| `undo`            | `{ roomCode }`               | Admin | Undo last action                   |
+| `exercise_rtm`    | `{ roomCode }`               | —     | Exercise Right to Match            |
+| `pause_auction`   | `{ roomCode }`               | Admin | Pause the auction                  |
+| `resume_auction`  | `{ roomCode }`               | Admin | Resume the auction                 |
+| `update_settings` | `{ roomCode, settings }`     | Admin | Update auction settings            |
+| `chat_message`    | `{ roomCode, message }`      | —     | Send a chat message                |
+| `claim_host`      | `{ roomCode }`               | —     | Claim admin after disconnect       |
+| `fetch_state`     | `{ roomCode }`               | —     | Request full state snapshot        |
+| `end_auction`     | `{ roomCode }`               | Admin | End the auction                    |
+
+#### Server → Client (22 events)
+
+| Event                  | Payload                                                  | Description                         |
+| ---------------------- | -------------------------------------------------------- | ----------------------------------- |
+| `full_state`           | `{ room, players, isAdmin, auctionState, chatMessages }` | Complete state snapshot             |
+| `join_result`          | `{ success, roomCode?, error? }`                         | Join attempt result                 |
+| `player_joined`        | `{ players }`                                            | New player joined lobby             |
+| `player_left`          | `{ userId }`                                             | Player left lobby                   |
+| `auction_started`      | `{ mode, settings, totalPlayers }`                       | Auction has begun                   |
+| `player_served`        | `{ player, basePrice, round, timer }`                    | New player up for auction           |
+| `bid_placed`           | `{ bidderId, amount, newTimer }`                         | A bid was placed                    |
+| `bid_error`            | `{ message, code }`                                      | Bid was rejected                    |
+| `timer_tick`           | `{ remaining }`                                          | Timer countdown update              |
+| `player_sold`          | `{ playerId, buyerId, buyerTeam, amount, rtm? }`         | Player was sold                     |
+| `player_unsold`        | `{ playerId, reason }`                                   | Player went unsold                  |
+| `budget_updated`       | `{ players }`                                            | Team budgets changed                |
+| `recall_round_started` | `{ round, basePriceMultiplier, playerCount }`            | Recall round began                  |
+| `rtm_window`           | `{ playerId, matchedTeam, amount, windowSeconds }`       | RTM window opened                   |
+| `rtm_exercised`        | `{ playerId, teamId, amount }`                           | RTM was exercised                   |
+| `rtm_declined`         | `{ playerId, teamId }`                                   | RTM window expired                  |
+| `state_reverted`       | `{ snapshot }`                                           | Undo was performed                  |
+| `auction_paused`       | `{ remaining }`                                          | Auction was paused                  |
+| `auction_resumed`      | `{ remaining }`                                          | Auction was resumed                 |
+| `auction_ended`        | `{ summary }`                                            | Auction has ended                   |
+| `settings_updated`     | `{ settings }`                                           | Settings were changed               |
+| `host_migration_vote`  | `{ message }`                                            | Admin disconnected; claim available |
 
 ---
+
+## Configuration
+
+### Environment Variables
+
+| Variable         | Default                      | Description            |
+| ---------------- | ---------------------------- | ---------------------- |
+| `PORT`           | `8000`                       | Backend server port    |
+| `CLIENT_URL`     | `http://localhost:3000`      | Allowed CORS origin    |
+| `NODE_ENV`       | `development`                | Environment mode       |
+| `DEV_MONGO_URL`  | `mongodb://localhost:27017/` | Local MongoDB URI      |
+| `PROD_MONGO_URL` | —                            | Production MongoDB URI |
+| `SECRET`         | —                            | JWT secret (legacy)    |
+
+### Auction Settings (configurable per room)
+
+| Setting           | Default  | Description                          |
+| ----------------- | -------- | ------------------------------------ |
+| `timerDuration`   | 10s      | Initial countdown per player         |
+| `timerReset`      | 5s       | Extra time added after each bid      |
+| `maxDuration`     | 20s      | Maximum allowed countdown            |
+| `maxSquadSize`    | 25       | Maximum players per team             |
+| `minSquadSize`    | 18       | Minimum players per team             |
+| `overseasLimit`   | 8        | Maximum overseas players             |
+| `basePurse`       | 12000 Cr | Starting purse (in lakhs)            |
+| `rtmCards`        | 3        | RTM cards per team (mock_2026 only)  |
+| `maxRecallRounds` | 3        | Maximum recall rounds                |
+| `autoAdvance`     | false    | Auto-advance to next player after 3s |
+
+---
+
+## Testing
+
+```bash
+# Run all backend tests
+npm test
+
+# Run tests with coverage
+npx jest --coverage
+```
+
+### Test Coverage
+
+- **Bid Engine** (14 tests): All increment tiers, all 7 validation failure modes (player not open, timer expired, self-bid, insufficient funds, squad full, overseas full), boundary cases.
+- **Currency Utilities** (6 tests): Lakh-to-crore conversion, crore-to-lakh conversion, display formatting.
+
+---
+
+## Deployment
+
+### Split Deployment Architecture
+
+```mermaid
+flowchart LR
+    subgraph Vercel["Vercel (Frontend)"]
+        React["React SPA\n(client/build)"]
+    end
+
+    subgraph Render["Render (Backend)"]
+        Express["Node.js / Express\nSocket.IO Server"]
+        Mongo["MongoDB Atlas\n(optional)"]
+    end
+
+    subgraph Browser["Browser"]
+        User["User"]
+    end
+
+    User -->|"HTTPS"| React
+    React -->|"REST + WebSocket"| Express
+    Express -->|"Mongoose"| Mongo
+```
+
+The frontend (React SPA) deploys to **Vercel** for global CDN delivery. The backend (Node.js + Socket.IO) deploys to **Render** because it needs a long-lived process to maintain WebSocket connections and in-memory auction state.
+
+### Step 1 — MongoDB Atlas (Optional)
+
+1. Create a free account at [mongodb.com/atlas](https://www.mongodb.com/atlas).
+2. Build a free M0 cluster.
+3. Add a database user (username + password).
+4. Under Network Access, allow `0.0.0.0/0`.
+5. Click Connect → Drivers and copy the connection string — this is your `PROD_MONGO_URL`.
 
 ### Step 2 — Backend on Render
 
 1. Push this repo to GitHub.
-2. On [render.com](https://render.com): **New → Blueprint**, select this repo.
-   Render reads [`render.yaml`](./render.yaml) and creates a **Web Service**
-   (`npm start`, free plan).
-3. In the service's **Environment**, set:
-   - `CLIENT_URL` — `https://YOUR-FRONTEND.vercel.app` (from Step 3; you can
-     set a placeholder now and edit it after Step 3)
-   - `NODE_ENV` — `production` (already set by the blueprint)
-   - `PROD_MONGO_URL` — _optional_, only if you did Step 1 and want the DB routes
-   - `SECRET` — _optional_ now (only the legacy JWT routes use it)
-4. Deploy. Note the backend URL, e.g. `https://ipl-auction-backend.onrender.com`.
-
-<details>
-<summary><b>Alternative backend hosts</b></summary>
-
-Render is recommended (has `render.yaml` one-click setup). Other WebSocket-capable
-options that work the same way:
-
-- **Railway** — `railway up`, set the same env vars, start command `npm start`.
-- **Fly.io** — needs a Dockerfile; works but more setup.
-- **A small VPS / DigitalOcean droplet** — `npm start` behind a reverse proxy
-  (Caddy/Nginx) for TLS.
-
-Avoid serverless-only platforms (plain Vercel functions, AWS Lambda, Cloudflare
-Workers) for the backend — they don't support long-lived WebSockets.
-
-</details>
-
----
+2. On [render.com](https://render.com): New → Blueprint, select this repo.
+3. Set environment variables:
+   - `CLIENT_URL` — your Vercel frontend URL (from Step 3)
+   - `NODE_ENV` — `production`
+   - `PROD_MONGO_URL` — optional (from Step 1)
+4. Deploy. Note the URL (e.g. `https://ipl-auction.onrender.com`).
 
 ### Step 3 — Frontend on Vercel
 
-1. On [vercel.com](https://vercel.com): **Add New → Project**, import the same
-   GitHub repo.
-2. Set **Root Directory** to `client` (Vercel will auto-detect Create React App
-   and use [`client/vercel.json`](./client/vercel.json)).
-3. Add an environment variable:
-   - `REACT_APP_API_URL` — your Render backend URL from Step 2, e.g.
-     `https://ipl-auction-backend.onrender.com` (no trailing slash issues — the
-     client code handles it).
-4. Deploy. Copy the resulting Vercel URL.
-5. **Go back to Render** and update `CLIENT_URL` to this Vercel URL, then redeploy
-   the backend (this enables CORS + cookies for your frontend).
-
-That's it — the auction is live. 🎉
+1. On [vercel.com](https://vercel.com): Add New → Project, import this repo.
+2. Set Root Directory to `client`.
+3. Add environment variable:
+   - `REACT_APP_API_URL` — your Render backend URL (e.g. `https://ipl-auction.onrender.com`)
+4. Deploy.
+5. Update Render's `CLIENT_URL` to your Vercel URL, then redeploy the backend.
 
 ---
 
-### Notes on the production setup
+## Project Status
 
-- **Cookies**: the JWT cookie is `httpOnly`, `secure` (in production), and
-  `sameSite=lax` so it travels correctly between the Vercel and Render origins.
-- **Puppeteer**: launched with `--no-sandbox` etc. so Chromium runs inside
-  Render's Linux container. If scraping ever fails, the app falls back to the
-  bundled [`data/squads.json`](./data/squads.json).
-- **Render free tier**: the backend sleeps after ~15 min of inactivity and takes
-  ~30s to wake on the first request. Upgrade to a paid plan for an always-on
-  service (recommended if you host a real game session).
-- **Local dev** still works exactly as before: `npm run dev` from the root, with
-  `DEV_MONGO_URL`, `SECRET`, and a local MongoDB running. See `.env.example`.
+This project is **actively maintained**. The core auction engine is complete and production-ready. Planned enhancements:
 
-## Note
+- Redis-backed distributed state (horizontal scaling)
+- Socket.IO integration tests with reconnection scenarios
+- Timer service unit tests
+- Admin dashboard with real-time metrics
+- Mobile-responsive UI refinements
+- Dark mode
 
-Keep the monogodb database running locally before running the application.
+---
+
+## License
+
+This project is open-source under the [ISC License](LICENSE).
+
+---
+
+## Acknowledgments
+
+Built with love for the cricket community. If you find this project useful, please ⭐ star the repository — it means a lot.
+
+For questions, feature requests, or contributions, reach out to Rahul Shyam:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahulshyamcivil/)
+[![X / Twitter](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/RahulShyamCv)
+[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://threads.com/@RahulCvJPS)
