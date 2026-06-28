@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { MongoMemoryServer } = require("mongodb-memory-server");
 
 async function connect() {
   let uri;
@@ -12,6 +11,7 @@ async function connect() {
 
   if (!uri) {
     console.log("No MongoDB URL found. Starting a fake in-memory MongoDB...");
+    const { MongoMemoryServer } = require("mongodb-memory-server");
     const mongo = await MongoMemoryServer.create();
     uri = mongo.getInstanceUri();
     console.log("Fake MongoDB started at", uri);
