@@ -1,10 +1,6 @@
 import React from "react";
 import TimerDisplay from "./TimerDisplay";
-
-function formatCurrency(lakhs) {
-  if (lakhs >= 100) return `₹${(lakhs / 100).toFixed(1)} Cr`;
-  return `₹${lakhs} L`;
-}
+import { formatCurrency } from "../utilities/currency";
 
 export default function PlayerCard({
   player,

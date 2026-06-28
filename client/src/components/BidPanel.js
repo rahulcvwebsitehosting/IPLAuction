@@ -1,9 +1,5 @@
 import React from "react";
-
-function formatCurrency(lakhs) {
-  if (lakhs >= 100) return `₹${(lakhs / 100).toFixed(1)} Cr`;
-  return `₹${lakhs} L`;
-}
+import { formatCurrency } from "../utilities/currency";
 
 const TIERS = [
   { maxBid: 20, increment: 5 },

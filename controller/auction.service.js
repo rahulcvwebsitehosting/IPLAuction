@@ -48,6 +48,7 @@ function createMachine(roomCode, mode, settings, roomPlayers) {
   const existing = auctionRegistry.get(roomCode);
   if (existing) return existing;
 
+  if (!MODES[mode]) throw new Error(`Unknown mode: ${mode}`);
   const dataset = loadPlayerDataset(mode);
   const playerPool = dataset.players || dataset;
   let sortedPool = [...playerPool];
@@ -114,7 +115,6 @@ function createMachine(roomCode, mode, settings, roomPlayers) {
     unsoldPool,
     rtmQueue: [],
     auditSeq: 0,
-    lastFlushedSeq: 0,
     undoHistory: undoStack.createUndoStack(5),
   };
 

@@ -23,7 +23,7 @@ const auctionResultSchema = new mongoose.Schema(
     ],
     teams: [
       {
-        userId: String,
+        userId: { type: String, index: true },
         team: String,
         purseSpent: Number,
         playersBought: Number,

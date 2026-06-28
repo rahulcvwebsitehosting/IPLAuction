@@ -3,9 +3,9 @@ const axios = require("axios");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-// Use a neutral JSDOM to create DOM elements for parsing RSS descriptions.
-global.document = new JSDOM("<!DOCTYPE html>").window.document;
 const router = express.Router();
+const dom = new JSDOM("<!DOCTYPE html>");
+const doc = dom.window.document;
 // const key = process.env.NEWS_KEY || 'pub_5928a18d3b8bc5ca9ba7a30e20af0b5bcd';
 // const url = `https://newsdata.io/api/1/news?apikey=${key}&country=in&category=sports&q=cricket`;
 
@@ -16,7 +16,7 @@ router.get("/news", async (req, res) => {
     );
 
     const results = response.data.channel.item.map((article) => {
-      const div = document.createElement("div");
+      const div = doc.createElement("div");
       div.innerHTML = article.description || "";
       const imageTag = div.getElementsByTagName("img");
 
