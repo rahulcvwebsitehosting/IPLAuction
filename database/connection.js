@@ -1,31 +1,27 @@
 const mongoose = require("mongoose");
+const { MongoMemoryServer } = require("mongodb-memory-server");
 
-const url =
-  process.env.NODE_ENV !== "production"
-    ? process.env.DEV_MONGO_URL
-    : process.env.PROD_MONGO_URL;
+async function connect() {
+  let uri;
 
-if (!process.env.DEV_MONGO_URL && !process.env.PROD_MONGO_URL) {
-  console.warn(
-    "Warning: Neither DEV_MONGO_URL nor PROD_MONGO_URL is set. The database will not be connected."
-  );
+  if (process.env.NODE_ENV === "production") {
+    uri = process.env.PROD_MONGO_URL;
+  } else if (process.env.DEV_MONGO_URL) {
+    uri = process.env.DEV_MONGO_URL;
+  }
+
+  if (!uri) {
+    console.log("No MongoDB URL found. Starting a fake in-memory MongoDB...");
+    const mongo = await MongoMemoryServer.create();
+    uri = mongo.getInstanceUri();
+    console.log("Fake MongoDB started at", uri);
+  }
+
+  await mongoose.connect(uri);
+  console.log("Connected to MongoDB");
 }
 
-let db;
-if (url) {
-  db = mongoose
-    .connect(url, {
-      useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("Connected to the mongodb database");
-    })
-    .catch((error) => {
-      console.log(error.name);
-      console.log(error);
-    });
-} else {
-  db = Promise.resolve();
-}
-
-module.exports = db;
+connect().catch((err) => {
+  console.error("MongoDB connection failed:", err.message);
+  process.exit(1);
+});

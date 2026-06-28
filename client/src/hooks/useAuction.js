@@ -102,7 +102,13 @@ function reducer(state, action) {
       };
 
     case "PLAYER_UNSOLD":
-      return { ...state, currentPlayerState: "UNSOLD" };
+      return {
+        ...state,
+        currentPlayerState: "UNSOLD",
+        currentBid: 0,
+        currentHighBidder: null,
+        rtmActive: false,
+      };
 
     case "BUDGET_UPDATED":
       return { ...state, players: action.payload.players || state.players };

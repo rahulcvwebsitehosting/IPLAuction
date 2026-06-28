@@ -22,37 +22,6 @@ function getRoomAuction(roomCode) {
   return aService.getAuction(roomCode);
 }
 
-function requireAdmin(socket, io) {
-  const binding = socketBindings.get(socket.id);
-  if (!binding) return false;
-  const auction = getRoomAuction(binding.roomCode);
-  if (!auction) {
-    Room.findOne({ roomCode: binding.roomCode })
-      .then((room) => {
-        if (room && room.adminUserId !== binding.userId) {
-          socket.emit("error", {
-            message: "Only the admin can perform this action",
-            code: "NOT_ADMIN",
-          });
-        }
-      })
-      .catch(() => {});
-    return false;
-  }
-  const room = auction.machine ? auction.machine.roomCode : binding.roomCode;
-  Room.findOne({ roomCode: room })
-    .then((r) => {
-      if (!r || r.adminUserId !== binding.userId) {
-        socket.emit("error", {
-          message: "Only the admin can perform this action",
-          code: "NOT_ADMIN",
-        });
-      }
-    })
-    .catch(() => {});
-  return true;
-}
-
 async function isAdmin(binding) {
   if (!binding) return false;
   try {
@@ -78,10 +47,7 @@ function registerSocket(io, socket, data) {
     userId: data.userId,
     team: data.team,
   });
-  const auction = getRoomAuction(data.roomCode);
-  if (auction && auction.machine) {
-    aService.servePlayer(auction.machine, auction.teamPlayerMap, io);
-  }
+  sendFullState(socket, data.roomCode);
 }
 
 function unregisterSocket(socket, io) {
@@ -131,14 +97,24 @@ async function sendFullState(socket, roomCode) {
         adminUserId: room.adminUserId,
         settings: room.settings,
       },
-      players: players.map((p) => ({
-        userId: p.userId,
-        team: p.team,
-        purseRemaining: p.purseRemaining,
-        overseasUsed: p.overseasUsed,
-        totalPlayers: p.totalPlayers,
-        rtmCards: p.rtmCardsRemaining,
-      })),
+      players:
+        auction && auction.machine
+          ? [...auction.teamPlayerMap.entries()].map(([userId, tp]) => ({
+              userId,
+              team: tp.team,
+              purseRemaining: tp.purseRemaining,
+              overseasUsed: tp.overseasUsed,
+              totalPlayers: tp.totalPlayers,
+              rtmCards: tp.rtmCards,
+            }))
+          : players.map((p) => ({
+              userId: p.userId,
+              team: p.team,
+              purseRemaining: p.purseRemaining,
+              overseasUsed: p.overseasUsed,
+              totalPlayers: p.totalPlayers,
+              rtmCards: p.rtmCardsRemaining,
+            })),
       isAdmin: isAdminUser,
       chatMessages: chatMessages.reverse(),
       auctionState: auction
@@ -152,13 +128,6 @@ async function sendFullState(socket, roomCode) {
 
 const socketRouter = (io) => {
   io.on("connection", (socket) => {
-    socket.on("create_room", async (data) => {
-      const { name: roomCode, mode, team } = data;
-      if (!roomCode && data.roomCode) {
-        return;
-      }
-    });
-
     socket.on("join_room", async (data) => {
       try {
         const { roomCode, team, userId } = data;
@@ -204,9 +173,10 @@ const socketRouter = (io) => {
       if (!roomCode) return;
       const binding = socketBindings.get(socket.id);
       if (binding) {
-        socket.leave(binding.roomCode);
+        const rc = binding.roomCode;
+        socket.leave(rc);
         socketBindings.delete(socket.id);
-        io.to(roomCode).emit("player_left", { userId: binding.userId });
+        io.to(rc).emit("player_left", { userId: binding.userId });
       }
     });
 
@@ -490,7 +460,11 @@ const socketRouter = (io) => {
       const auction = getRoomAuction(roomCode);
       if (!auction) return;
 
-      aService.endAuctionInternal(auction.machine, auction.teamPlayerMap, io);
+      await aService.endAuctionInternal(
+        auction.machine,
+        auction.teamPlayerMap,
+        io
+      );
     });
 
     socket.on("disconnect", () => {

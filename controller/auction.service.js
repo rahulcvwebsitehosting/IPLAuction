@@ -146,7 +146,7 @@ function findPlayerById(machine, playerId) {
 
 function getCurrentPlayer(machine) {
   if (!machine.currentPlayerId) return null;
-  return findPlayerById(machine, playerId) || null;
+  return findPlayerById(machine, machine.currentPlayerId) || null;
 }
 
 function nextPlayerId(machine) {
@@ -198,7 +198,7 @@ function servePlayer(machine, teamPlayerMap, io) {
   );
 
   machine.currentPlayerId = pid;
-  machine.currentBid = 0;
+  machine.currentBid = basePrice;
   machine.currentHighBidder = null;
   machine.currentPlayerState = PLAYER_STATUS.OPEN;
   machine.bidderHistory = [];
@@ -383,8 +383,17 @@ function advanceAndServe(machine, teamPlayerMap, io) {
   }
 }
 
+function clearRTMTimeout(machine) {
+  const key = machine.roomCode + "_" + machine.currentPlayerId;
+  if (rtmTimeouts.has(key)) {
+    clearTimeout(rtmTimeouts.get(key));
+    rtmTimeouts.delete(key);
+  }
+}
+
 function advanceToNextPlayer(machine, teamPlayerMap, io) {
   timerService.stopTimer(machine.roomCode);
+  clearRTMTimeout(machine);
 
   if (machine.round === 0) {
     machine.currentPlayerIndex++;
@@ -400,6 +409,7 @@ function advanceToNextPlayer(machine, teamPlayerMap, io) {
       if (machine.currentSetIndex >= machine.setQueue.length) {
         if (machine.unsoldPool.length > 0) {
           beginRecallRound(machine, teamPlayerMap, io);
+          servePlayer(machine, teamPlayerMap, io);
           return false;
         }
         endAuctionInternal(machine, teamPlayerMap, io);
@@ -440,13 +450,25 @@ function advanceToNextPlayer(machine, teamPlayerMap, io) {
 }
 
 function markSold(machine, teamPlayerMap, io) {
+  if (
+    machine.currentPlayerState !== PLAYER_STATUS.OPEN &&
+    machine.currentPlayerState !== PLAYER_STATUS.BIDDING_ACTIVE
+  )
+    return;
   timerService.stopTimer(machine.roomCode);
+  clearRTMTimeout(machine);
   if (!machine.currentHighBidder || machine.currentBid <= 0) return;
   markSoldInternal(machine, teamPlayerMap, io);
 }
 
 function markUnsold(machine, teamPlayerMap, io) {
+  if (
+    machine.currentPlayerState !== PLAYER_STATUS.OPEN &&
+    machine.currentPlayerState !== PLAYER_STATUS.BIDDING_ACTIVE
+  )
+    return;
   timerService.stopTimer(machine.roomCode);
+  clearRTMTimeout(machine);
   markUnsoldInternal(machine, teamPlayerMap, io, "admin_marked");
 }
 
@@ -597,6 +619,7 @@ function undoPlayerSold(
       tp.overseasUsed = Math.max(0, tp.overseasUsed - 1);
   }
   machine.playerResults.delete(playerId);
+  machine.currentPlayerId = playerId;
   machine.currentBid = 0;
   machine.currentHighBidder = null;
   machine.currentPlayerState = PLAYER_STATUS.OPEN;
@@ -644,7 +667,7 @@ function resumeAuction(machine, teamPlayerMap, io) {
   );
   logEvent(machine, "auction_resumed", "admin", {});
   io.to(machine.roomCode).emit("auction_resumed", {
-    remaining: machine.timerRemaining,
+    remaining: timerService.getRemaining(machine.roomCode),
     seq: machine.auditSeq,
   });
 }
@@ -664,6 +687,7 @@ function updateSettings(machine, newSettings, io) {
 
 async function endAuctionInternal(machine, teamPlayerMap, io) {
   timerService.stopTimer(machine.roomCode);
+  machine.timerRemaining = 0;
 
   const playerResults = [];
   for (const [playerId, result] of machine.playerResults) {

@@ -1,22 +1,22 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { io } from "socket.io-client";
 
 const SOCKET_URL = process.env.REACT_APP_API_URL || "http://localhost:8000/";
 
 export default function useSocket(roomCode, userId, team, handlers = {}) {
-  const socketRef = useRef(null);
+  const [socket, setSocket] = useState(null);
   const handlersRef = useRef(handlers);
   handlersRef.current = handlers;
 
   const connect = useCallback(() => {
-    if (socketRef.current?.connected) return;
+    if (socket?.connected) return;
     const s = io(SOCKET_URL, {
       transports: ["websocket", "polling"],
       reconnection: true,
       reconnectionAttempts: 10,
       reconnectionDelay: 1000,
     });
-    socketRef.current = s;
+    setSocket(s);
 
     const on = (event, fn) => s.on(event, (...args) => fn(...args));
 
@@ -45,6 +45,7 @@ export default function useSocket(roomCode, userId, team, handlers = {}) {
     on("rtm_window", (data) => handlersRef.current.onRtmWindow?.(data));
     on("rtm_exercised", (data) => handlersRef.current.onRtmExercised?.(data));
     on("rtm_declined", (data) => handlersRef.current.onRtmDeclined?.(data));
+    on("rtm_error", (data) => handlersRef.current.onRtmError?.(data));
     on("state_reverted", (data) => handlersRef.current.onStateReverted?.(data));
     on("auction_paused", (data) => handlersRef.current.onAuctionPaused?.(data));
     on("auction_resumed", (data) =>
@@ -58,13 +59,10 @@ export default function useSocket(roomCode, userId, team, handlers = {}) {
       handlersRef.current.onHostMigrationVote?.(data)
     );
     on("error", (data) => handlersRef.current.onSocketError?.(data));
-  }, []);
+  }, [socket]);
 
   const disconnect = useCallback(() => {
-    if (socketRef.current) {
-      socketRef.current.disconnect();
-      socketRef.current = null;
-    }
+    setSocket(null);
   }, []);
 
   useEffect(() => {
@@ -72,9 +70,10 @@ export default function useSocket(roomCode, userId, team, handlers = {}) {
       connect();
     }
     return () => {
-      disconnect();
+      if (socket) socket.disconnect();
+      setSocket(null);
     };
-  }, [roomCode, userId, team, connect, disconnect]);
+  }, [roomCode, userId, team, connect, disconnect, socket]);
 
-  return { socket: socketRef.current, connect, disconnect };
+  return { socket, connect, disconnect };
 }

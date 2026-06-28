@@ -7,7 +7,7 @@ function applyRetention(teamPlayerObj, player) {
   const cost = player.retentionCost || 0;
   teamPlayerObj.purseRemaining = Math.max(
     0,
-    teamPlayerObj.purseRemaining - cost * 100
+    teamPlayerObj.purseRemaining - cost
   );
   teamPlayerObj.totalPlayers++;
   teamPlayerObj.squad.push({

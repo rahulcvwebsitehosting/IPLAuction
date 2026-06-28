@@ -58,7 +58,7 @@ export default function RoomPage() {
         return;
       }
       setFullState(data);
-      if (data.auctionState) {
+      if (data.auctionState && data.room?.status === "LIVE") {
         dispatch({ type: "AUCTION_STARTED" });
       }
     },
@@ -79,6 +79,8 @@ export default function RoomPage() {
     onRtmExercised: (data) =>
       dispatch({ type: "RTM_EXERCISED", payload: data }),
     onRtmDeclined: () => dispatch({ type: "RTM_DECLINED" }),
+    onRtmError: (data) =>
+      dispatch({ type: "BID_ERROR", payload: data.error || "RTM failed" }),
     onStateReverted: (data) =>
       dispatch({ type: "STATE_REVERTED", payload: data }),
     onAuctionPaused: (data) =>
